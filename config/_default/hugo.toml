@@ -1,4 +1,4 @@
-baseURL         = "myblog-9mp.pages.dev"
+baseURL         = "https://myblog-9mp.pages.dev/"
 languageCode    = "zh-hant-tw"
 title           = "Life with everything"
 theme           = "hugo-theme-stack" # 加入這行，指定讀取本地 themes 資料夾
