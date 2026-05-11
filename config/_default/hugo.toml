@@ -14,7 +14,7 @@ hasCJKLanguage         = true # 你的遊記會用到中文，這行很重要
     page = "/:slug/"
 
 [params]
-    mainSections = ["post"]
+    mainSections = ["posts"]
     featuredImageField = "image"
     copyright = "Hazwle's Blog"
     customSCSS = ["scss/custom.scss"]
