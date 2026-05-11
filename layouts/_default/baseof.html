@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="{{ default `ltr` .Language.LanguageDirection }}">
+    <head>
+        {{- partial "head/head.html" . -}}
+        {{- block "head" . -}}{{ end }}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    </head>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.dream-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+    <body class="{{ if .IsHome }}home-page{{ end }} {{ block `body-class` . }}{{ end }}">
+        {{- partial "head/colorScheme" . -}}
+        {{ partial "header.html" . }}
+
+        {{ if .IsHome }} <div class="site-cover">
+            </div>
+        {{ end }}
+
+        <div class="main-layout-container">
+            
+            <main class="article-section">
+                {{- block "main" . }}{{- end }}
+            </main>
+
+            
+                <aside class="right-sidebar">
+                    {{ if eq .Kind "page" }}
+                        {{ block "right-sidebar" . }}{{ end }}
+                    {{ end }}
+                    {{ partial "widgets/profile.html" . }}
+                    {{ partial "widgets/search.html" . }}
+                    {{ partial "widgets/calendar.html" . }}
+                    {{ partial "widgets/recent-posts.html" . }} 
+                    {{ partial "widgets/gallery.html" . }}
+                    {{ partial "widgets/tags.html" . }}
+                    {{ partial "widgets/categories.html" . }}
+                    {{ partial "widgets/ads.html" . }}
+                    {{ partial "widgets/rss.html" . }}
+                </aside>
+            
+        </div>
+
+        {{ partial "footer/include.html" . }}
+    </body>
+
+</html>

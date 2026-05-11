@@ -1,0 +1,22 @@
+<section class="widget recent-posts">
+    <div class="widget-title">
+        <span>最新文章</span>
+    </div>
+    <div class="widget-body">
+        <ul class="recent-posts-list">
+            {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+            <li class="recent-post-item">
+                <a href="{{ .RelPermalink }}">
+                    {{ if .Params.image }}
+                    <img src="{{ .Params.image }}" alt="{{ .Title }}" class="recent-post-img">
+                    {{ end }}
+                    <div class="recent-post-info">
+                        <span class="recent-post-title">{{ .Title }}</span>
+                        <span class="recent-post-date">{{ .Date | time.Format "2006/01/02" }}</span>
+                    </div>
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</section>

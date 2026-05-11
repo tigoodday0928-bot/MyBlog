@@ -1,0 +1,36 @@
+# 1. 頂層基本設定 (直接寫，不要包在 [params] 裡)
+customSCSS = ["scss/custom.scss"]
+mainSections = ["posts"]
+rssFullContent = true
+favicon = "img/avatar.png"
+copyright = "Hazwle's Blog"
+
+# 2. 側邊欄設定
+[sidebar]
+    enabled = false
+    emoji = "✏️"
+    subtitle = "生命總會找到自己的出路"
+    avatar = "img/avatar.png"
+
+# 3. 小工具設定 (與你的 baseof.html 調用邏輯對齊)
+[widgets]
+    homepage = [
+        { type = "search" },
+        { type = "archives", params = { limit = 5 } },
+        { type = "categories", params = { limit = 10 } }
+    ]
+    page = [{ type = "toc" }]
+
+# 4. 首頁封面
+[homepage]
+    cover = "img/cover.jpg"
+
+# 5. 文章設定
+[article]
+    [article.license]
+        enabled = true
+        default = "Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)"
+
+[author]
+    name = "Hazwle"
+    bio = "記錄生命中的每一個美好瞬間・旅遊・美食・電玩"

@@ -1,0 +1,45 @@
+<section class="widget categories">
+    <div class="widget-title">
+        <span>文章分類</span>
+    </div>
+    <div class="widget-body">
+        <ul class="tree-category-list">
+            {{ range .Site.Menus.sidebar_categories }}
+            <li>
+                {{ if .HasChildren }}
+                <details>
+                    <summary>
+                        <span class="folder-title">{{ .Name }}</span>
+                        {{ $count := len (index $.Site.Taxonomies.categories (lower .Name)) }}
+                        {{ if gt $count 0 }}
+                        <span class="count">{{ $count }}</span>
+                        {{ end }}
+                    </summary>
+                    <ul class="sub-category">
+                        {{ range .Children }}
+                        <li>
+                            <a href="{{ .URL | relURL }}">
+                                {{ .Name }}
+                                {{ $count := len (index $.Site.Taxonomies.categories (lower .Name)) }}
+                                {{ if gt $count 0 }}
+                                <span class="count">{{ $count }}</span>
+                                {{ end }}
+                            </a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </details>
+                {{ else }}
+                <a href="{{ .URL | relURL }}">
+                    {{ .Name }}
+                    {{ $count := len (index $.Site.Taxonomies.categories (lower .Name)) }}
+                    {{ if gt $count 0 }}
+                    <span class="count">{{ $count }}</span>
+                    {{ end }}
+                </a>
+                {{ end }}
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</section>

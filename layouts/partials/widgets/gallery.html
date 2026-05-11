@@ -1,0 +1,95 @@
+<section class="widget gallery">
+    <div class="widget-icon">🎨</div>
+    <h2 class="widget-title section-title">Hazwle's Gallery</h2>
+
+    <div class="gallery-slideshow">
+        <!-- 每張圖片是一個 slide -->
+        <div class="gallery-slide active">
+            <img src="/img/drawing1.jpg" alt="Procreate Work" class="gallery-img">
+        </div>
+        <div class="gallery-slide">
+            <img src="/img/drawing2.jpg" alt="Procreate Work" class="gallery-img">
+        </div>
+        <div class="gallery-slide">
+            <img src="/img/drawing3.jpg" alt="Hachiware Fanart" class="gallery-img">
+        </div>
+        <div class="gallery-slide">
+            <img src="/img/drawing4.png" alt="Digital Art" class="gallery-img">
+        </div>
+
+        <!-- 底部圓點指示器 -->
+        <div class="gallery-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+</section>
+
+<style>
+.gallery-slideshow {
+    position: relative;
+    margin-top: 15px;
+}
+
+.gallery-slide {
+    display: none;
+}
+
+.gallery-slide.active {
+    display: block;
+}
+
+.gallery-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1.5px solid rgba(177, 162, 199, 0.3);
+    transition: opacity 0.5s ease;
+}
+
+/* 圓點指示器 */
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #dcdce0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dot.active {
+    background: #967BB6;
+}
+</style>
+
+<script>
+(function() {
+    const slides = document.querySelectorAll('.gallery-slide');
+    const dots   = document.querySelectorAll('.dot');
+    let current  = 0;
+
+    function goTo(index) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+    }
+
+    // 圓點點擊
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+    // 每 3 秒自動切換
+    setInterval(() => goTo(current + 1), 3000);
+})();
+</script>

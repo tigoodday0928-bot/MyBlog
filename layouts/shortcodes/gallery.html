@@ -1,0 +1,5 @@
+<div class="photo-gallery">
+    {{ range split (.Get "images") " " }}
+    <img src="{{ . }}" alt="gallery image">
+    {{ end }}
+</div>

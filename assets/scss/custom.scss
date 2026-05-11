@@ -1,0 +1,1588 @@
+/* ============================================================
+   1. Dream 風格整合版 (適用於 Hugo Stack 主題)
+   ============================================================ */
+/* 2. 卡片本體：超大圓角與優雅陰影 */
+.article-card {
+    border-radius: 24px !important;
+    /* Dream 的靈魂大圓角 */
+    border: none !important;
+    background-color: var(--card-background);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+}
+
+.article-card:hover {
+    transform: translateY(-10px);
+    /* 懸浮飄起 */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* --- 圖片夢幻美化版 --- */
+.article-image img {
+    border-radius: 12px !important;
+    /* 加上可愛的圓角 */
+    height: 260px !important;
+    /* 保留高度，照片才有張力 */
+    object-fit: cover !important;
+    /* 確保照片裁切完美，不拉伸變形 */
+    width: 100% !important;
+    transition: transform 0.4s ease !important;
+    /* 縮放速度調得優雅一點 */
+}
+
+/* 滑鼠移上去時，圖片會微微放大，更有互動感 */
+.article-card:hover .article-image img {
+    transform: scale(1.05) !important;
+    /* 1.05 倍是視覺上最舒服的放大比例 */
+}
+
+/* 4. 文字細節：清爽與留白 */
+.article-details {
+    padding: 1.8rem !important;
+    /* 增加內容的呼吸感 */
+    text-align: left;
+    /* 如果想更像 Dream，可以改成 center */
+}
+
+.article-title {
+    font-size: 1.35rem !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    margin-bottom: 12px !important;
+    color: var(--card-text-color-main);
+}
+
+/* 5. 標籤與時間：小巧精緻 */
+.article-tags .tag {
+    background-color: rgba(var(--main-color-rgb), 0.1);
+    /* 自動適應主題色 */
+    border-radius: 50px !important;
+    padding: 4px 12px !important;
+    font-size: 1rem !important;
+}
+
+/* 6. 手機版自動適應 (RWD) */
+@media (max-width: 1024px) {
+    .article-list {
+        grid-template-columns: 1fr;
+        /* 螢幕小時變回單欄 */
+    }
+}
+
+/* ============================================================
+   2. 首頁大封面樣式
+   ============================================================ */
+.site-cover {
+    width: 100%;
+    height: 400px;
+
+    /* 修正點：移除 linear-gradient，直接讓圖片原色呈現 */
+    background-image: url("/img/cover.jpg");
+
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+
+    /* 重要修正：將 40px 改為 0，避免頂開下方的卡片區塊 */
+    margin-bottom: 0 !important;
+}
+
+/* 如果移除遮罩後，上面的字（如果有標題的話）看不清楚，可以強化陰影 */
+.cover-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
+    /* 稍微加深陰影 */
+}
+
+/* 手機版縮小高度 */
+@media (max-width: 768px) {
+    .site-cover {
+        height: 250px;
+    }
+
+    .cover-content h1 {
+        font-size: 2rem;
+    }
+}
+
+/* --- 強制文章列表佈局優化 --- */
+section.article-list {
+    display: grid !important;
+    /* 因為右邊有側邊欄，建議改為兩欄，畫面會比較大氣 */
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 30px !important;
+    width: 100% !important;
+}
+
+/* --- 重點：讓大貓咪封面圖「跨欄」顯示 --- */
+/* 這樣封面圖才會橫跨左邊區域，不會縮在小格子裡 */
+section.article-list article.main-article {
+    grid-column: span 2 !important;
+    /* 強制橫跨兩欄 */
+    margin-bottom: 0 !important;
+    position: relative;
+    z-index: 1;
+    /* 配合之前的負邊距，讓它在底層 */
+}
+
+/* 封面圖高度與呈現 */
+section.article-list article.main-article .featured-image {
+    min-height: 450px !important;
+    height: 50vh !important;
+    /* 根據螢幕高度動態調整 */
+    object-fit: cover;
+}
+
+/* 文章卡片細節優化 */
+.article-card .article-details {
+    padding: 25px !important;
+    line-height: 1.6 !important;
+}
+
+/* 確保卡片不爆開 */
+section.article-list article {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+}
+
+/* 響應式調整：當螢幕變小時（例如平板或手機） */
+@media (max-width: 1100px) {
+    section.article-list {
+        grid-template-columns: 1fr !important;
+        /* 降為一欄 */
+    }
+
+    section.article-list article.main-article {
+        grid-column: span 1 !important;
+    }
+}
+
+/* ============================================================
+   2-1. 封面圖區域修正 (處理 .site-cover 與 .article-header)
+   ============================================================ */
+
+/* 消除封面圖下方的強制間距，讓橘色區域消失 */
+.site-cover,
+.article-header {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    position: relative !important;
+    z-index: 1 !important;
+    /* 確保封面圖在底層 */
+}
+
+/* 封面圖片樣式：強化圓角與陰影 */
+.featured-image img {
+    border-radius: 24px !important;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2) !important;
+    transition: transform 0.3s ease;
+    display: block;
+    /* 消除圖片下方的微小行高間隙 */
+}
+
+/* ============================================================
+   2-2. 內容總容器：強制吸附與重疊
+   ============================================================ */
+
+.main-layout-container {
+    position: relative !important;
+    z-index: 10 !important;
+    /* 確保內容浮在封面圖上方 */
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    max-width: 1400px !important;
+
+    /* 核心位移：利用負邊距將整塊內容向上拉，覆蓋封面圖尾巴 */
+    margin: 20px auto 40px auto !important;
+    /* 改成正常間距 */
+
+    gap: 40px !important;
+    background: transparent !important;
+    /* 確保容器本身不擋住背景圖 */
+}
+
+/* 只有主頁才用負邊距覆蓋封面圖 */
+.home-page .main-layout-container {
+    margin-top: -100px !important;
+}
+
+/* ============================================================
+   2-3. 區塊對齊優化 (文章區與側邊欄)
+   ============================================================ */
+
+/* 文章區塊：限制寬度並微調懸浮感 */
+.article-section {
+    flex: 1 !important;
+    max-width: calc(100% - 360px) !important;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(177, 162, 199, 0.2) !important;
+    transition: all 0.3s ease;
+}
+
+/* 右側側邊欄：確保寬度並與文章頂部對齊 */
+.right-sidebar {
+    width: 320px !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important;
+    z-index: 100 !important;
+    padding-top: 20px !important;
+    /* 讓側邊欄工具不要太貼封面圖 */
+}
+
+/* ============================================================
+   3. 頁腳美化
+   ============================================================ */
+
+.site-footer {
+    background: linear-gradient(180deg,
+            rgba(150, 123, 182, 0.05) 0%,
+            rgba(150, 123, 182, 0.12) 100%);
+    border-top: 1px solid rgba(150, 123, 182, 0.2);
+    padding: 40px 20px 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 快速導覽 */
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 24px;
+
+    a {
+        color: #555;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 600;
+        transition: color 0.2s;
+
+        &:hover {
+            color: #967BB6;
+        }
+    }
+}
+
+/* 社群圖示 */
+.footer-social {
+    display: flex;
+    gap: 20px;
+
+    a {
+        color: #888;
+        font-size: 2rem;
+        transition: all 0.2s;
+
+        &:hover {
+            color: #967BB6;
+            transform: translateY(-3px);
+        }
+    }
+}
+
+/* X社群圖標淡化 */
+.ti-brand-x {
+    opacity: 0.75 !important;
+}
+
+/* 一句話 */
+.footer-quote {
+    font-size: 1.1rem;
+    color: #967BB6;
+    font-style: italic;
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* 瀏覽次數統計 */
+.footer-stats {
+    display: flex;
+    gap: 24px;
+    font-size: 1rem;
+    color: #888;
+
+    i {
+        color: #967BB6;
+        margin-right: 4px;
+    }
+}
+
+/* 版權 */
+.copyright {
+    font-size: 1rem;
+    color: #999;
+
+    a {
+        color: #967BB6;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/* ============================================================
+   4. 頁碼：移除長外框，只留圓鈕
+   ============================================================ */
+
+/* 1. 分頁容器：確保水平置中並消除長框 */
+.pagination {
+    display: flex !important;
+    justify-content: center !important;
+    /* 核心：置中 */
+    align-items: center !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    gap: 12px !important;
+    /* 按鈕之間的間距 */
+    padding: 1px 0 !important;
+    margin: 20px auto !important;
+    list-style: none !important;
+    width: 100% !important;
+    /* 讓容器佔滿寬度以便置中內部元素 */
+}
+
+/* 2. 定義每一項 (li) 的寬度，防止被拉長 */
+.pagination .page-item {
+    flex: 0 0 44px !important;
+    /* 不放大、不縮小、固定 44px */
+    width: auto !important;
+    /* 不強制撐開 */
+    height: auto !important;
+    min-width: 44px !important;
+    /* 防止被壓縮 */
+}
+
+/* 3. 單個圓形按鈕的樣式 (a 和 span) */
+.pagination a,
+.pagination span,
+.pagination .page-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    max-width: 44px !important;
+    /* 加這行 */
+    min-height: 44px !important;
+    /* 加這行 */
+    max-height: 44px !important;
+    /* 加這行 */
+    border-radius: 50% !important;
+    background: #ffffff !important;
+    color: #444 !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+}
+
+/* 4. 當前頁面 (選中) 的樣式 - 莫蘭迪紫 */
+.pagination .page-item.active .page-link,
+.pagination .page-item.active span {
+    background: #967BB6 !important;
+    /* 使用你的莫蘭迪紫 */
+    color: #ffffff !important;
+    box-shadow: 0 6px 15px rgba(150, 123, 182, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* 5. 滑鼠經過效果 */
+.pagination a:hover {
+    color: #967BB6 !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 6. 箭頭按鈕符號樣式 (上一頁/下一頁) */
+.pagination .page-item:first-child .page-link,
+.pagination .page-item:last-child .page-link {
+    background: rgba(255, 255, 255, 0.8) !important;
+    font-size: 1.2rem !important;
+}
+
+/* ============================================================
+   5. 導航欄：雜誌感大字體 + 完美居中對齊
+   ============================================================ */
+
+.dream-nav {
+    background: rgba(255, 255, 255, 0.96) !important;
+    backdrop-filter: blur(20px);
+    padding: 40px 0 !important;
+    /* 再次加厚，支撐大字體 */
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    /* 底部線條稍微加粗 */
+}
+
+/* 導航欄透明效果 */
+.dream-nav.scrolled {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 0 4px 20px rgba(150, 123, 182, 0.1) !important;
+    transition: all 0.3s ease !important;
+}
+
+.nav-container {
+    max-width: 95% !important;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* 確保左右絕對垂直對齊 */
+    padding: 0 60px !important;
+}
+
+.nav-brand {
+    /* 1. 網站標題：旗艦大尺寸 2.6rem */
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+    color: #1a1a1a !important;
+    letter-spacing: -1px;
+    /* 緊湊的標題更有設計感 */
+    text-transform: none;
+    /* 如果是英文，全大寫會非常帥 */
+}
+
+.nav-links {
+    display: flex !important;
+    align-items: center !important;
+    /* 確保社群區塊跟文字在一條線上 */
+}
+
+/* 社群圖示區域 */
+.social-icons {
+    display: flex !important;
+    align-items: center !important;
+    gap: 25px !important;
+    /* 圖標間距增加 */
+    margin-right: 40px !important;
+    padding-right: 40px !important;
+    border-right: 2px solid #ddd !important;
+    height: 40px;
+    /* 增加高度讓對齊更穩 */
+}
+
+/* 圖示本人 */
+.social-link i {
+    font-size: 1.8rem !important;
+    /* 圖標放大到 2rem */
+    color: #555;
+    transition: all 0.3s;
+}
+
+/* 2. 文字選單連結：極致大尺寸 1.5rem */
+.nav-links>a:not(.social-link),
+.nav-links>.nav-dropdown>a {
+    margin-left: 40px !important;
+    text-decoration: none !important;
+    font-weight: 800 !important;
+    font-size: 1.6rem !important;
+    color: #222 !important;
+    letter-spacing: 1px;
+    white-space: nowrap !important;
+}
+
+/* 下拉式選單 */
+.nav-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    /* 加小箭頭在文字後面 */
+    &>a::after {
+        content: " ▾";
+        font-size: 0.9rem;
+        opacity: 0.6;
+    }
+
+    .nav-dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        /* 距離主選單稍微拉開 */
+        left: 25px !important;
+        transform: none !important;
+        /* 置中對齊父層 */
+        background: rgba(255, 255, 255, 0.85) !important;
+        backdrop-filter: blur(8px) !important;
+        box-shadow: none;
+        padding: 4px 0;
+        /* 上8px 右0 下4px 左0 */
+        min-width: auto !important;
+        z-index: 100;
+        border-left: none;
+        border-radius: 10px !important;
+        animation: fadeIn 0.15s ease;
+
+        a {
+            display: block;
+            padding: 10px 20px;
+            color: #444;
+            font-size: 1.5rem !important;
+            /* 比主選單小一點 */
+            font-weight: 600 !important;
+            white-space: nowrap;
+
+            &:hover {
+                color: #967BB6;
+                background: rgba(150, 123, 182, 0.08);
+            }
+        }
+    }
+
+    &:hover .nav-dropdown-menu {
+        display: block;
+    }
+
+}
+
+/* 加在 custom.scss 的最下面 */
+.nav-dropdown .nav-dropdown-menu a {
+    margin-left: 0 !important;
+}
+
+/* 懸浮效果：紫色 + 微微放大 */
+.nav-links a:hover,
+.nav-dropdown>a:hover,
+.social-link:hover i {
+    color: #b1a2c7 !important;
+    transform: scale(1.1) !important;
+}
+
+/* 下拉選單淡入動畫 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 修正文章頁內容被導航欄蓋住 */
+body.article-page .main-layout-container {
+    margin-top: 0 !important;
+    padding-top: 30px !important;
+}
+
+body.article-page {
+    background: linear-gradient(180deg,
+            rgba(150, 123, 182, 0.25) 0%,
+            /* 從 0.15 調高到 0.25 */
+            rgba(255, 255, 255, 0) 35%) !important;
+}
+
+/* 同時確認 Stack 主題預設 header 沒有殘留 */
+.site-header {
+    display: none !important;
+}
+
+/* ============================================================
+   6.小工具通用樣式 (整合磨砂感與莫蘭迪紫)
+   ============================================================ */
+.widget {
+    background: rgba(255, 255, 255, 0.9) !important;
+    /* 增加透明度 */
+    backdrop-filter: blur(10px);
+    /* 磨砂玻璃效果 */
+    border-radius: 20px !important;
+    /* 圓角微調加大 */
+    padding: 25px !important;
+    margin-bottom: 30px !important;
+    box-shadow: 0 10px 25px rgba(150, 123, 182, 0.1) !important;
+    /* 淡淡的紫色陰影 */
+    border: 1px solid rgba(150, 123, 182, 0.2) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.widget:hover {
+    transform: translateY(-5px);
+    /* 懸停微升 */
+    box-shadow: 0 15px 35px rgba(150, 123, 182, 0.2) !important;
+}
+
+.widget-title {
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #967BB6 !important;
+    /* 莫蘭迪紫 */
+    border-bottom: 3px solid #967BB6;
+    display: inline-block;
+    padding-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+/* ============================================================
+   6-0. 關於工具欄：個人簡介
+   ============================================================ */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+}
+
+.profile-avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(150, 123, 182, 0.4);
+    box-shadow: 0 4px 15px rgba(150, 123, 182, 0.2);
+    transition: all 0.3s ease;
+}
+
+.profile-avatar img:hover {
+    transform: scale(1.05);
+    border-color: #967BB6;
+}
+
+.profile-name {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #333;
+    margin: 0;
+}
+
+.profile-bio {
+    font-size: 1.3rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.profile-more {
+    display: inline-block;
+    font-size: 1.1rem;
+    color: #967BB6;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+
+    &:hover {
+        color: #7a5fa3;
+        transform: translateX(3px);
+    }
+}
+
+.profile-tags {
+    display: flex;
+    gap: 11px;
+    justify-content: center;
+    color: #967BB6;
+    font-size: 1.4rem;
+}
+
+/* ============================================================
+   6-1. 關於工具欄：搜尋框：現代圓潤一體化設計
+   ============================================================ */
+
+.search-form {
+    display: flex;
+    align-items: center;
+    background: #fdfdff;
+    /* 背景色 */
+    border: 1px solid #e2e2e7;
+    border-radius: 50px;
+    /* 這裡改為全圓角，會更有現代感 */
+    padding: 5px 5px 5px 15px;
+    /* 左側留空間給文字，右側留空間給按鈕 */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+/* 當滑鼠點擊輸入框時，整個外框變色 */
+.search-form:focus-within {
+    border-color: #967BB6;
+    box-shadow: 0 0 0 3px rgba(150, 123, 182, 0.15);
+    background: #fff;
+}
+
+.search-input {
+    flex: 1;
+    border: none !important;
+    /* 去掉原本輸入框的邊框 */
+    background: transparent !important;
+    padding: 8px 0 !important;
+    font-size: 0.95rem;
+    color: #444;
+    outline: none !important;
+}
+
+.search-input::placeholder {
+    color: #b0b0b8;
+}
+
+.search-button {
+    background: #967BB6 !important;
+    /* D3A4FF 改成莫蘭迪紫，統一風格 */
+    color: white;
+    border: none;
+    border-radius: 50px !important;
+    width: 42px;
+    /* 稍微加大，視覺更平衡 */
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+    /* 移除 margin-left，改用 padding 控制 */
+}
+
+.search-button:hover {
+    background: #7a5fa3 !important;
+    /* 加深版莫蘭迪紫 */
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(150, 123, 182, 0.4);
+    /* 懸停加光暈 */
+}
+
+/* 修正放大鏡圖示的大小 */
+.search-button i,
+.search-button svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ============================================================
+   6-2. 關於工具欄：最新文章 widget
+   ============================================================ */
+.recent-posts-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.recent-post-item {
+    margin-bottom: 12px !important;
+
+    a {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        text-decoration: none !important;
+        color: #444 !important;
+        transition: all 0.2s !important;
+
+        &:hover {
+            color: #967BB6 !important;
+        }
+    }
+}
+
+.recent-post-img {
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    flex-shrink: 0 !important;
+}
+
+.recent-post-info {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+}
+
+.recent-post-title {
+    font-size: 1.4rem !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+}
+
+.recent-post-date {
+    font-size: 1.2rem !important;
+    color: #999 !important;
+}
+
+/* ============================================================
+   6-3. 關於工具欄：藝廊 (Gallery) 內部美化
+   ============================================================ */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.gallery-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1.5px solid rgba(177, 162, 199, 0.3);
+    /* 莫蘭迪紫 */
+    transition: all 0.3s ease;
+}
+
+/* ============================================================
+   6-4. 關於工具欄：行事曆美化 
+   ============================================================ */
+.calendar-grid {
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    gap: 4px !important;
+    text-align: center !important;
+}
+
+.day-name {
+    font-size: 0.85rem !important;
+    color: #999 !important;
+    padding: 4px 0 !important;
+    font-weight: 600 !important;
+}
+
+.day {
+    padding: 6px 0 !important;
+    font-size: 0.9rem !important;
+    border-radius: 50% !important;
+    cursor: default !important;
+}
+
+.day.has-post {
+    background: #967BB6 !important;
+    color: #fff !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+}
+
+.day.today {
+    border: 2px solid #967BB6 !important;
+    color: #967BB6 !important;
+    font-weight: 700 !important;
+}
+
+.day.empty {
+    background: none !important;
+}
+
+.calendar-header {
+    display: inline-flex;
+    margin-bottom: 3px;
+}
+
+#cal-title {
+    padding: 5px;
+}
+
+.cal-prev,
+.cal-next {
+    background: rgba(150, 123, 182, 0.1) !important;
+    border: none !important;
+    border-radius: 50% !important;
+    width: 28px !important;
+    height: 28px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.2rem !important;
+    color: #967BB6 !important;
+    cursor: pointer !important;
+    transition: all 0.2s !important;
+
+    &:hover {
+        background: #967BB6 !important;
+        color: #fff !important;
+    }
+}
+
+
+/* ============================================================
+   6-5. 關於工具欄：標籤雲
+   ============================================================ */
+.tag-cloud {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+}
+
+.tag-item {
+    background: rgba(150, 123, 182, 0.1) !important;
+    color: #967BB6 !important;
+    border-radius: 20px !important;
+    padding: 4px 12px !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: all 0.2s !important;
+    border: 1px solid rgba(150, 123, 182, 0.2) !important;
+
+    &:hover {
+        background: #967BB6 !important;
+        color: #fff !important;
+    }
+}
+
+/* ============================================================
+   6-6. 關於工具欄：文章歸檔清單升級版
+   ============================================================ */
+
+.archive-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.archive-list li {
+    padding: 6px 0 !important;
+}
+
+.archive-list li a {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    text-decoration: none !important;
+    color: #444 !important;
+    transition: all 0.2s ease !important;
+}
+
+.archive-list li a::after {
+    content: "" !important;
+    flex-grow: 1 !important;
+    margin: 0 12px !important;
+    border-bottom: 2px dotted #dcdce0 !important;
+    height: 1px !important;
+    align-self: center !important;
+    order: 3 !important;
+}
+
+.archive-list li a .count {
+    background: #967BB6 !important;
+    color: #fff !important;
+    padding: 2px 10px !important;
+    border-radius: 20px !important;
+    font-size: 0.85rem !important;
+    font-weight: bold !important;
+    min-width: 32px !important;
+    text-align: center !important;
+    order: 4 !important;
+    flex-shrink: 0 !important;
+    transition: background 0.2s ease !important;
+}
+
+.archive-list li a:hover {
+    color: #967BB6 !important;
+    padding-left: 4px !important;
+}
+
+.archive-list li a:hover .count {
+    background: #7a5fa3 !important;
+}
+
+/* ============================================================
+   6-7. 關於工具欄：分類合輯
+   ============================================================ */
+
+.tree-category-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.tree-category-list>li>a,
+.tree-category-list summary {
+    display: flex;
+    align-items: center;
+    padding: 9px 0 !important;
+    color: #333 !important;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.35rem !important;
+    font-weight: 600 !important;
+    transition: all 0.2s;
+}
+
+.tree-category-list>li>a:hover,
+.tree-category-list summary:hover {
+    color: #967BB6 !important;
+}
+
+.tree-category-list li a::before,
+.tree-category-list summary::before {
+    content: "";
+    display: inline-block;
+    width: 16px !important;
+    height: 16px !important;
+    margin-right: 8px !important;
+    background-color: #967BB6;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z'/%3E%3C/svg%3E") no-repeat center;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z'/%3E%3C/svg%3E") no-repeat center;
+    flex-shrink: 0;
+}
+
+/* 分類數字泡泡 */
+.tree-category-list li a .count,
+.tree-category-list summary .count {
+    background: #967BB6 !important;
+    color: #fff !important;
+    padding: 2px 10px !important;
+    border-radius: 20px !important;
+    font-size: 0.85rem !important;
+    font-weight: bold !important;
+    min-width: 32px !important;
+    text-align: center !important;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
+    transition: background 0.2s ease !important;
+}
+
+.tree-category-list li a:hover .count,
+.tree-category-list summary:hover .count {
+    background: #7a5fa3 !important;
+}
+
+.sub-category {
+    list-style: none !important;
+    margin: 4px 0 10px 12px !important;
+    padding-left: 16px !important;
+    border-left: 2px solid rgba(150, 123, 182, 0.35) !important;
+}
+
+.sub-category li {
+    padding: 4px 0 !important;
+}
+
+.sub-category li a {
+    font-size: 1.2rem !important;
+    font-weight: 400 !important;
+    color: #666 !important;
+    padding: 5px 0 !important;
+    display: block;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.sub-category li a:hover {
+    color: #967BB6 !important;
+}
+
+summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* ============================================================
+   6-8. 關於工具欄：廣告/分潤卡片美化
+   ============================================================ */
+
+.widget.ads {
+    display: none;
+    margin-top: 20px;
+    /* 與上方分類保持距離 */
+}
+
+.ads-container {
+    background: #fdfdff;
+    border: 2px dashed #e2e2e7;
+    /* 預留位用虛線表示 */
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.ads-container:hover {
+    border-color: #967BB6;
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(150, 123, 182, 0.1);
+}
+
+.ads-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    /* 增加高度，像截圖那樣 */
+    color: #b0b0b8;
+    text-align: center;
+}
+
+.ads-placeholder span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.ads-placeholder small {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* 如果以後放入圖片廣告，確保圖片不跑版 */
+.ads-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ============================================================
+   6-9. 關於工具欄：RSS訂閱
+   ============================================================ */
+.rss-btn {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: #967BB6 !important;
+    color: #fff !important;
+    padding: 10px 20px !important;
+    border-radius: 20px !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    transition: all 0.2s !important;
+    width: fit-content !important;
+
+    &:hover {
+        background: #7a5fa3 !important;
+        transform: translateY(-2px) !important;
+    }
+
+    i {
+        font-size: 1.2rem !important;
+    }
+}
+
+/* ============================================================
+   7. 文章內頁排版美化
+   ============================================================ */
+/* 文章內頁標題 */
+.article-title {
+    font-size: 2.2rem !important;
+    font-weight: 800 !important;
+    line-height: 1.4 !important;
+    color: #222 !important;
+    margin: 0 0 8px 0 !important;
+}
+
+/* 標題和標籤間距 */
+.article-title-wrapper {
+    margin: 0 !important;
+}
+
+/* 分類標籤 */
+.article-category {
+    text-align: left !important;
+    margin: 0 0 8px 0 !important;
+}
+
+.article-category a {
+    background: rgba(150, 123, 182, 0.12) !important;
+    color: #967BB6 !important;
+    border-radius: 20px !important;
+    padding: 6px 20px !important;
+    font-size: 1.2rem !important;
+    /* 稍微放大 */
+    font-weight: 600 !important;
+    text-decoration: none !important;
+}
+
+/* 文章資訊列 */
+.article-details {
+    display: flex !important;
+    flex-direction: column !important;
+    /* 改成垂直排列 */
+    gap: 8px !important;
+    color: #888 !important;
+    font-size: 1.2rem !important;
+    /* 跟標籤一樣大 */
+    margin: 8px 0 16px !important;
+    padding-bottom: 16px !important;
+    border-bottom: 1px solid rgba(150, 123, 182, 0.15) !important;
+    margin-top: 0 !important;
+}
+
+.article-details i {
+    color: #967BB6 !important;
+}
+
+/* 文章內頁內容 */
+.article-content {
+    font-size: 1.6rem !important;
+    /* 縮小內文字體 */
+    line-height: 1.7 !important;
+    color: #444 !important;
+    padding: 0 20px !important;
+
+    p {
+        margin-bottom: 1.5rem !important;
+    }
+
+    img {
+        max-width: 100% !important;
+        border-radius: 12px !important;
+        margin: 20px auto !important;
+        display: block !important;
+    }
+}
+
+/* 文章 header 排序 */
+.article-header {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* 目錄自訂樣式 - 莫蘭迪紫 */
+aside.article-toc {
+    border: 2px solid #c4b5c8;
+    border-radius: 16px;
+    background-color: #faf8fb;
+    padding: 1.2rem 1.5rem;
+
+    details summary {
+        background-color: #8b7096;
+        color: white;
+        font-weight: bold;
+        padding: 0.3rem 0.9rem;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+        font-size: 0.95rem;
+        display: inline-block;
+    }
+
+    nav.toc-nav a {
+        color: #7a5f85 !important;
+        font-weight: bold;
+        text-decoration: none;
+
+        &:hover {
+            color: #5a4065 !important;
+            text-decoration: underline;
+        }
+    }
+}
+
+/* 隱藏目錄上的# */
+.widget.archives .widget-icon {
+    display: none;
+}
+
+/* 目錄跟著網頁滾動 */
+.right-sidebar.sticky {
+    position: sticky;
+    top: 140px;
+    align-self: flex-start;
+}
+
+/* ============================================================
+   7-1. 文章內頁排版美化：照片
+   ============================================================ */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 20px 0;
+
+    img {
+        width: 100% !important;
+        aspect-ratio: 1/1 !important;
+        object-fit: cover !important;
+        border-radius: 8px !important;
+        margin: 0 !important;
+    }
+
+    /* 第一張圖跨兩行兩列，像 WordPress 那樣 */
+    img:first-child {
+        grid-column: span 1;
+        grid-row: span 1;
+        aspect-ratio: 1/1 !important;
+    }
+}
+
+/* 文章內頁一般圖片 */
+.article-content img:not(.photo-gallery img) {
+    max-width: 70% !important;
+    height: auto !important;
+    border-radius: 12px !important;
+    margin: 20px auto !important;
+    display: block !important;
+}
+
+/* ============================================================
+   7-1. 文章內頁排版美化：頁尾分享＋作者簡介+相關文章
+   ============================================================ */
+.article-share {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(150, 123, 182, 0.15);
+    margin-top: 30px;
+
+    span {
+        font-size: 1.3rem;
+        color: #666;
+        font-weight: 600;
+    }
+}
+
+.share-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.share-facebook {
+    background: #1877f2;
+}
+
+.share-twitter {
+    background: #000;
+}
+
+.share-copy {
+    background: #967BB6;
+}
+
+/* 作者簡介 */
+.author-bio {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    background-color: #f5f0f7;
+    border-left: 4px solid #8b7096;
+    border-radius: 12px;
+
+    .author-bio-avatar {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+        border: 3px solid #c4b5c8;
+    }
+
+    .author-bio-name {
+        margin: 0 0 0.4rem 0;
+        font-size: 1.5rem;
+        color: #5a4065;
+        font-weight: bold;
+    }
+
+    .author-bio-desc {
+        margin: 0;
+        font-size: 1.4rem;
+        color: #7a6a80;
+        line-height: 1.6;
+    }
+}
+
+/* 相關文章卡片 */
+// 讓相關文章卡片區塊變寬
+aside .article-list--tile article.has-image {
+    > a {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        position: relative !important;
+    }
+
+    // 縮小標題字體
+    .article-title {
+        font-size: 1.2rem !important;
+        font-weight: 500 !important;
+        line-height: 1.5 !important;
+    }
+
+    .article-image {
+        width: 130px !important;
+        min-width: 130px !important;
+        height: 100px !important;
+        flex-shrink: 0 !important;
+        position: relative !important;
+        
+        img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            position: relative !important; // 取消 absolute
+        }
+    }
+
+    .article-details {
+        flex: 1 !important;
+        padding: 8px 12px !important;
+        position: relative !important;
+        background: none !important;
+        
+        // 取消原本 absolute 定位造成的疊加
+        top: auto !important;
+        left: auto !important;
+        bottom: auto !important;
+        right: auto !important;
+    }
+}
+
+// 讓卡片區塊變寬
+aside .subsection-list {
+    max-width: 100% !important;
+}
+
+aside .article-list--tile {
+    width: 100% !important;
+    max-width: 600px !important; // 可以調整這個數字
+}
+
+/* ============================================================
+   8. 分頁美化：歸檔
+   ============================================================ */
+/* 歸檔頁整體 */
+.template-archives .article-section {
+    padding: 20px 0 !important;
+}
+
+/* 歸檔頁分類卡片 */
+.subsection-list .article-list--tile article {
+    background: linear-gradient(135deg,
+            #F5F0E8 0%,
+            #EDE8DF 100%) !important;
+    border-radius: 16px !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid rgba(150, 123, 182, 0.15) !important;
+    display: flex !important;
+    /* 加這行 */
+    align-items: center !important;
+    /* 加這行 */
+    justify-content: center !important;
+    /* 加這行 */
+    min-height: 120px !important;
+    /* 加這行 */
+
+    &:hover {
+        transform: translateY(-5px) !important;
+        box-shadow: 0 10px 25px rgba(150, 123, 182, 0.15) !important;
+        border-color: rgba(150, 123, 182, 0.3) !important;
+    }
+}
+
+/* 「分類」標題 */
+.subsection-list>h2 {
+    font-size: 1.6rem !important;
+    font-weight: 800 !important;
+    color: #967BB6 !important;
+    border-bottom: 2px solid rgba(150, 123, 182, 0.3) !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 20px !important;
+}
+
+/* 分類卡片文字置中 */
+.subsection-list .article-list--tile article .article-details {
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    font-size: 1.4rem !important;
+    color: #6b5a7e !important;
+    font-weight: 700 !important;
+    height: auto !important;
+}
+
+/* 文章列表卡片 */
+.article-list--compact article {
+    background: #fff !important;
+    border-radius: 12px !important;
+    padding: 16px !important;
+    margin-bottom: 12px !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.3s ease !important;
+
+    &:hover {
+        transform: translateX(5px) !important;
+        box-shadow: 0 4px 15px rgba(150, 123, 182, 0.15) !important;
+    }
+}
+
+/* 文章列表標題 */
+.article-list--compact .article-title {
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+    color: #333 !important;
+}
+
+/* 文章列表日期 */
+.article-list--compact .article-time--published {
+    font-size: 0.95rem !important;
+    color: #999 !important;
+}
+
+/* 年份標題 */
+.archives-group {
+    margin-bottom: 24px !important;
+}
+
+/* 年份文字 - 用 id 選到 */
+[id].archives-group>* {
+    font-size: 1.4rem !important;
+    font-weight: 800 !important;
+    color: #967BB6 !important;
+}
+
+.subsection-list {
+    /* 自訂捲軸樣式 */
+    margin-bottom: 20px !important;
+    /* 加這行與下方文章留白 */
+    scrollbar-width: thin !important;
+    scrollbar-color: rgba(150, 123, 182, 0.4) transparent !important;
+
+    &::-webkit-scrollbar {
+        height: 4px !important;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent !important;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(150, 123, 182, 0.4) !important;
+        border-radius: 10px !important;
+    }
+}

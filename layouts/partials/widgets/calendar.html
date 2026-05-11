@@ -1,0 +1,78 @@
+<section class="widget calendar">
+    <!-- 把所有文章日期傳給 JS -->
+    <script>
+        var postDates = [
+            {{ range (where .Site.RegularPages "Section" "posts") }}
+            "{{ .Date.Format "2006-01-02" }}",
+            {{ end }}
+        ];
+    </script>
+
+    <div class="widget-title">
+        <div class="calendar-header">
+            <button class="cal-prev" onclick="changeMonth(-1)">‹</button>
+            <span id="cal-title"></span>
+            <button class="cal-next" onclick="changeMonth(1)">›</button>
+        </div>
+    </div>
+
+    <div class="calendar-grid">
+        <div class="day-name">一</div>
+        <div class="day-name">二</div>
+        <div class="day-name">三</div>
+        <div class="day-name">四</div>
+        <div class="day-name">五</div>
+        <div class="day-name">六</div>
+        <div class="day-name">日</div>
+    </div>
+    <div class="calendar-grid" id="cal-days"></div>
+
+    <script>
+        var currentDate = new Date();
+        var currentYear = currentDate.getFullYear();
+        var currentMonth = currentDate.getMonth();
+
+        function renderCalendar() {
+            var title = document.getElementById('cal-title');
+            var daysContainer = document.getElementById('cal-days');
+            
+            title.textContent = currentYear + '年 ' + String(currentMonth + 1).padStart(2, '0') + '月';
+            
+            var firstDay = new Date(currentYear, currentMonth, 1).getDay();
+            firstDay = firstDay === 0 ? 6 : firstDay - 1;
+            
+            var daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+            
+            var html = '';
+            
+            for (var i = 0; i < firstDay; i++) {
+                html += '<div class="day empty"></div>';
+            }
+            
+            for (var d = 1; d <= daysInMonth; d++) {
+                var dateStr = currentYear + '-' + 
+                    String(currentMonth + 1).padStart(2, '0') + '-' + 
+                    String(d).padStart(2, '0');
+                var hasPost = postDates.indexOf(dateStr) !== -1;
+                var isToday = (d === currentDate.getDate() && 
+                    currentMonth === currentDate.getMonth() && 
+                    currentYear === currentDate.getFullYear());
+                
+                html += '<div class="day' + 
+                    (hasPost ? ' has-post' : '') + 
+                    (isToday ? ' today' : '') + '">' + d + '</div>';
+            }
+            
+            daysContainer.innerHTML = html;
+        }
+
+        function changeMonth(delta) {
+            currentMonth += delta;
+            if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+            if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+            renderCalendar();
+        }
+
+        renderCalendar();
+    </script>
+</section>

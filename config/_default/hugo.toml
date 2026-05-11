@@ -1,0 +1,70 @@
+baseURL         = "http://localhost:1313/"
+languageCode    = "zh-hant-tw"
+title           = "Life with everything"
+theme           = "hugo-theme-stack" # 加入這行，指定讀取本地 themes 資料夾
+
+defaultContentLanguage = "zh-hant-tw"
+hasCJKLanguage         = true # 你的遊記會用到中文，這行很重要
+
+[pagination]
+    pageSize = 5
+
+[permalinks]
+    post = "/p/:slug/"
+    page = "/:slug/"
+
+[params]
+    mainSections = ["post"]
+    featuredImageField = "image"
+    copyright = "Hazwle's Blog"
+    customSCSS = ["scss/custom.scss"]
+
+# 定義側邊欄分類選單
+[[menu.sidebar_categories]]
+    name = "遊玩景點"
+    identifier = "travel" # 父節點的唯一識別碼
+    url = "/categories/遊玩景點/"
+    weight = 1
+
+[[menu.sidebar_categories]]
+    name = "泰國曼谷"
+    parent = "travel" # 指向上面的 identifier，就會變成子目錄
+    url = "/categories/泰國曼谷/"
+    weight = 1
+
+[[menu.sidebar_categories]]
+    name = "日本東京"
+    parent = "travel"
+    url = "/categories/日本東京/"
+    weight = 2
+
+[[menu.sidebar_categories]]
+    name = "中國上海"
+    parent = "travel"
+    url = "/categories/中國上海/"
+    weight = 3
+
+[[menu.sidebar_categories]]
+    name = "美食紀錄"
+    identifier = "food"        # 父層的 identifier
+    url = "/categories/美食紀錄/"
+    weight = 2
+
+[[menu.sidebar_categories]]
+    name = "泰國曼谷"
+    parent = "food"            # 指向父層的 identifier
+    url = "/categories/泰國曼谷/"
+    weight = 1
+
+# 如果還有其他子分類繼續加：
+[[menu.sidebar_categories]]
+    name = "日本東京"
+    parent = "food"
+    url = "/categories/日本東京/"
+    weight = 2
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    

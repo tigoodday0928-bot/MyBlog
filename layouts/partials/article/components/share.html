@@ -1,0 +1,12 @@
+<div class="article-share">
+    <span>分享此文：</span>
+    <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" class="share-btn share-facebook">
+        <i class="ti ti-brand-facebook"></i>
+    </a>
+    <a href="https://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title }}" target="_blank" class="share-btn share-twitter">
+        <i class="ti ti-brand-x"></i>
+    </a>
+    <a href="javascript:void(0)" onclick="navigator.clipboard.writeText('{{ .Permalink }}');alert('連結已複製！')" class="share-btn share-copy">
+        <i class="ti ti-link"></i>
+    </a>
+</div>

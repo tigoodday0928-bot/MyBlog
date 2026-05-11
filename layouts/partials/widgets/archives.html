@@ -1,0 +1,17 @@
+<section class="widget archives">
+    <div class="widget-title">
+        <span>文章歸檔</span>
+    </div>
+    <div class="widget-body">
+        <ul class="archive-list">
+            {{ range (.Site.RegularPages.GroupByDate "2006") }}
+            <li>
+                <a href="{{ (print "/archives/#" .Key) | relURL }}">
+                    <span class="year">{{ .Key }}</span>
+                    <span class="count">{{ len .Pages }}</span>
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</section>

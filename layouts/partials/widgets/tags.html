@@ -1,0 +1,14 @@
+<section class="widget tags">
+    <div class="widget-title">
+        <span>標籤</span>
+    </div>
+    <div class="widget-body">
+        <div class="tag-cloud">
+            {{ range .Site.Taxonomies.tags }}
+            <a href="{{ .Page.RelPermalink }}" class="tag-item">
+                {{ .Page.Title }} ({{ .Count }})
+            </a>
+            {{ end }}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,60 @@
+[[main]]
+    name = "遊玩景點"
+    url = "/categories/遊玩景點/"
+    weight = 1
+
+[[main]]
+    name = "美食紀錄"
+    url = "/categories/美食紀錄/"
+    weight = 2
+
+[[main]]
+    name = "電玩資訊"
+    url = "/categories/電玩資訊/"
+    weight = 3
+
+[[main]]
+    identifier = "original"        # 加這個讓子層可以指向它
+    name = "自創內容"
+    url = "/categories/自創內容/"
+    weight = 4
+
+[[main]]
+    parent = "original"            # 指向上面的 identifier
+    name = "影劇心得"
+    url = "/categories/影劇心得/"
+    weight = 41
+
+[[main]]
+    name = "關於我"
+    url = "/about/"
+    weight = 5
+
+# --- 社群連結 ---
+[[social]]
+    identifier = "instagram"
+    name       = "Instagram"
+    url        = "你的IG連結"
+    [social.params]
+        icon = "brand-instagram"
+
+[[social]]
+    identifier = "facebook"
+    name       = "Facebook"
+    url        = "你的FB連結"
+    [social.params]
+        icon = "brand-facebook"
+
+[[social]]
+    identifier = "twitch"
+    name       = "Twitch"
+    url        = "https://www.twitch.tv/hazwle"
+    [social.params]
+        icon = "brand-twitch"
+
+[[social]]
+    identifier = "youtube"
+    name       = "YouTube"
+    url        = "https://youtube.com/@hazwle?si=zQx5XsGMOeFs37Ku"
+    [social.params]
+        icon = "brand-youtube"
