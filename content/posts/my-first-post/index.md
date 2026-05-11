@@ -7,7 +7,7 @@ categories:
     - 遊玩景點 
 tags:
     - 台灣台南 
-image: tainan-plumchicken-7.jpg
+image: posts/my-first-post/tainan-plumchicken-7.jpg
 draft: false
 ---
 
