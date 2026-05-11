@@ -19,6 +19,9 @@ hasCJKLanguage         = true # 你的遊記會用到中文，這行很重要
     copyright = "Hazwle's Blog"
     customSCSS = ["scss/custom.scss"]
 
+    [params.header]
+        title = "Life with everything"  # 這裡會決定標籤頁顯示的文字
+
 # 定義側邊欄分類選單
 [[menu.sidebar_categories]]
     name = "遊玩景點"
