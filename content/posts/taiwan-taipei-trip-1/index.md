@@ -1,7 +1,7 @@
 ---
 title: '【台北圓山】圓山飯店之旅紀錄'
 date: 2023-04-09
-slug: "mytrip-taipei-1"
+slug: "taiwan-taipei-trip-1"
 description: "台北圓山國宴之旅"
 toc: true
 type: posts
@@ -9,7 +9,7 @@ categories:
     - 遊玩景點
 tags:
     - 台灣台北
-image: posts/mytrip-taipei-1/trip-taipei-1-1.jpg
+image: posts/taiwan-taipei-trip-1/trip-taipei-1-1.jpg
 draft: false
 ---
 
