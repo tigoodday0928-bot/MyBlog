@@ -16,11 +16,11 @@
 
 [zh-hant-tw]
     languageName = "正體中文"
-    title        = "Hugo 主題 Stack"
+    title        = "Life with everything"
     weight       = 3
 
     [zh-hant-tw.params.sidebar]
-        subtitle = "為博客設計的卡片式 Hugo 主題"
+        subtitle = "記錄生活中的每一個美好瞬間"
         enabled  = false
 
 [ja]

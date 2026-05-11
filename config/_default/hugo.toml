@@ -21,6 +21,23 @@ hasCJKLanguage         = true # 你的遊記會用到中文，這行很重要
 
     [params.header]
         title = "Life with everything"  # 這裡會決定標籤頁顯示的文字
+        
+[params.comments]
+    enabled = true
+    provider = "giscus"
+
+[params.comments.giscus]
+    repo = "tigoodday0928-bot/MyBlog-comments"
+    repoID = "R_kgDOSaAinA"
+    category = "General"
+    categoryID = "DIC_kwDOSaAinM4C8ww3"
+    mapping = "title"
+    reactionsEnabled = 1
+    emitMetadata = 0
+    inputPosition = "bottom"
+    lang = "zh-TW"
+
+
 
 # 定義側邊欄分類選單
 [[menu.sidebar_categories]]
