@@ -1586,3 +1586,71 @@ aside .article-list--tile {
         border-radius: 10px !important;
     }
 }
+
+/* ============================================================
+   手機版 RWD (max-width: 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+
+    /* 導覽列縮小 */
+    .dream-nav {
+        padding: 15px 0 !important;
+    }
+
+    .nav-container {
+        padding: 0 20px !important;
+        flex-wrap: wrap;
+    }
+
+    .nav-brand {
+        font-size: 1.8rem !important;
+    }
+
+    /* 隱藏導覽列文字選單，只留 LOGO */
+    .nav-links {
+        display: none !important;
+    }
+
+    /* 主內容區全寬 */
+    .main-layout-container {
+        flex-direction: column !important;
+        padding: 0 15px !important;
+        gap: 20px !important;
+        margin: 10px auto !important;
+    }
+
+    .article-section {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    /* 側邊欄移到下方 */
+    .right-sidebar {
+        width: 100% !important;
+        padding-top: 0 !important;
+    }
+
+    /* 文章列表單欄 */
+    section.article-list {
+        grid-template-columns: 1fr !important;
+    }
+
+    section.article-list article.main-article {
+        grid-column: span 1 !important;
+    }
+
+    /* 文章內頁字體縮小 */
+    .article-title {
+        font-size: 1.6rem !important;
+    }
+
+    .article-content {
+        font-size: 1.4rem !important;
+        padding: 0 5px !important;
+    }
+
+    /* 封面圖高度 */
+    .article-image img {
+        height: 180px !important;
+    }
+}
