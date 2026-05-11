@@ -9,6 +9,7 @@
             <span></span>
         </button>    
 
+        <!-- 桌面版導覽列 -->
         <div class="nav-links" id="nav-links">
             <div class="social-icons">
                 <a href="https://ww.instagram.com/mochi._.orange/" target="_blank" class="social-link"><i class="ti ti-brand-instagram"></i></a>
@@ -17,33 +18,71 @@
                 <a href="https://www.twitch.tv/hazwle" target="_blank" class="social-link"><i class="ti ti-brand-twitch"></i></a>
                 <a href="https://youtube.com/@hazwle?si=zQx5XsGMOeFs37Ku" target="_blank" class="social-link"><i class="ti ti-brand-youtube"></i></a>
             </div>
-
             <a href="/">主頁</a>
             <a href="/archives/">歸檔</a>
             <a href="/categories/遊玩景點/">遊玩景點</a>
             <a href="/categories/美食紀錄/">美食紀錄</a>
             <a href="/categories/電玩資訊/">電玩資訊</a>
-                        <!-- 自創內容加下拉 -->
             <div class="nav-dropdown">
                 <a href="/categories/自創內容/">自創內容</a>
                 <div class="nav-dropdown-menu">
                     <a href="/categories/影劇心得/">影劇心得</a>
                 </div>
             </div>
-            
             <a href="/about/">關於我</a>
         </div>
     </div>
 </nav>
 
+<!-- 手機版側滑選單 -->
+<div class="mobile-overlay" id="mobile-overlay"></div>
+<div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-header">
+        <span>Life with everything</span>
+        <button class="mobile-close" id="mobile-close">✕</button>
+    </div>
+    <div class="mobile-social">
+        <a href="https://ww.instagram.com/mochi._.orange/" target="_blank"><i class="ti ti-brand-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100090390607495" target="_blank"><i class="ti ti-brand-facebook"></i></a>
+        <a href="https://twitter.com/Hazwle_" target="_blank"><i class="ti ti-brand-x"></i></a>
+        <a href="https://www.twitch.tv/hazwle" target="_blank"><i class="ti ti-brand-twitch"></i></a>
+        <a href="https://youtube.com/@hazwle?si=zQx5XsGMOeFs37Ku" target="_blank"><i class="ti ti-brand-youtube"></i></a>
+    </div>
+    <nav class="mobile-nav">
+        <a href="/">主頁</a>
+        <a href="/archives/">歸檔</a>
+        <a href="/categories/遊玩景點/">遊玩景點</a>
+        <a href="/categories/美食紀錄/">美食紀錄</a>
+        <a href="/categories/電玩資訊/">電玩資訊</a>
+        <a href="/categories/自創內容/">自創內容</a>
+        <a href="/categories/影劇心得/" class="mobile-sub">└ 影劇心得</a>
+        <a href="/about/">關於我</a>
+    </nav>
+</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileOverlay = document.getElementById('mobile-overlay');
+    const mobileClose = document.getElementById('mobile-close');
 
-    hamburger.addEventListener('click', function() {
-        navLinks.classList.toggle('nav-open');
-        hamburger.classList.toggle('is-open');
-    });
+    function openMenu() {
+        mobileMenu.classList.add('is-open');
+        mobileOverlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        hamburger.classList.add('is-open');
+    }
+
+    function closeMenu() {
+        mobileMenu.classList.remove('is-open');
+        mobileOverlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+        hamburger.classList.remove('is-open');
+    }
+
+    hamburger.addEventListener('click', openMenu);
+    mobileClose.addEventListener('click', closeMenu);
+    mobileOverlay.addEventListener('click', closeMenu);
 });
 </script>
