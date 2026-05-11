@@ -8,7 +8,7 @@ categories:
 tags:
     - 台灣電影
     - 心得
-image: /img/helloghost.jpg
+image: posts/myinsights-helloghost/helloghost
 draft: false
 ---
 距離我上次更新文章已經是好幾個月前。
