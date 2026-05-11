@@ -1654,3 +1654,56 @@ aside .article-list--tile {
         height: 180px !important;
     }
 }
+
+/* 手機版漢堡式隱藏導航欄 */
+@media (max-width: 768px) {
+    .nav-hamburger {
+        display: flex !important;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+
+        span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #333;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+    }
+
+    .nav-hamburger.is-open span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .nav-hamburger.is-open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-hamburger.is-open span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-links.nav-open {
+        display: flex !important;
+        flex-direction: column !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        padding: 20px !important;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+        z-index: 999 !important;
+        gap: 15px !important;
+    }
+}
+
+/* 桌面版隱藏漢堡按鈕 */
+.nav-hamburger {
+    display: none;
+}

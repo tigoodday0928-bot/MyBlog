@@ -2,6 +2,13 @@
     <div class="nav-container">
         <a href="/" class="nav-brand">Life with everything</a>
         
+        <!-- 漢堡按鈕（手機版才顯示） -->
+        <button class="nav-hamburger" id="hamburger" aria-label="開啟選單">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>    
+
         <div class="nav-links">
             <div class="social-icons">
                 <a href="https://ww.instagram.com/mochi._.orange/" target="_blank" class="social-link"><i class="ti ti-brand-instagram"></i></a>
@@ -28,3 +35,13 @@
         </div>
     </div>
 </nav>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('nav-open');
+    hamburger.classList.toggle('is-open');
+});
+</script>
