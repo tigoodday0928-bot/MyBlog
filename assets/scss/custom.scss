@@ -1862,3 +1862,17 @@ aside .article-list--tile {
     font-size: 1.2rem !important;
     font-weight: 700 !important;
 }
+
+.mobile-toc summary {
+    background: #967BB6 !important;
+    color: #ffffff !important;
+    border-radius: 20px !important;
+    padding: 8px 20px !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    cursor: pointer !important;
+    width: fit-content !important;
+}
