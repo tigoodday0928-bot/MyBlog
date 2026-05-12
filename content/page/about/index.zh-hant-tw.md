@@ -24,15 +24,23 @@ menu:
 
 ## 👋 Hi，我是 Hazwle
 
-> 重度抽卡遊戲成癮者
->
-> 具備高度賭徒精神
->
-> 閱讀、觀賞戲劇電影為平日喜好
->
-> 閒暇時與朋友玩玩各種遊戲
->
-> 偶爾剪剪遊玩影片
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0;">
+    <div style="background: rgba(150, 123, 182, 0.12); border: 1px solid rgba(150, 123, 182, 0.3); border-radius: 20px; padding: 10px 18px; font-size: 1.3rem; color: #6b5a7e; font-weight: 600;">
+        🎮 重度抽卡遊戲成癮者
+    </div>
+    <div style="background: rgba(150, 123, 182, 0.12); border: 1px solid rgba(150, 123, 182, 0.3); border-radius: 20px; padding: 10px 18px; font-size: 1.3rem; color: #6b5a7e; font-weight: 600;">
+        🎲 具備高度賭徒精神
+    </div>
+    <div style="background: rgba(150, 123, 182, 0.12); border: 1px solid rgba(150, 123, 182, 0.3); border-radius: 20px; padding: 10px 18px; font-size: 1.3rem; color: #6b5a7e; font-weight: 600;">
+        📖 閱讀、觀賞戲劇電影為平日喜好
+    </div>
+    <div style="background: rgba(150, 123, 182, 0.12); border: 1px solid rgba(150, 123, 182, 0.3); border-radius: 20px; padding: 10px 18px; font-size: 1.3rem; color: #6b5a7e; font-weight: 600;">
+        👾 閒暇時與朋友玩各種遊戲
+    </div>
+    <div style="background: rgba(150, 123, 182, 0.12); border: 1px solid rgba(150, 123, 182, 0.3); border-radius: 20px; padding: 10px 18px; font-size: 1.3rem; color: #6b5a7e; font-weight: 600;">
+        🎬 偶爾剪剪遊玩影片
+    </div>
+</div>
 
 這個部落格記錄著我的日常生活——旅遊景點、美食體驗、電玩心得，以及各種我喜歡的事物。
 
@@ -43,15 +51,7 @@ menu:
 ## 📸 旅遊 & 遊戲時光
 
 <!-- 照片牆 -->
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0;">
-    <img src="/img/photo1.jpg" alt="旅遊照片" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px;">
-    <img src="/img/photo2.jpg" alt="旅遊照片" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px;">
-    <img src="/img/photo3.jpg" alt="遊戲截圖" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px;">
-    <img src="/img/photo4.jpg" alt="遊戲截圖" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px;">
-    <img src="/img/photo5.jpg" alt="旅遊照片" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px;">
-    <img src="/img/photo6.jpg" alt="遊戲截圖" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px;">
-</div>
-
+{{< photo-wall >}}
 ---
 
 ## ✉️ 聯絡我
