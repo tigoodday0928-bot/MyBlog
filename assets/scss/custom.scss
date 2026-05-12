@@ -1838,3 +1838,20 @@ aside .article-list--tile {
         border-radius: 10px;
     }
 }
+
+/* 桌面版隱藏手機目錄 */
+.mobile-toc {
+    display: none;
+}
+
+/* 手機版顯示手機目錄，隱藏桌面目錄 */
+@media (max-width: 768px) {
+    .article-toc:not(.mobile-toc) {
+        display: none !important;
+    }
+    
+    .mobile-toc {
+        display: block !important;
+        margin-bottom: 20px;
+    }
+}
