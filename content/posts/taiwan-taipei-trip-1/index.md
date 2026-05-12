@@ -7,6 +7,7 @@ toc: true
 type: posts
 categories:
     - 遊玩景點
+    - 台灣
 tags:
     - 台灣台北
 image: /posts/taiwan-taipei-trip-1/trip-taipei-1-1.jpg

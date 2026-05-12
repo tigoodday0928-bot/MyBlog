@@ -45,22 +45,28 @@ hasCJKLanguage         = true # 你的遊記會用到中文，這行很重要
     weight = 1
 
 [[menu.sidebar_categories]]
-    name = "泰國曼谷"
+    name = "台灣"
     parent = "travel" # 指向上面的 identifier，就會變成子目錄
-    url = "/categories/泰國曼谷/"
+    url = "/categories/台灣/"
     weight = 1
+
+[[menu.sidebar_categories]]
+    name = "泰國曼谷"
+    parent = "travel" 
+    url = "/categories/泰國曼谷/"
+    weight = 2
 
 [[menu.sidebar_categories]]
     name = "日本東京"
     parent = "travel"
     url = "/categories/日本東京/"
-    weight = 2
+    weight = 3
 
 [[menu.sidebar_categories]]
     name = "中國上海"
     parent = "travel"
     url = "/categories/中國上海/"
-    weight = 3
+    weight = 4
 
 [[menu.sidebar_categories]]
     name = "美食紀錄"
@@ -69,17 +75,41 @@ hasCJKLanguage         = true # 你的遊記會用到中文，這行很重要
     weight = 2
 
 [[menu.sidebar_categories]]
-    name = "泰國曼谷"
+    name = "台灣美食"
     parent = "food"            # 指向父層的 identifier
-    url = "/categories/泰國曼谷/"
+    url = "/categories/台灣美食/"
     weight = 1
+
+[[menu.sidebar_categories]]
+    name = "泰國曼谷美食"
+    parent = "food"            
+    url = "/categories/泰國曼谷美食/"
+    weight = 2
 
 # 如果還有其他子分類繼續加：
 [[menu.sidebar_categories]]
-    name = "日本東京"
+    name = "日本東京美食"
     parent = "food"
-    url = "/categories/日本東京/"
-    weight = 2
+    url = "/categories/日本東京美食/"
+    weight = 3
+
+[[menu.sidebar_categories]]
+    name = "中國上海美食"
+    parent = "food"
+    url = "/categories/中國上海美食/"
+    weight = 4
+
+[[menu.sidebar_categories]]
+    name = "自創內容"
+    identifier = "creative"
+    url = "/categories/自創內容/"
+    weight = 3
+
+[[menu.sidebar_categories]]
+    name = "影劇心得"
+    parent = "creative"
+    url = "/categories/影劇心得/"
+    weight = 1
 
 [markup]
   [markup.tableOfContents]

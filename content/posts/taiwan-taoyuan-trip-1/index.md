@@ -7,6 +7,7 @@ toc: true
 type: posts
 categories:
     - 遊玩景點
+    - 台灣
 tags:
     - 台灣桃園
     - 大園海芋季

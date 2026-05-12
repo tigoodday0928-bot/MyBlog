@@ -4,9 +4,11 @@ date: 2025-03-28
 slug: "taiwan-tainan-trip-1"
 description: "台南一日遊遊記"
 categories:
-    - 遊玩景點 
+    - 遊玩景點
+    - 台灣 
 tags:
-    - 台灣台南 
+    - 台灣台南
+    - 木棉花季
 image: /posts/taiwan-tainan-trip-1/tainan-plumchicken-7.jpg
 draft: false
 ---
