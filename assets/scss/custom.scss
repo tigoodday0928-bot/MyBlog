@@ -1855,3 +1855,10 @@ aside .article-list--tile {
         margin-bottom: 20px;
     }
 }
+
+/* 修改手機版目錄顯示 */
+.mobile-toc .article-toc-title span {
+    color: #967BB6 !important;
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+}
