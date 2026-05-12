@@ -1,0 +1,28 @@
+{
+  "name": "myblog",
+  "version": "1.0.0",
+  "description": "This is an example site used for solely for testing purposes. **It is not meant to be used as a template for your site**.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tigoodday0928-bot/MyBlog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/tigoodday0928-bot/MyBlog/issues"
+  },
+  "homepage": "https://github.com/tigoodday0928-bot/MyBlog#readme",
+  "dependencies": {
+    "tinacms": "^3.8.0"
+  },
+  "devDependencies": {
+    "@tinacms/cli": "^2.3.0",
+    "@types/node": "^25.7.0"
+  }
+}
