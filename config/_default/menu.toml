@@ -9,8 +9,8 @@
     weight = 2
 
 [[main]]
-    name = "電玩資訊"
-    url = "/categories/電玩資訊/"
+    name = "電玩精華"
+    url = "/categories/電玩精華/"
     weight = 3
 
 [[main]]
