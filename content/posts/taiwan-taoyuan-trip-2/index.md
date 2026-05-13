@@ -1,18 +1,20 @@
 ---
+description: 桃園大溪半日遊
+toc: true
+image: /posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-1.jpg
 title: 【桃園大溪】經典傳承的好味道客家菜－老地方客家菜
 date: 2023-03-26T12:29:49.812Z
-description: "桃園大溪半日遊"
-toc: true
 categories:
   - 美食紀錄
   - 台灣美食
 tags:
   - 台灣桃園
   - 客家菜
-image: /posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-1.jpg
 ---
 
-## 前言![](/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-1.jpg)
+## 前言
+
+![](/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-1.jpg)
 
 這天天氣並沒有很好，在連續一個星期的出太陽後天氣逐漸降溫
 
@@ -31,8 +33,6 @@ image: /posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-1.jpg
 ![](/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-2.jpg)
 
 ## 菜色
-
-
 
 首先上桌的是這道客家油雞，份量比想像中得少一些
 
