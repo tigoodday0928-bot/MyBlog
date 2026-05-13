@@ -1,10 +1,15 @@
 ---
 title: 【桃園大溪】經典傳承的好味道客家菜－老地方客家菜
+date: 2023-03-26T12:29:49.812Z
+categories:
+  - 美食紀錄
+  - 台灣美食
+tags:
+  - 台灣桃園
+  - 客家菜
 ---
 
-#### 前言
-
-![](/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-1.jpg)
+## 前言![](/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-1.jpg)
 
 這天天氣並沒有很好，在連續一個星期的出太陽後天氣逐漸降溫
 
@@ -18,15 +23,13 @@ title: 【桃園大溪】經典傳承的好味道客家菜－老地方客家菜
 
 今天就是久違再來回訪
 
-#### 菜單
+## 菜單
 
 ![](/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-2.jpg)
 
-#### 菜色
+## 菜色
 
 
-
-{{\< figure src="/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-3.jpg" title="客家油雞" caption="客家油雞(小) NT.260" >}}
 
 首先上桌的是這道客家油雞，份量比想像中得少一些
 
@@ -34,7 +37,7 @@ title: 【桃園大溪】經典傳承的好味道客家菜－老地方客家菜
 
 身為油雞愛好者的我感到很滿足
 
-{{\< figure src="/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-4.jpg" title="蚵仔酥" caption="蚵仔酥(小) NT.250" >}}
+
 
 接著這道蚵仔酥，外酥內嫩不油膩
 
@@ -44,7 +47,7 @@ title: 【桃園大溪】經典傳承的好味道客家菜－老地方客家菜
 
 忍不住一口接著一口吃
 
-{{\< figure src="/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-5.jpg" title="悶燒鯽魚2" caption="悶燒鯽魚2尾 NT.70\~100/尾(每日不同)" >}}
+
 
 悶燒鯽魚，魚肉非常軟嫩
 
@@ -56,7 +59,7 @@ title: 【桃園大溪】經典傳承的好味道客家菜－老地方客家菜
 
 反而能夠嚐到魚肉的鮮甜
 
-{{\< figure src="/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-6.jpg" title="炒過貓" caption="炒過貓(小) NT.190" >}}
+
 
 將過貓和蒜末、福菜一同拌炒
 
@@ -68,7 +71,7 @@ title: 【桃園大溪】經典傳承的好味道客家菜－老地方客家菜
 
 過貓本身有一點老，但整體適合下飯
 
-{{\< figure src="/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-7.jpg" title="蚵仔煎蛋" caption="蚵仔煎蛋(中) NT.180" >}}
+
 
 身為喜歡吃蛋的台灣人，一頓飯少不了蛋
 
@@ -80,7 +83,7 @@ title: 【桃園大溪】經典傳承的好味道客家菜－老地方客家菜
 
 讓這道煎蛋在細緻的口感中帶有一絲蔥香
 
-{{\< figure src="/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-8.jpg" title="水蓮牛肉" caption="水蓮牛肉(小) NT.240" >}}
+
 
 第一次吃水蓮炒牛肉，感覺很新鮮
 
@@ -90,7 +93,7 @@ title: 【桃園大溪】經典傳承的好味道客家菜－老地方客家菜
 
 意外是個還不錯的組合
 
-{{\< figure src="/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-9.jpg" title="蛤蠣湯" caption="蛤蠣湯(小) NT.190" >}}
+
 
 又到了我喜歡的喝湯時間，還是我很喜歡的蛤蠣湯
 
@@ -100,7 +103,7 @@ title: 【桃園大溪】經典傳承的好味道客家菜－老地方客家菜
 
 可能怕煮太久蛤蜊不好吃，但蛤蜊真的超鹹的
 
-#### 評價
+## 評價
 
 ![](/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-10.jpg)
 
@@ -118,7 +121,7 @@ title: 【桃園大溪】經典傳承的好味道客家菜－老地方客家菜
 
 (怎麼感覺這個月都在吃客家菜XD)
 
-#### 餐廳位置
+### 餐廳位置
 
 > 地址: 335桃園市大溪區員林路一段489號\
 > 營業時間:週一\~週日 11:00\~20:30\
