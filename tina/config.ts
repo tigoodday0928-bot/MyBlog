@@ -1,52 +1,85 @@
 import { defineConfig } from "tinacms";
 
-// Your hosting provider likely exposes this as an environment variable
-const branch ="main";
+const branch = "main";
 
 export default defineConfig({
   branch,
-
-  // Get this from tina.io
   clientId: "ca5ad85b-8a6e-444b-b7ba-eb350d992022",
-  // Get this from tina.io
   token: process.env.TINA_TOKEN,
 
   build: {
     outputFolder: "admin",
     publicFolder: "static",
   },
-  // Uncomment to allow cross-origin requests from non-localhost origins
-  // during local development (e.g. GitHub Codespaces, Gitpod, Docker).
-  // Use 'private' to allow all private-network IPs (WSL2, Docker, etc.)
-  // server: {
-  //   allowedOrigins: ['https://your-codespace.github.dev'],
-  // },
   media: {
     tina: {
       mediaRoot: "",
       publicFolder: "static",
     },
   },
-  // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/r/content-modelling-collections/
   schema: {
     collections: [
       {
         name: "post",
         label: "Posts",
         path: "content/posts",
+        // 這裡設定格式，確保相容 Hugo 的 index.md 結構
+        format: "md", 
         fields: [
           {
             type: "string",
             name: "title",
-            label: "Title",
+            label: "標題",
             isTitle: true,
             required: true,
           },
           {
+            type: "datetime",
+            name: "date",
+            label: "發布日期",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "categories",
+            label: "分類",
+            list: true,
+          },
+          {
+            type: "string",
+            name: "tags",
+            label: "標籤",
+            list: true,
+          },
+          {
+            type: "boolean",
+            name: "draft",
+            label: "草稿狀態",
+          },
+          {
             type: "rich-text",
             name: "body",
-            label: "Body",
+            label: "內容正文",
             isBody: true,
+            // 這裡最重要：註冊 Shortcodes，解決反斜線和無法解析的問題
+            templates: [
+              {
+                name: "figure",
+                label: "帶說明圖片 (Figure)",
+                fields: [
+                  { name: "src", label: "圖片路徑", type: "image" },
+                  { name: "title", label: "圖片標題", type: "string" },
+                  { name: "caption", label: "說明文字", type: "string" },
+                ],
+              },
+              {
+                name: "masonry",
+                label: "不規則照片牆",
+                fields: [
+                   { name: "children", label: "內容", type: "rich-text" }
+                ],
+              },
+            ],
           },
         ],
       },
