@@ -40,6 +40,14 @@ export default defineConfig({
             description: "對應 Hugo Stack 主題的封面圖片",
           },
           {
+            type: "string",
+            name: "description",
+            label: "文章簡介",
+            ui: {
+              component: "textarea", // 使用多行文本框，方便寫比較長的簡介
+            },
+          },
+          {
             type: "datetime",
             name: "date",
             label: "發布日期",
