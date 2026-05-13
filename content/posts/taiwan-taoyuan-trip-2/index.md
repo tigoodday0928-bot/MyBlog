@@ -9,7 +9,7 @@ categories:
 tags:
   - 台灣桃園
   - 客家菜
-image: /posts/
+image: /posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-1.jpg
 ---
 
 ## 前言![](/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-1.jpg)
