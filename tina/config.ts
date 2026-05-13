@@ -13,8 +13,8 @@ export default defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: "",
-      publicFolder: "static",
+      mediaRoot: "content/posts",
+      publicFolder: "",
     },
   },
   schema: {
@@ -32,6 +32,12 @@ export default defineConfig({
             label: "標題",
             isTitle: true,
             required: true,
+          },
+          {
+            type: "image",
+            name: "image",
+            label: "文章封面圖",
+            description: "對應 Hugo Stack 主題的封面圖片",
           },
           {
             type: "datetime",
