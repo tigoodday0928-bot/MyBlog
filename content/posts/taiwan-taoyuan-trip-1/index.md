@@ -14,6 +14,7 @@ tags:
     - 大河屋
 image: /posts/taiwan-taoyuan-trip-1/trip-taoyuan-1-1.jpg
 draft: false
+featured: true
 ---
 
 ## 2023大園海芋季

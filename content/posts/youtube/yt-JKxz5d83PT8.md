@@ -6,6 +6,7 @@ categories:
     - 電玩精華
 image: "https://i.ytimg.com/vi/JKxz5d83PT8/hqdefault.jpg"
 draft: false
+featured: true
 ---
 
 {{< youtube JKxz5d83PT8 >}}

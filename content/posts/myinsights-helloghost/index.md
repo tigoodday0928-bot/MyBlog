@@ -3,6 +3,7 @@ date: '2023-12-24T00:00:00.000Z'
 slug: myinsights-helloghost
 description: 你不是一無所有，我們一直都在。
 categories:
+  - 自創內容
   - 影劇心得
 tags:
   - 台灣電影

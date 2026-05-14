@@ -1,0 +1,31 @@
+{{ define "main" }}
+    {{/* 1. 抓取所有文章 */}}
+    {{ $pages := where .Site.RegularPages "Type" "post" }}
+
+    {{/* 2. 依照置頂屬性進行聯集 (Union) */}}
+    {{/* 這樣寫最保險：置頂的在前，其餘在後，並且不會重複 */}}
+    {{ $featured := where $pages "Params.featured" true }}
+    {{ $regular := where $pages "Params.featured" "!=" true }}
+    {{ $sortedPages := $featured | append $regular }}
+
+    {{/* 3. 將合併後的列表傳給分頁器 */}}
+    {{ $paginator := .Paginate $sortedPages }}
+    
+    <section class="article-list">
+        {{ range $paginator.Pages }}
+            {{ if .Params.featured }}
+                <div class="featured-wrapper">
+                    {{ partial "article-list/default" . }}
+                </div>
+            {{ else }}
+                {{ partial "article-list/default" . }}
+            {{ end }}
+        {{ end }}
+    </section>
+
+    {{ partial "pagination.html" . }}
+{{ end }}
+
+{{ define "right-sidebar" }}
+    {{ partial "sidebar/right.html" (dict "Context" . "Scope" "homepage") }}
+{{ end }}

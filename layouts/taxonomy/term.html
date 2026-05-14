@@ -1,0 +1,64 @@
+{{ define "main" }}
+{{ if eq .Title "電玩精華" }}
+<div class="gaming-page">
+    <h2 class="gaming-grid-title">📺 電玩精華</h2>
+
+    <!-- 1. 置頂區：只抓出 featured: true 的文章 -->
+    <div class="gaming-featured-section">
+        {{ range where .Pages "Params.featured" true }}
+        <a href="{{ .Permalink }}" class="gaming-card featured">
+            <div class="gaming-thumb">
+                <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+                <div class="gaming-play-icon">▶ </div>
+            </div>
+            <div class="gaming-info">
+                <p class="gaming-title">{{ .Title }}</p>
+                <p class="gaming-date">{{ .Date.Format "2006/01/02" }}</p>
+                <p class="gaming-desc">{{ .Description | default "點擊進入觀看精彩的電玩剪輯精華！" }}</p>
+                {{ with .Description }}<p class="gaming-desc">{{ . }}</p>{{ end }}
+            </div>
+        </a>
+        {{ end }}
+    </div>
+
+    <hr class="gaming-divider">
+
+    <!-- 2. 網格區：抓出「非」精選的文章 -->
+    <div class="gaming-grid">
+        {{ range where .Pages "Params.featured" "!=" true }}
+        <a href="{{ .Permalink }}" class="gaming-card">
+            <div class="gaming-thumb">
+                <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+                <div class="gaming-play-icon">▶</div>
+            </div>
+            <div class="gaming-info">
+                <p class="gaming-title">{{ .Title }}</p>
+                <p class="gaming-date">{{ .Date.Format "2006/01/02" }}</p>
+            </div>
+        </a>
+        {{ end }}
+    </div>
+</div>
+{{ else }}
+    <header>
+        <h3 class="section-title">{{ .Parent.Title }}</h3>
+        <div class="section-card">
+            <div class="section-details">
+                <h3 class="section-count">{{ T "list.page" (len .Pages) }}</h3>
+                <h1 class="section-term">{{ .Title }}</h1>
+            </div>
+        </div>
+    </header>
+    {{- $pages := partial "helper/pages.html" . -}}
+    {{ $paginator := partial "helper/paginator.html" . }}
+    {{ with $paginator }}
+        <section class="article-list--compact">
+            {{ range .Pages }}
+                {{ partial "article-list/compact" . }}
+            {{ end }}
+        </section>
+    {{ end }}
+    {{- partial "pagination.html" . -}}
+    {{ partialCached "footer/footer" . }}
+{{ end }}
+{{ end }}

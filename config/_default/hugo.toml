@@ -7,7 +7,7 @@ defaultContentLanguage = "zh-hant-tw"
 hasCJKLanguage         = true # 你的遊記會用到中文，這行很重要
 
 [pagination]
-    pageSize = 5
+    pageSize = 50
 
 [permalinks]
     post = "/p/:slug/"
@@ -111,8 +111,14 @@ hasCJKLanguage         = true # 你的遊記會用到中文，這行很重要
     url = "/categories/影劇心得/"
     weight = 1
 
+[[menu.sidebar_categories]]
+    name = "電玩精華"
+    identifier = "gaming"
+    url = "/categories/電玩精華/"
+    weight = 4
+
 [markup]
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 4
-    
+  

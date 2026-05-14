@@ -67,6 +67,12 @@ export default defineConfig({
           },
           {
             type: "boolean",
+            name: "featured",
+            label: "置頂文章",
+            description: "開啟後會將此文章排在列表首位",
+          },
+          {
+            type: "boolean",
             name: "draft",
             label: "草稿狀態",
           },
