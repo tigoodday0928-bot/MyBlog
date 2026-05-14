@@ -1,7 +1,7 @@
 ---
 toc: true
 title: 【桃園大溪】經典傳承的好味道客家菜－老地方客家菜
-image: ''
+image: /content/posts/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-1.jpg
 description: 桃園大溪半日遊
 date: 2023-03-26T12:29:49.812Z
 categories:
