@@ -12,7 +12,9 @@ tags:
 image: /posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-1.jpg
 ---
 
-## 前言![](/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-1.jpg)
+## 前言
+
+![](/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-1.jpg)
 
 這天天氣並沒有很好，在連續一個星期的出太陽後天氣逐漸降溫
 
