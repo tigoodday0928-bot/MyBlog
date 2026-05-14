@@ -1,8 +1,8 @@
 ---
-description: 桃園大溪半日遊
 toc: true
-image: /posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-1.jpg
 title: 【桃園大溪】經典傳承的好味道客家菜－老地方客家菜
+image: /content/posts/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-1.jpg
+description: 桃園大溪半日遊
 date: 2023-03-26T12:29:49.812Z
 categories:
   - 美食紀錄
@@ -14,7 +14,7 @@ tags:
 
 ## 前言
 
-![](/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-1.jpg)
+![](/content/posts/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-1.jpg)
 
 這天天氣並沒有很好，在連續一個星期的出太陽後天氣逐漸降溫
 
@@ -30,9 +30,11 @@ tags:
 
 ## 菜單
 
-![](/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-2.jpg)
+![](/content/posts/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-2.jpg)
 
 ## 菜色
+
+
 
 首先上桌的是這道客家油雞，份量比想像中得少一些
 
@@ -108,7 +110,7 @@ tags:
 
 ## 評價
 
-![](/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-10.jpg)
+![](/content/posts/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-10.jpg)
 
 即使是下午一點半後，店內人還是很多
 
@@ -124,7 +126,7 @@ tags:
 
 (怎麼感覺這個月都在吃客家菜XD)
 
-### 餐廳位置
+## 餐廳位置
 
 > 地址: 335桃園市大溪區員林路一段489號\
 > 營業時間:週一\~週日 11:00\~20:30\
