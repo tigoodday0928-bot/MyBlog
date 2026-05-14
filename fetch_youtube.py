@@ -5,7 +5,7 @@ import os
 api_key = os.environ['YOUTUBE_API_KEY']
 channel_id = os.environ['CHANNEL_ID']
 
-url = f"https://www.googleapis.com/youtube/v3/search?key={api_key}&channelId={channel_id}&part=snippet&order=date&maxResults=10&type=video"
+url = f"https://www.googleapis.com/youtube/v3/search?key={api_key}&channelId={channel_id}&part=snippet&order=date&maxResults=50&type=video"
 
 with urllib.request.urlopen(url) as response:
     data = json.loads(response.read())

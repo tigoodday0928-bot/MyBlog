@@ -1,0 +1,39 @@
+{{ define "main" }}
+<div class="gaming-page">
+    
+    {{ $featured := "" }}
+    {{ range .Pages }}
+        {{ if .Params.featured }}
+            {{ $featured = . }}
+        {{ end }}
+    {{ end }}
+
+    {{ if $featured }}
+    <div class="gaming-featured">
+        <h2 class="gaming-featured-title">🎮 精選推薦</h2>
+        <div class="gaming-featured-video">
+            {{ $featured.Content | safeHTML }}
+        </div>
+        <h3>{{ $featured.Title }}</h3>
+    </div>
+    {{ end }}
+
+    <h2 class="gaming-grid-title">📺 所有影片</h2>
+    <div class="gaming-grid">
+        {{ range .Pages }}
+        {{ if not .Params.featured }}
+        <a href="{{ .Permalink }}" class="gaming-card">
+            <div class="gaming-thumb">
+                <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+                <div class="gaming-play-icon">▶</div>
+            </div>
+            <div class="gaming-info">
+                <p class="gaming-title">{{ .Title }}</p>
+                <p class="gaming-date">{{ .Date.Format "2006/01/02" }}</p>
+            </div>
+        </a>
+        {{ end }}
+        {{ end }}
+    </div>
+</div>
+{{ end }}
