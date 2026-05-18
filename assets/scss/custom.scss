@@ -1234,18 +1234,21 @@ summary::-webkit-details-marker {
 
 /* 文章內頁內容 */
 .article-content {
-    font-size: 1.6rem !important;
-    /* 縮小內文字體 */
-    line-height: 1.7 !important;
+    font-size: 1.7rem !important;     /* 從 1.6 稍微放大 */
+    line-height: 2.2 !important;      /* 從 1.7 加大行距，圖一感覺約 2.0 */
     color: #444 !important;
     padding: 0 20px !important;
+    max-width: 780px !important;   /* 加這行 */
+    margin: 0 auto !important;     /* 加這行，讓它置中 */
 
     p {
-        margin-bottom: 1.5rem !important;
+        margin: 0 auto 2.5rem !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;    
     }
 
     img {
-        max-width: 100% !important;
+        max-width: 85% !important;
         border-radius: 12px !important;
         margin: 20px auto !important;
         display: block !important;
