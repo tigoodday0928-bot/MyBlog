@@ -14,7 +14,7 @@ tags:
 
 ## 前言
 
-![](/content/posts/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-1.jpg)
+![](/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-1.jpg)
 
 這天天氣並沒有很好，在連續一個星期的出太陽後天氣逐漸降溫
 
@@ -30,15 +30,20 @@ tags:
 
 ## 菜單
 
-![](/content/posts/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-2.jpg)
+![](posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-2.jpg)
 
 ## 菜色
+
+{{< figure src="/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-3.jpg" caption="客家油雞(小) NT.260" >}}
 
 首先上桌的是這道客家油雞，份量比想像中得少一些
 
 軟嫩的雞肉充滿蔥油的香氣，每一口都讓人回味無窮
 
 身為油雞愛好者的我感到很滿足
+
+
+{{< figure src="/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-4.jpg" caption="蚵仔酥(小) NT.250" >}}
 
 接著這道蚵仔酥，外酥內嫩不油膩
 
@@ -47,6 +52,9 @@ tags:
 再吃一口淺沾胡椒的，感受九層塔與胡椒香氣的碰撞
 
 忍不住一口接著一口吃
+
+
+{{< figure src="/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-5.jpg" caption="悶燒鯽魚2尾 NT.70~100/尾(每日不同)" >}}
 
 悶燒鯽魚，魚肉非常軟嫩
 
@@ -58,6 +66,9 @@ tags:
 
 反而能夠嚐到魚肉的鮮甜
 
+
+{{< figure src="/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-6.jpg" caption="炒過貓(小) NT.190" >}}
+
 將過貓和蒜末、福菜一同拌炒
 
 蒜香味道非常重，屬於吃一口便充斥口腔的程度
@@ -67,6 +78,9 @@ tags:
 也有可能是因為我吃不習慣這樣的組合
 
 過貓本身有一點老，但整體適合下飯
+
+
+{{< figure src="/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-7.jpg" caption="蚵仔煎蛋(中) NT.180" >}}
 
 身為喜歡吃蛋的台灣人，一頓飯少不了蛋
 
@@ -78,6 +92,9 @@ tags:
 
 讓這道煎蛋在細緻的口感中帶有一絲蔥香
 
+
+{{< figure src="/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-8.jpg" caption="水蓮牛肉(小) NT.240" >}}
+
 第一次吃水蓮炒牛肉，感覺很新鮮
 
 水蓮鮮嫩有嚼勁，牛肉口感軟嫩
@@ -85,6 +102,9 @@ tags:
 看上去有炒豆瓣，但香氣並不明顯
 
 意外是個還不錯的組合
+
+
+{{< figure src="/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-9.jpg" caption="水蓮牛肉(小) NT.240" >}}
 
 又到了我喜歡的喝湯時間，還是我很喜歡的蛤蠣湯
 
@@ -96,7 +116,7 @@ tags:
 
 ## 評價
 
-![](/content/posts/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-10.jpg)
+![](/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-10.jpg)
 
 即使是下午一點半後，店內人還是很多
 
@@ -111,6 +131,7 @@ tags:
 下次還有機會的話也會再來回訪
 
 (怎麼感覺這個月都在吃客家菜XD)
+
 
 ## 餐廳位置
 
