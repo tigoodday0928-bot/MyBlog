@@ -1567,19 +1567,20 @@ aside .article-list--tile {
     transition: all 0.3s ease !important;
     border: 1px solid rgba(150, 123, 182, 0.15) !important;
     display: flex !important;
-    /* 加這行 */
     align-items: center !important;
-    /* 加這行 */
     justify-content: center !important;
-    /* 加這行 */
     min-height: 120px !important;
-    /* 加這行 */
 
     &:hover {
         transform: translateY(-5px) !important;
         box-shadow: 0 10px 25px rgba(150, 123, 182, 0.15) !important;
         border-color: rgba(150, 123, 182, 0.3) !important;
     }
+
+        .article-details {
+        color: #967BB6 !important;
+    }
+
 }
 
 /* 「分類」標題 */
@@ -1603,44 +1604,114 @@ aside .article-list--tile {
     height: auto !important;
 }
 
-/* 文章列表卡片 */
-.article-list--compact article {
-    background: #fff !important;
-    border-radius: 12px !important;
-    padding: 16px !important;
-    margin-bottom: 12px !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important;
-    transition: all 0.3s ease !important;
+// ===== 歸檔時間軸 =====
+.template-archives .archives-group {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 32px;
 
-    &:hover {
-        transform: translateX(5px) !important;
-        box-shadow: 0 4px 15px rgba(150, 123, 182, 0.15) !important;
+    &::before {
+        content: "";
+        position: absolute;
+        left: 6px;
+        top: 32px;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(
+            to bottom,
+            rgba(150, 123, 182, 0.6),
+            rgba(150, 123, 182, 0.1)
+        );
     }
 }
 
-/* 文章列表標題 */
-.article-list--compact .article-title {
-    font-size: 1.8rem !important;
-    font-weight: 700 !important;
-    color: #333 !important;
-}
-
-/* 文章列表日期 */
-.article-list--compact .article-time--published {
-    font-size: 0.95rem !important;
-    color: #999 !important;
-}
-
-/* 年份標題 */
-.archives-group {
-    margin-bottom: 24px !important;
-}
-
-/* 年份文字 - 用 id 選到 */
-[id].archives-group>* {
+.template-archives .archives-group > * {
     font-size: 1.4rem !important;
     font-weight: 800 !important;
     color: #967BB6 !important;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: -26px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #967BB6;
+        box-shadow: 0 0 0 3px rgba(150, 123, 182, 0.2);
+    }
+}
+
+.template-archives .article-list--compact {
+    background: transparent !important;
+    border-radius: 10px !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+}
+
+.template-archives .article-list--compact article {
+    background: #fff !important;
+    border-radius: 10px !important;
+    padding: 12px 16px !important;
+    margin-bottom: 8px !important;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.04) !important;
+    border-bottom: none !important;
+    transition: all 0.2s ease !important;
+    position: relative;
+    min-height: unset !important;
+    height: auto !important;
+
+    &:last-child {
+        border-bottom: none !important;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: -27px !important;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 8px !important;
+        height: 8px !important;
+        border-radius: 50%;
+        background: rgba(150, 123, 182, 0.4);
+        border: 2px solid #fff;
+        box-shadow: 0 0 0 2px rgba(150, 123, 182, 0.3);
+    }
+
+    &:hover {
+        transform: translateX(4px) !important;
+
+        &::before {
+            background: #967BB6;
+        }
+    }
+}
+
+.template-archives .article-list--compact .article-image {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+.template-archives .article-list--compact .article-title {
+    font-size: 1.6rem !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+}
+
+.template-archives .article-list--compact .article-time--published {
+    font-size: 1.2rem !important;
+    color: #999 !important;
+}
+
+.template-archives .article-list--compact article .article-details {
+    min-height: unset !important;
+    gap: 4px !important;
+    padding: 0 !important;
 }
 
 .subsection-list {
@@ -1664,6 +1735,38 @@ aside .article-list--tile {
     }
 }
 
+// ===== 回頂部按鈕 =====
+#back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #967BB6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(150, 123, 182, 0.4);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 999;
+
+    &:hover {
+        background: #7a5fa3;
+        transform: translateY(-2px);
+    }
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* ============================================================
    8-1. 分頁美化：電玩精華
    ============================================================ */
@@ -1672,7 +1775,7 @@ aside .article-list--tile {
 }
 
 .gaming-grid-title {
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #5a4065;
     margin-bottom: 1.5rem;
@@ -1926,63 +2029,62 @@ aside .article-list--tile {
 }
 
 .bookshelf-card {
+    position: relative;
     display: flex;
-    gap: 20px;
+    align-items: flex-end;
     border-radius: 12px;
     overflow: hidden;
-    background: var(--card-background);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    height: 160px;
+    background-size: cover;
+    background-position: center;
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    padding: 16px;
-    align-items: flex-start;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
 
     &:hover {
-        transform: translateX(4px);
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
     }
 
-    &__cover {
-        flex-shrink: 0;
-        width: 120px;
-        height: 170px;        // 👈 固定高度，書本比例
-        border-radius: 4px 8px 8px 4px;
-        overflow: hidden;
-        box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.05) 0%,
+            rgba(0,0,0,0.65) 100%
+        );
     }
 
     &__info {
+        position: relative;
+        z-index: 1;
+        padding: 16px 20px;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;  // 👈 改成靠上對齊
+        align-items: center;      // 👈 置中
         gap: 6px;
-        padding: 4px 0;
-        flex: 1; // 👈 加這行，讓 info 佔剩餘空間但不超出
-        min-width: 0; // 👈 防止文字撐破 flex 容器
+        background: rgba(0,0,0,0.35);  // 👈 半透明底色塊
+        backdrop-filter: blur(4px);    // 👈 毛玻璃效果
+        text-align: center;
     }
 
     &__title {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
         font-weight: 700;
-        color: var(--card-text-color-main);
+        color: white;
         line-height: 1.4;
     }
 
     &__date {
-        font-size: 1.3rem;
-        color: var(--card-text-color-secondary);
+        font-size: 1.2rem;
+        color: rgba(255,255,255,0.75);
     }
 
     &__desc {
-        font-size: 1.3rem;
-        color: var(--card-text-color-secondary);
-        line-height: 1.6;
+        font-size: 1.2rem;
+        color: rgba(255,255,255,0.75);
+        line-height: 1.5;
     }
 }
 
@@ -1997,6 +2099,10 @@ aside .article-list--tile {
         &__cover {
             width: 80px;
         }
+    }
+
+    .bookshelf-card__info {
+    padding: 12px 16px !important;
     }
 }
 

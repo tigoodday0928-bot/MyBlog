@@ -5,6 +5,14 @@
         {{- block "head" . -}}{{ end }}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
     </head>
+
+    <!-- 回頂部按鈕 -->
+    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
     <body class="{{ if .IsHome }}home-page{{ end }} {{ block `body-class` . }}{{ end }}">
         {{- partial "head/colorScheme" . -}}
         {{ partial "header.html" . }}
@@ -37,14 +45,15 @@
          {{ partial "footer/include.html" . }}
 
         <script>
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('.dream-nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
+            // 原本的 scroll 監聽保留，加這段
+            const backToTop = document.getElementById('back-to-top');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
         </script>
     </body>
 </html>
