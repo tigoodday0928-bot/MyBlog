@@ -23,6 +23,7 @@
                 {{ end }}
                 {{ partial "widgets/profile.html" . }}
                 {{ partial "widgets/search.html" . }}
+                {{ partial "widgets/clock.html" . }}
                 {{ partial "widgets/calendar.html" . }}
                 {{ partial "widgets/recent-posts.html" . }} 
                 {{ partial "widgets/gallery.html" . }}
@@ -33,7 +34,7 @@
             </aside>
         </div>
 
-        {{ partial "footer/include.html" . }}
+         {{ partial "footer/include.html" . }}
 
         <script>
         window.addEventListener('scroll', function() {

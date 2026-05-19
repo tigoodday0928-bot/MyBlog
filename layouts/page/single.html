@@ -1,11 +1,5 @@
 {{ define "body-class" }}
     article-page
-    single-post
-    {{/* 
-        Enable the right sidebar if
-            - Widget different from 'TOC' is enabled
-            - TOC is enabled and not empty
-    */}}
     {{- $HasWidgetNotTOC := false -}}
     {{- $TOCWidgetEnabled := false -}}
     {{- range .Site.Params.widgets.page -}}
@@ -33,7 +27,6 @@
 
     {{ partial "article/components/related-content" . }}
 
-    <!-- 分享按鈕 -->
     {{ partial "article/components/share.html" . }}
      
     {{ if not (eq .Params.comments false) }}

@@ -51,16 +51,16 @@ menu:
         name="email" 
         placeholder="你的 Email" 
         required
-        style="padding: 12px 16px; border-radius: 10px; border: 1px solid rgba(150,123,182,0.3); font-size: 1rem; outline: none;">
+        style="padding: 12px 16px; border-radius: 10px; border: 1px solid rgba(150,123,182,0.3); font-size: 1.2rem; outline: none;">
     <textarea 
         name="message" 
         placeholder="想說什麼呢？" 
         rows="5" 
         required
-        style="padding: 12px 16px; border-radius: 10px; border: 1px solid rgba(150,123,182,0.3); font-size: 1rem; outline: none; resize: vertical;"></textarea>
+        style="padding: 12px 16px; border-radius: 10px; border: 1px solid rgba(150,123,182,0.3); font-size: 1.2rem; outline: none; resize: vertical;"></textarea>
     <button 
         type="submit"
-        style="padding: 12px; background: #967BB6; color: #fff; border: none; border-radius: 10px; font-size: 1rem; font-weight: bold; cursor: pointer;">
+        style="padding: 12px; background: #967BB6; color: #fff; border: none; border-radius: 10px; font-size: 1.2rem; font-weight: bold; cursor: pointer;">
         送出 ✉️
     </button>
 </form>

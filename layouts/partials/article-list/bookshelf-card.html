@@ -1,0 +1,15 @@
+<a href="{{ .Permalink }}" class="bookshelf-card">
+    {{ $image := partial "helper/image" (dict "Image" .Params.image "Resources" .Resources "Context" .) }}
+    {{ if $image }}
+        <div class="bookshelf-card__cover">
+            <img src="{{ $image.Permalink }}" alt="{{ .Title }}" loading="lazy">
+        </div>
+    {{ end }}
+    <div class="bookshelf-card__info">
+        <h2 class="bookshelf-card__title">{{ .Title }}</h2>
+        <p class="bookshelf-card__date">{{ .Date.Format "2006/01/02" }}</p>
+        {{ with .Description }}
+            <p class="bookshelf-card__desc">{{ . }}</p>
+        {{ end }}
+    </div>
+</a>

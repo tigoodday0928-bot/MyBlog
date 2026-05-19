@@ -14,6 +14,7 @@ tags:
 
 ## 前言
 
+
 ![](/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-1.jpg)
 
 這天天氣並沒有很好，在連續一個星期的出太陽後天氣逐漸降溫。
@@ -24,6 +25,7 @@ tags:
 但大概是因為年紀太小所以沒有印象，今天就是久違再來回訪。
 
 ## 菜單
+
 
 ![](/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-2.jpg)
 
@@ -77,9 +79,9 @@ tags:
 
 ## 評價
 
-![](/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-10.jpg)
 
-即使是下午一點半後，店內人還是很多。
+{{< figure src="/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-10.jpg" caption="即使是下午一點半後，店內人還是很多。" >}}
+
 
 推薦星數：★★★★☆(4.4)
 

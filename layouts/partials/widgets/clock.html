@@ -1,0 +1,93 @@
+<div class="widget clock-widget">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <style>
+  .terminal-wrap-l {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(150,123,182,0.25);
+  }
+  .terminal-bar-l {
+    background: rgba(150,123,182,0.12);
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid rgba(150,123,182,0.15);
+  }
+  .tl-dot { width: 11px; height: 11px; border-radius: 50%; }
+  .tl-dot-r { background: #ff5f57; }
+  .tl-dot-y { background: #febc2e; }
+  .tl-dot-g { background: #28c840; }
+  .terminal-fn {
+    margin-left: auto;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: #967BB6;
+    opacity: 0.7;
+  }
+  .terminal-body-l {
+    background: #faf8fb;
+    padding: 1rem 1.4rem 1.2rem;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    line-height: 2;
+  }
+  .lcc-keyword { color: #7c5cbf; }
+  .lcc-var     { color: #5577bb; }
+  .lcc-time    {
+    font-size: 26px;
+    color: #967BB6;
+    letter-spacing: 3px;
+    display: block;
+    margin: 2px 0;
+    font-weight: 500;
+  }
+  .lcc-comment { color: #aaa; font-style: italic; }
+  .lcc-string  { color: #6aa96a; }
+  .lcc-cursor  {
+    display: inline-block;
+    width: 8px;
+    height: 14px;
+    background: rgba(150,123,182,0.5);
+    vertical-align: middle;
+    margin-left: 2px;
+    animation: lcc-blink 1s step-end infinite;
+  }
+  @keyframes lcc-blink { 0%,100%{opacity:1} 50%{opacity:0} }
+  </style>
+
+  <div class="terminal-wrap-l">
+    <div class="terminal-bar-l">
+      <div class="tl-dot tl-dot-r"></div>
+      <div class="tl-dot tl-dot-y"></div>
+      <div class="tl-dot tl-dot-g"></div>
+      <div class="terminal-fn">clock.js</div>
+    </div>
+    <div class="terminal-body-l">
+      <div><span class="lcc-keyword">const</span> <span class="lcc-var">now</span> = <span class="lcc-keyword">new</span> Date();</div>
+      <span class="lcc-time" id="lcc-time">00:00:00</span>
+      <div><span class="lcc-comment">// <span id="lcc-date"></span></span></div>
+      <div><span class="lcc-keyword">return</span> <span class="lcc-string">"<span id="lcc-lunar"></span>"</span>;<span class="lcc-cursor"></span></div>
+    </div>
+  </div>
+
+  <script>
+  const _lw=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  function _ltick(){
+    const n=new Date();
+    const h=String(n.getHours()).padStart(2,'0'),m=String(n.getMinutes()).padStart(2,'0'),s=String(n.getSeconds()).padStart(2,'0');
+    document.getElementById('lcc-time').textContent=`${h}:${m}:${s}`;
+    document.getElementById('lcc-date').textContent=`${n.getFullYear()}/${String(n.getMonth()+1).padStart(2,'0')}/${String(n.getDate()).padStart(2,'0')} ${_lw[n.getDay()]}`;
+  }
+  function _llu2(){
+    const n=new Date();
+    try{
+      const lunar=new Intl.DateTimeFormat('zh-TW-u-ca-chinese',{month:'long',day:'numeric'}).format(n);
+      document.getElementById('lcc-lunar').textContent='農曆 '+lunar;
+    }catch(e){}
+  }
+  _ltick();_llu2();setInterval(_ltick,1000);setInterval(_llu2,3600000);
+  </script>
+</div>

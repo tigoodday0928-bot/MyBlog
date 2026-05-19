@@ -32,7 +32,7 @@ menu:
         🎲 具備高度賭徒精神
     </div>
     <div style="background: rgba(150, 123, 182, 0.12); border: 1px solid rgba(150, 123, 182, 0.3); border-radius: 20px; padding: 10px 18px; font-size: 1.3rem; color: #6b5a7e; font-weight: 600;">
-        📖 閱讀、觀賞戲劇電影為平日喜好
+        📖 喜好閱讀、觀賞戲劇電影
     </div>
     <div style="background: rgba(150, 123, 182, 0.12); border: 1px solid rgba(150, 123, 182, 0.3); border-radius: 20px; padding: 10px 18px; font-size: 1.3rem; color: #6b5a7e; font-weight: 600;">
         👾 閒暇時與朋友玩各種遊戲
@@ -64,13 +64,13 @@ menu:
         name="email" 
         placeholder="你的 Email" 
         required
-        style="padding: 12px 16px; border-radius: 10px; border: 1px solid rgba(150,123,182,0.3); font-size: 1rem; outline: none;">
+        style="padding: 12px 16px; border-radius: 10px; border: 1px solid rgba(150,123,182,0.3); font-size: 1.2rem; outline: none;">
     <textarea 
         name="message" 
         placeholder="想說什麼呢？" 
         rows="5" 
         required
-        style="padding: 12px 16px; border-radius: 10px; border: 1px solid rgba(150,123,182,0.3); font-size: 1rem; outline: none; resize: vertical;"></textarea>
+        style="padding: 12px 16px; border-radius: 10px; border: 1px solid rgba(150,123,182,0.3); font-size: 1.2rem; outline: none; resize: vertical;"></textarea>
     <button 
         type="submit"
         style="padding: 15px; background: #967BB6; color: #fff; border: none; border-radius: 13px; font-size: 1.3rem; font-weight: bold; cursor: pointer;">

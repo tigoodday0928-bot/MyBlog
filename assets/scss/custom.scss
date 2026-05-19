@@ -645,113 +645,132 @@ body.article-page {
 /* ============================================================
    6-0. 關於工具欄：個人簡介
    ============================================================ */
-.profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+// ===== 個人簡介 =====
+.widget.profile {
+    background: linear-gradient(145deg, rgba(150, 123, 182, 0.08) 0%, rgba(255,255,255,0) 100%);
+    border: 1px solid rgba(150, 123, 182, 0.2);
+    border-radius: 16px;
+    padding: 28px 20px;
     text-align: center;
-    gap: 12px;
 }
 
-.profile-avatar img {
-    width: 100px;
-    height: 100px;
+.profile-avatar {
+    margin: 0 auto 16px;
+    width: 110px;        // 👈 放大頭像
+    height: 110px;
     border-radius: 50%;
-    object-fit: cover;
+    overflow: hidden;
     border: 3px solid rgba(150, 123, 182, 0.4);
-    box-shadow: 0 4px 15px rgba(150, 123, 182, 0.2);
-    transition: all 0.3s ease;
-}
+    box-shadow: 0 4px 20px rgba(150, 123, 182, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-.profile-avatar img:hover {
-    transform: scale(1.05);
-    border-color: #967BB6;
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 28px rgba(150, 123, 182, 0.4);
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .profile-name {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: 800;
-    color: #333;
-    margin: 0;
+    color: var(--card-text-color-main);
+    margin-bottom: 6px;
 }
 
 .profile-bio {
     font-size: 1.3rem;
-    color: #666;
-    margin: 0;
-    line-height: 1.5;
-}
-
-.profile-more {
-    display: inline-block;
-    font-size: 1.1rem;
-    color: #967BB6;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.2s;
-
-    &:hover {
-        color: #7a5fa3;
-        transform: translateX(3px);
-    }
+    color: var(--card-text-color-secondary);
+    margin-bottom: 14px;
+    line-height: 1.6;
 }
 
 .profile-tags {
     display: flex;
-    gap: 11px;
     justify-content: center;
+    gap: 14px;
+    margin-bottom: 16px;
+
+    i {
+        font-size: 1.8rem;
+        color: #967BB6;
+        transition: transform 0.2s ease, color 0.2s ease;
+        cursor: default;
+
+        &:hover {
+            transform: translateY(-3px) scale(1.2);
+            color: #7a5fa3;
+        }
+    }
+}
+
+.profile-more {
+    display: inline-block;
+    font-size: 1.3rem;
     color: #967BB6;
-    font-size: 1.4rem;
+    text-decoration: none;
+    border: 1px solid rgba(150, 123, 182, 0.4);
+    border-radius: 20px;
+    padding: 5px 16px;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: #967BB6;
+        color: white;
+        border-color: #967BB6;
+    }
 }
 
 /* ============================================================
    6-1. 關於工具欄：搜尋框：現代圓潤一體化設計
    ============================================================ */
+// ===== 搜尋框 =====
+.widget.search .widget-title {
+    display: none;
+}
 
 .search-form {
     display: flex;
     align-items: center;
     background: #fdfdff;
-    /* 背景色 */
-    border: 1px solid #e2e2e7;
+    border: 1.5px solid rgba(150, 123, 182, 0.3);
     border-radius: 50px;
-    /* 這裡改為全圓角，會更有現代感 */
     padding: 5px 5px 5px 15px;
-    /* 左側留空間給文字，右側留空間給按鈕 */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
-}
 
-/* 當滑鼠點擊輸入框時，整個外框變色 */
-.search-form:focus-within {
-    border-color: #967BB6;
-    box-shadow: 0 0 0 3px rgba(150, 123, 182, 0.15);
-    background: #fff;
+    &:focus-within {
+        border-color: #967BB6;
+        box-shadow: 0 0 0 5px rgba(150, 123, 182, 0.15);
+        background: #fff;
+    }
 }
 
 .search-input {
     flex: 1;
     border: none !important;
-    /* 去掉原本輸入框的邊框 */
     background: transparent !important;
     padding: 8px 0 !important;
-    font-size: 0.95rem;
+    font-size: 1.5rem;
     color: #444;
     outline: none !important;
-}
 
-.search-input::placeholder {
-    color: #b0b0b8;
+    &::placeholder {
+        color: #b0b0b8;
+    }
 }
 
 .search-button {
     background: #967BB6 !important;
-    /* D3A4FF 改成莫蘭迪紫，統一風格 */
     color: white;
     border: none;
     border-radius: 50px !important;
     width: 42px;
-    /* 稍微加大，視覺更平衡 */
     height: 42px;
     display: flex;
     align-items: center;
@@ -759,22 +778,17 @@ body.article-page {
     cursor: pointer;
     transition: all 0.2s;
     flex-shrink: 0;
-    /* 移除 margin-left，改用 padding 控制 */
-}
 
-.search-button:hover {
-    background: #7a5fa3 !important;
-    /* 加深版莫蘭迪紫 */
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(150, 123, 182, 0.4);
-    /* 懸停加光暈 */
-}
+    &:hover {
+        background: #7a5fa3 !important;
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(150, 123, 182, 0.4);
+    }
 
-/* 修正放大鏡圖示的大小 */
-.search-button i,
-.search-button svg {
-    width: 18px;
-    height: 18px;
+    i, svg {
+        width: 18px;
+        height: 18px;
+    }
 }
 
 /* ============================================================
@@ -848,7 +862,36 @@ body.article-page {
 }
 
 /* ============================================================
-   6-4. 關於工具欄：行事曆美化 
+   6-4. 關於工具欄：時鐘小工具 
+   ============================================================ */
+.clock-widget {
+    text-align: center;
+    padding: 16px !important;
+}
+
+.clock-time {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #967BB6;
+    letter-spacing: 2px;
+    font-variant-numeric: tabular-nums;
+}
+
+.clock-date {
+    font-size: 1.3rem;
+    color: #666;
+    margin-top: 6px;
+}
+
+.clock-lunar {
+    font-size: 1.2rem;
+    color: #967BB6;
+    margin-top: 4px;
+    opacity: 0.8;
+}
+
+/* ============================================================
+   6-5. 關於工具欄：行事曆美化 
    ============================================================ */
 .calendar-grid {
     display: grid !important;
@@ -918,9 +961,8 @@ body.article-page {
     }
 }
 
-
 /* ============================================================
-   6-5. 關於工具欄：標籤雲
+   6-6. 關於工具欄：標籤雲
    ============================================================ */
 .tag-cloud {
     display: flex !important;
@@ -946,7 +988,7 @@ body.article-page {
 }
 
 /* ============================================================
-   6-6. 關於工具欄：文章歸檔清單升級版
+   6-7. 關於工具欄：文章歸檔清單升級版
    ============================================================ */
 
 .archive-list {
@@ -1002,7 +1044,7 @@ body.article-page {
 }
 
 /* ============================================================
-   6-7. 關於工具欄：分類合輯
+   6-8. 關於工具欄：分類合輯
    ============================================================ */
 
 .tree-category-list {
@@ -1098,7 +1140,7 @@ summary::-webkit-details-marker {
 }
 
 /* ============================================================
-   6-8. 關於工具欄：廣告/分潤卡片美化
+   6-9. 關於工具欄：廣告/分潤卡片美化
    ============================================================ */
 
 .widget.ads {
@@ -1153,7 +1195,7 @@ summary::-webkit-details-marker {
 }
 
 /* ============================================================
-   6-9. 關於工具欄：RSS訂閱
+   6-10. 關於工具欄：RSS訂閱
    ============================================================ */
 .rss-btn {
     display: flex !important;
@@ -1234,25 +1276,45 @@ summary::-webkit-details-marker {
 
 /* 文章內頁內容 */
 .article-content {
-    font-size: 1.7rem !important;     /* 從 1.6 稍微放大 */
-    line-height: 2.2 !important;      /* 從 1.7 加大行距，圖一感覺約 2.0 */
+    font-size: 1.7rem !important;
+    line-height: 2.2 !important;
     color: #444 !important;
-    padding: 0 20px !important;
-    max-width: 780px !important;   /* 加這行 */
-    margin: 0 auto !important;     /* 加這行，讓它置中 */
 
     p {
-        margin: 0 auto 2.5rem !important;
         word-break: break-word !important;
-        overflow-wrap: break-word !important;    
+        overflow-wrap: break-word !important;
+        padding: 0 24px !important;  // 👈 移到 p 這層
     }
 
     img {
-        max-width: 85% !important;
+        max-width: 82% !important;
         border-radius: 12px !important;
-        margin: 20px auto !important;
+        margin: 28px auto !important;
         display: block !important;
     }
+
+    img + em {
+        display: block !important;
+        text-align: center !important;
+        color: #999 !important;
+        font-size: 1.3rem !important;
+        margin-top: -16px !important;
+        margin-bottom: 28px !important;
+    }
+}
+
+body.single-post .article-content p,
+body.single-post .article-content h1,
+body.single-post .article-content h2,
+body.single-post .article-content h3,
+body.single-post .article-content h4 {
+    max-width: 780px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+body.single-post .article-content p {
+    margin-bottom: 2.5rem !important;
 }
 
 /* 文章 header 排序 */
@@ -1610,7 +1672,7 @@ aside .article-list--tile {
 }
 
 .gaming-grid-title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: bold;
     color: #5a4065;
     margin-bottom: 1.5rem;
@@ -1784,6 +1846,176 @@ aside .article-list--tile {
     .gaming-card.featured .gaming-info {
         padding: 1.5rem;
     }
+}
+
+/* ============================================================
+   8-2. 分頁美化：遊玩景點、美食紀錄、自創內容
+   ============================================================ */
+// ===== 網格卡片（遊玩景點、美食紀錄）=====
+.article-list--grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.grid-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--card-background);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    &__thumb {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+    }
+
+    &:hover &__thumb img {
+        transform: scale(1.04);
+    }
+
+    &__info {
+        padding: 16px;
+    }
+
+    &__title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--card-text-color-main);
+        margin-bottom: 6px;
+        line-height: 1.4;
+    }
+
+    &__date {
+        font-size: 1.3rem;
+        color: var(--card-text-color-secondary);
+        margin-bottom: 8px;
+    }
+
+    &__desc {
+        font-size: 1.3rem;
+        color: var(--card-text-color-secondary);
+        line-height: 1.6;
+    }
+}
+
+// ===== 書本感（自創內容）=====
+.article-list--bookshelf {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 24px;
+    max-width: 600px; // 👈 加這行
+}
+
+.bookshelf-card {
+    display: flex;
+    gap: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--card-background);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 16px;
+    align-items: flex-start;
+
+    &:hover {
+        transform: translateX(4px);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    &__cover {
+        flex-shrink: 0;
+        width: 120px;
+        height: 170px;        // 👈 固定高度，書本比例
+        border-radius: 4px 8px 8px 4px;
+        overflow: hidden;
+        box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;  // 👈 改成靠上對齊
+        gap: 6px;
+        padding: 4px 0;
+        flex: 1; // 👈 加這行，讓 info 佔剩餘空間但不超出
+        min-width: 0; // 👈 防止文字撐破 flex 容器
+    }
+
+    &__title {
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: var(--card-text-color-main);
+        line-height: 1.4;
+    }
+
+    &__date {
+        font-size: 1.3rem;
+        color: var(--card-text-color-secondary);
+    }
+
+    &__desc {
+        font-size: 1.3rem;
+        color: var(--card-text-color-secondary);
+        line-height: 1.6;
+    }
+}
+
+// 手機版書本卡片調整
+@media (max-width: 768px) {
+    .article-list--grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .bookshelf-card {
+        &__cover {
+            width: 80px;
+        }
+    }
+}
+
+/* ============================================================
+   8-3. 分頁進入淡化載入樣式
+   ============================================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
+    animation: fadeIn 0.4s ease forwards;
 }
 
 /* ============================================================
@@ -2027,19 +2259,23 @@ aside .article-list--tile {
 }
 
 /* 桌面版隱藏手機目錄 */
-.mobile-toc {
+aside.article-toc.mobile-toc {
     display: none;
 }
 
-/* 手機版顯示手機目錄，隱藏桌面目錄 */
 @media (max-width: 768px) {
-    .article-toc:not(.mobile-toc) {
-        display: none !important;
-    }
-    
-    .mobile-toc {
+    aside.article-toc.mobile-toc {
         display: block !important;
         margin-bottom: 20px;
+    }
+
+    aside.article-toc:not(.mobile-toc) {
+        display: none !important;
+    }
+
+    // 只隱藏側欄裡的目錄區塊
+    section.widget.archives {
+        display: none !important;
     }
 }
 
@@ -2064,22 +2300,23 @@ aside .article-list--tile {
     width: fit-content !important;
 }
 
-/* 給置頂文章一個淡淡的紫色光暈或小標籤 */
-.featured-wrapper {
+
+// 置頂文章標籤（列表第一篇）
+section.article-list article:first-child {
     position: relative;
     border: 1px solid rgba(90, 64, 101, 0.3);
     border-radius: 12px;
-    margin-bottom: 20px;
-}
 
-.featured-wrapper::after {
-    content: "📌 置頂推薦";
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #5a4065;
-    color: white;
-    font-size: 12px;
-    padding: 2px 8px;
-    border-radius: 4px;
+    &::after {
+        content: "📌 置頂推薦";
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #5a4065;
+        color: white;
+        font-size: 12px;
+        padding: 2px 8px;
+        border-radius: 4px;
+        z-index: 1;
+    }
 }
