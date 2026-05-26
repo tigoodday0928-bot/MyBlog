@@ -17,13 +17,31 @@
     <div class="footer-stats">
         <span>
             <i class="ti ti-eye"></i>
-            總瀏覽：<span id="busuanzi_value_site_pv">...</span> 次
+            總瀏覽：<span id="gc-pv">...</span> 次
         </span>
         <span>
             <i class="ti ti-user"></i>
-            總訪客：<span id="busuanzi_value_site_uv">...</span> 人
+            總訪客：<span id="gc-uv">...</span> 人
         </span>
     </div>
+
+    <!-- GoatCounter 追蹤 + 顯示 -->
+    <script data-goatcounter="https://hazwle.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+    <script>
+    window.addEventListener('load', function() {
+        fetch('https://hazwle.goatcounter.com/counter/TOTAL.json')
+        .then(r => r.json())
+        .then(d => {
+            document.getElementById('gc-pv').textContent = d.count;
+            document.getElementById('gc-uv').textContent = d.count_unique;
+        })
+        .catch(() => {
+            document.getElementById('gc-pv').textContent = '---';
+            document.getElementById('gc-uv').textContent = '---';
+        });
+    });
+    </script>
 
     <!-- 版權 -->
     <section class="copyright">
