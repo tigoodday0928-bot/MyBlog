@@ -1,0 +1,20 @@
+{{ $score := .Get "score" | float }}
+{{ $max := .Get "max" | default "5" | float }}
+{{ $label := .Get "label" | default "評分" }}
+
+<div class="rating-block">
+    <div class="rating-label">{{ $label }}</div>
+    <div class="rating-stars">
+        {{ range seq 1 (int $max) }}
+            {{ $i := . | float }}
+            {{ if le $i $score }}
+                <i class="ti ti-star-filled"></i>
+            {{ else if lt (sub $i 1.0) $score }}
+                <i class="ti ti-star-half-filled"></i>
+            {{ else }}
+                <i class="ti ti-star"></i>
+            {{ end }}
+        {{ end }}
+        <span class="rating-number">{{ $score }} / {{ $max }}</span>
+    </div>
+</div>

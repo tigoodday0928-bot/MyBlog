@@ -1,10 +1,9 @@
 /* ============================================================
    1. Dream 風格整合版 (適用於 Hugo Stack 主題)
    ============================================================ */
-/* 2. 卡片本體：超大圓角與優雅陰影 */
+/* 卡片本體 */
 .article-card {
     border-radius: 24px !important;
-    /* Dream 的靈魂大圓角 */
     border: none !important;
     background-color: var(--card-background);
     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05) !important;
@@ -14,59 +13,39 @@
 
 .article-card:hover {
     transform: translateY(-10px);
-    /* 懸浮飄起 */
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12) !important;
 }
 
-/* --- 圖片夢幻美化版 --- */
+/* 圖片 */
 .article-image img {
     border-radius: 12px !important;
-    /* 加上可愛的圓角 */
     height: 260px !important;
-    /* 保留高度，照片才有張力 */
     object-fit: cover !important;
-    /* 確保照片裁切完美，不拉伸變形 */
     width: 100% !important;
     transition: transform 0.4s ease !important;
-    /* 縮放速度調得優雅一點 */
 }
 
-/* 滑鼠移上去時，圖片會微微放大，更有互動感 */
 .article-card:hover .article-image img {
     transform: scale(1.05) !important;
-    /* 1.05 倍是視覺上最舒服的放大比例 */
 }
 
-/* 4. 文字細節：清爽與留白 */
-.article-details {
-    padding: 1.8rem !important;
-    /* 增加內容的呼吸感 */
-    text-align: left;
-    /* 如果想更像 Dream，可以改成 center */
-}
-
-.article-title {
-    font-size: 1.35rem !important;
-    font-weight: 700 !important;
-    line-height: 1.4 !important;
-    margin-bottom: 12px !important;
-    color: var(--card-text-color-main);
-}
-
-/* 5. 標籤與時間：小巧精緻 */
+/* 標籤 */
 .article-tags .tag {
     background-color: rgba(var(--main-color-rgb), 0.1);
-    /* 自動適應主題色 */
     border-radius: 50px !important;
     padding: 4px 12px !important;
     font-size: 1rem !important;
 }
 
-/* 6. 手機版自動適應 (RWD) */
+/* 用 body class 鎖定首頁 */
+body.home-page .article-details {
+    padding-left: 25px !important;
+}
+
+/* 手機版 */
 @media (max-width: 1024px) {
     .article-list {
         grid-template-columns: 1fr;
-        /* 螢幕小時變回單欄 */
     }
 }
 
@@ -1224,54 +1203,104 @@ summary::-webkit-details-marker {
 /* ============================================================
    7. 文章內頁排版美化
    ============================================================ */
-/* 文章內頁標題 */
+/* 首頁卡片標題 */
 .article-title {
     font-size: 2.2rem !important;
     font-weight: 800 !important;
     line-height: 1.4 !important;
     color: #222 !important;
-    margin: 0 0 8px 0 !important;
+    margin: 0 0 6px 0 !important;
 }
 
-/* 標題和標籤間距 */
+/* 文章內頁資訊欄置中 */
+body.single-post .article-details {
+    align-items: center !important;
+}
+
 .article-title-wrapper {
-    margin: 0 !important;
+    margin: 0 0 10px 0 !important;
 }
 
-/* 分類標籤 */
-.article-category {
-    text-align: left !important;
-    margin: 0 0 8px 0 !important;
+/* 副標題 - 只在文章內頁顯示框框樣式 */
+body.single-post .article-subtitle {
+    font-size: 1.5rem !important;
+    font-weight: 400 !important;
+    color: #666 !important;
+    margin: 8px 0 0 0 !important;
+    line-height: 1.8 !important;
+    background: rgba(150, 123, 182, 0.06) !important;
+    border: 1px dashed rgba(150, 123, 182, 0.3) !important;
+    border-radius: 8px !important;
+    padding: 6px 14px !important;
+    display: inline-block !important;
+    text-align: center !important;
+    align-self: center !important;
+    width: auto !important;  /* 讓寬度由內容決定，不撐滿 */
 }
 
-.article-category a {
-    background: rgba(150, 123, 182, 0.12) !important;
-    color: #967BB6 !important;
-    border-radius: 20px !important;
-    padding: 6px 20px !important;
-    font-size: 1.2rem !important;
-    /* 稍微放大 */
-    font-weight: 600 !important;
-    text-decoration: none !important;
+/* 首頁卡片隱藏副標題 */
+body.home-page .article-subtitle {
+    display: none !important;
 }
 
 /* 文章資訊列 */
 .article-details {
     display: flex !important;
     flex-direction: column !important;
-    /* 改成垂直排列 */
-    gap: 8px !important;
-    color: #888 !important;
-    font-size: 1.2rem !important;
-    /* 跟標籤一樣大 */
-    margin: 8px 0 16px !important;
-    padding-bottom: 16px !important;
-    border-bottom: 1px solid rgba(150, 123, 182, 0.15) !important;
-    margin-top: 0 !important;
+    align-items: flex-start !important;
+    gap: 0 !important;
+    margin: 0 auto 16px auto !important;
+    padding-bottom: 12px !important;
+    padding-left: 0 !important;
+    max-width: 100% !important;
+    border-bottom: 1px solid #e0e0e0 !important;
 }
 
-.article-details i {
+/* 日期、分類同一行 */
+.article-meta {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    margin-top: 8px !important;
+    flex-direction: row !important;
+}
+
+.article-meta .inline-meta {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    font-size: 1.5rem !important;
+    color: #888 !important;
+
+    svg {
+        width: 15px !important;
+        height: 15px !important;
+        color: #967BB6 !important;
+        flex-shrink: 0 !important;
+    }
+}
+
+.article-time--published {
+    font-size: 1.5rem !important;
+    color: #888 !important;
+}
+
+/* 分類標籤 */
+.article-category a {
+    background: transparent !important;
     color: #967BB6 !important;
+    border: 1px solid rgba(150, 123, 182, 0.4) !important;
+    border-radius: 6px !important;
+    padding: 2px 10px !important;
+    font-size: 1.4rem !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+
+    &:hover {
+        background: rgba(150, 123, 182, 0.08) !important;
+    }
 }
 
 /* 文章內頁內容 */
@@ -1284,6 +1313,10 @@ summary::-webkit-details-marker {
         word-break: break-word !important;
         overflow-wrap: break-word !important;
         padding: 0 24px !important;  // 👈 移到 p 這層
+    }
+
+    p:has(img) {
+        padding: 0 !important;  /* 👈 新增這條 */
     }
 
     img {
@@ -1315,6 +1348,46 @@ body.single-post .article-content h4 {
 
 body.single-post .article-content p {
     margin-bottom: 2.5rem !important;
+}
+
+
+/* 文章內評分 */ 
+body.single-post .article-content .rating-block {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    background: rgba(150, 123, 182, 0.08) !important;
+    border: 1px solid rgba(150, 123, 182, 0.2) !important;
+    border-radius: 12px !important;
+    padding: 10px 16px !important;
+    max-width: 360px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    transform: translateX(calc(-390px / 2)) !important;
+}
+
+.rating-label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #967BB6;
+    white-space: nowrap;
+}
+
+.rating-stars {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    i {
+        font-size: 1.8rem;
+        color: #f5a623;
+    }
+}
+
+.rating-number {
+    font-size: 1.4rem;
+    color: #888;
+    margin-left: 8px;
 }
 
 /* 文章 header 排序 */

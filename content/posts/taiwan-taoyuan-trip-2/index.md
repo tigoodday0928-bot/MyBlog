@@ -83,7 +83,7 @@ tags:
 {{< figure src="/posts/taiwan-taoyuan-trip-2/trip-taoyuan-2-10.jpg" caption="即使是下午一點半後，店內人還是很多。" >}}
 
 
-推薦星數：★★★★☆(4.4)
+{{< rating score="4.4" max="5" label="整體評分" >}}
 
 幾乎沒怎麼踩到雷的一頓飯，吃得很滿足。
 家裡以前好像很常來吃，可惜我沒什麼印象；
