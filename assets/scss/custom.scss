@@ -1303,7 +1303,7 @@ body.home-page .article-subtitle {
     }
 }
 
-/* 文章內頁內容 */
+/* 文章內頁內容(含照片) */
 .article-content {
     font-size: 1.7rem !important;
     line-height: 2.2 !important;
@@ -1316,8 +1316,10 @@ body.home-page .article-subtitle {
     }
 
     p:has(img) {
-        padding: 0 !important;  /* 👈 新增這條 */
+        padding: 0 !important;
+        margin: 0 !important;
     }
+
 
     img {
         max-width: 82% !important;
@@ -1350,6 +1352,9 @@ body.single-post .article-content p {
     margin-bottom: 2.5rem !important;
 }
 
+body.single-post .article-content .photo-gallery {
+    margin-top: -2rem !important;
+}
 
 /* 文章內評分 */ 
 body.single-post .article-content .rating-block {
@@ -1445,10 +1450,12 @@ aside.article-toc {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
-    margin: 20px 0;
+    margin: 0 0 20px 0 !important;
+    align-items: stretch !important;
 
     img {
         width: 100% !important;
+        height: 100% !important;  /* 👈 加這行 */
         aspect-ratio: 1/1 !important;
         object-fit: cover !important;
         border-radius: 8px !important;
@@ -1464,12 +1471,34 @@ aside.article-toc {
 }
 
 /* 文章內頁一般圖片 */
-.article-content img:not(.photo-gallery img) {
+.article-content img:not(.photo-gallery img):not(figure img) {
     max-width: 70% !important;
     height: auto !important;
     border-radius: 12px !important;
     margin: 20px auto !important;
     display: block !important;
+}
+
+/* 統一 figure 大小跟一般圖片一致 */
+.article-content figure {
+    max-width: 70% !important;
+    margin: 20px auto !important;
+    display: block !important;  /* 👈 加這行 */
+
+    img {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 12px !important;
+        margin: 0 !important;
+        max-width: 100% !important;  /* 👈 相對於 figure，不是頁面 */
+    }
+
+    figcaption {
+        text-align: center !important;
+        color: #999 !important;
+        font-size: 1.3rem !important;
+        margin-top: 8px !important;
+    }
 }
 
 /* 針對文章裡照片牆裡的所有圖片設定 */
@@ -2265,6 +2294,28 @@ main {
     }
 }
 
+@media (max-width: 768px) {
+    body.single-post .article-title {
+        text-align: center !important;
+    }
+
+    body.single-post .article-details {
+        align-items: center !important;
+        text-align: center !important;  /* 👈 加這行 */
+        padding-left: 20px !important;  /* 👈 加這行，跟右側對齊 */
+    }
+
+    body.single-post .article-subtitle {
+        text-align: center !important;
+    }
+
+    body.single-post .article-meta {
+        justify-content: center !important;
+        align-items: center !important;  /* 👈 加這行 */
+        width: 100% !important;          /* 👈 加這行 */
+    }
+}
+
 /* 手機版漢堡式隱藏導航欄 */
 @media (max-width: 768px) {
     .nav-hamburger {
@@ -2497,5 +2548,13 @@ section.article-list article:first-child {
         padding: 2px 8px;
         border-radius: 4px;
         z-index: 1;
+    }
+}
+
+/* 評分介面手機版取消位移 */
+@media (max-width: 768px) {
+    body.single-post .article-content .rating-block {
+        transform: none !important;
+        max-width: 100% !important;
     }
 }
