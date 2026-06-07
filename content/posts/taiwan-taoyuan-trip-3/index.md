@@ -2,6 +2,7 @@
 title: "【桃園市區】和風壽喜燒吃到飽，海陸風格任選最低439起－魯山人和風壽喜鍋物"
 date: 2023-03-18
 slug: "taiwan-taoyuan-trip-3"
+description: "和好友的壽喜燒一日遊"
 image: "/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-18.jpg"
 categories:
     - 美食紀錄
@@ -15,9 +16,7 @@ toc: true
 
 ## 前言
 
-
 ![](/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-1.jpg)
-
 
 久違地約吃壽喜燒，這間位於桃園市區的魯山人也觀望了一段時間，
 原本之前跟朋友聚餐有打算吃，後來改吃別的；想到上次吃壽喜燒是四年前吃一番地，這次便嘗試不同的餐廳。
@@ -26,34 +25,16 @@ toc: true
 路上經過了桃園77藝文町，住在桃園這麼久我竟然沒進去過，便順道逛了一下。
 
 
-{{< photo-wall >}}
-![](/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-2.jpg)
-![](/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-3.jpg)
-![](/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-4.jpg)
-{{< /photo-wall >}}
+{{< gallery images="trip-taoyuan-3-2.jpg trip-taoyuan-3-3.jpg trip-taoyuan-3-4.jpg" >}}
 
 
 ## 餐廳照片
 
-
-{{< photo-wall >}}
-![](/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-5.jpg)
-![](/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-6.jpg)
-![](/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-7.jpg)
-{{< /photo-wall >}}
+{{< gallery images="trip-taoyuan-3-5.jpg trip-taoyuan-3-6.jpg trip-taoyuan-3-7.jpg" >}}
 
 
-{{< photo-wall >}}
-![](/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-8.jpg)
-![](/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-9.jpg)
-![](/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-10.jpg)
-![](/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-11.jpg)
-![](/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-12.jpg)
-![](/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-13.jpg)
-![](/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-14.jpg)
-![](/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-15.jpg)
-![](/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-16.jpg)
-{{< /photo-wall >}}
+
+{{< gallery images="trip-taoyuan-3-8.jpg trip-taoyuan-3-9.jpg trip-taoyuan-3-10.jpg trip-taoyuan-3-11.jpg trip-taoyuan-3-12.jpg trip-taoyuan-3-13.jpg trip-taoyuan-3-14.jpg trip-taoyuan-3-15.jpg trip-taoyuan-3-16.jpg" >}}
 
 
 ## 餐點照片
@@ -64,17 +45,12 @@ toc: true
 
 ![](/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-18.jpg)
 
-
 我們點的是壽喜燒湯底+海鮮雙拼鍋(附贈439肉盤吃到飽)(海鮮6選2)。
 壽喜燒鍋端上來，我跟好友夾滿了各自想吃的火鍋料和青菜，
 兩個人的火鍋料中有重複的還不少，我們決定都放下去，想吃甚麼就夾，反正沒吃到就再補就好XD
 
 
-{{< photo-wall >}}
-![](/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-19.jpg)
-![](/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-20.jpg)
-![](/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-21.jpg)
-{{< /photo-wall >}}
+{{< gallery images="trip-taoyuan-3-19.jpg trip-taoyuan-3-20.jpg trip-taoyuan-3-21.jpg" >}}
 
 
 然後我們兩個憨憨，因為很少吃壽喜燒的經驗，
@@ -87,6 +63,7 @@ toc: true
 
 
 {{< figure src="/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-22.jpg" caption="很少見的薄荷巧克力冰淇淋是我的最愛(好友也很喜歡)" >}}
+
 
 
 {{< rating score="4.3" max="5" label="整體評分" >}}
@@ -110,10 +87,10 @@ toc: true
 
 ## 後記
 
+![](/posts/taiwan-taoyuan-trip-3/trip-taoyuan-3-23.jpg)
 
-刪除
 
-當天還去買了星巴克的草莓雙果星冰茶~比想像中的還好喝，草莓跟芒果的香氣很足，
-兩者搭配也不衝突，是果汁愛好者會喜歡的口味~
+當天還去買了星巴克的草莓雙果星冰茶～比想像中的還好喝，草莓跟芒果的香氣很足，
+兩者搭配也不衝突，是果汁愛好者會喜歡的口味！
 因為有好友分享卷才難得喝一杯
 (喝到後面混在一起遠看像紅蘿蔔汁XD)
