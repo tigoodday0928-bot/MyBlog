@@ -1,0 +1,74 @@
+{{ $images := split (.Get "images") " " }}
+{{ $slug := .Page.Slug }}
+{{ $id := printf "ca-%s" (md5 (.Get "images")) }}
+
+<div class="carousel-wrapper" id="{{ $id }}">
+  <div class="carousel-main">
+    <button class="carousel-btn carousel-prev" onclick="caMove('{{ $id }}', -1)">&#8249;</button>
+    <div class="carousel-track">
+      {{ range $i, $img := $images }}
+      <div class="carousel-slide{{ if eq $i 0 }} active{{ end }}">
+        <img src="/posts/{{ $slug }}/{{ $img }}" alt="圖片 {{ add $i 1 }}" loading="lazy">
+      </div>
+      {{ end }}
+    </div>
+    <button class="carousel-btn carousel-next" onclick="caMove('{{ $id }}', 1)">&#8250;</button>
+    <div class="carousel-counter"><span class="ca-current">1</span> / {{ len $images }}</div>
+  </div>
+  <div class="carousel-thumbs">
+    {{ range $i, $img := $images }}
+    <div class="carousel-thumb{{ if eq $i 0 }} active{{ end }}" onclick="caGoTo('{{ $id }}', {{ $i }})">
+      <img src="/posts/{{ $slug }}/{{ $img }}" alt="縮圖 {{ add $i 1 }}" loading="lazy">
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+<style>
+.carousel-wrapper { margin: 24px 0; user-select: none; }
+.carousel-main { position: relative; overflow: hidden; border-radius: 12px; background: #000; aspect-ratio: 16/9; }
+.carousel-track { display: flex; height: 100%; transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); }
+.carousel-slide { min-width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.carousel-slide img { width:100% !important; height:100% !important; max-width:100% !important; object-fit:contain !important; border-radius:0 !important; margin:0 !important; }
+.carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.45); color: #fff; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 22px; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; justify-content: center; }
+.carousel-btn:hover { background: rgba(150,123,182,0.75); }
+.carousel-prev { left: 12px; } .carousel-next { right: 12px; }
+.carousel-counter { position: absolute; bottom: 10px; right: 14px; background: rgba(0,0,0,0.5); color: #fff; font-size: 13px; padding: 2px 10px; border-radius: 20px; }
+.carousel-thumbs { display: flex; gap: 6px; margin-top: 8px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
+.carousel-thumb { flex-shrink: 0; width: 64px; height: 48px; border-radius: 6px; overflow: hidden; cursor: pointer; opacity: 0.55; border: 2px solid transparent; transition: opacity 0.2s, border-color 0.2s; }
+.carousel-thumb.active { opacity: 1; border-color: #967BB6; }
+.carousel-thumb img { width:100% !important; height:100% !important; max-width:100% !important; object-fit:cover !important; border-radius:0 !important; margin:0 !important; }
+</style>
+
+<script>
+(function(){
+  const state = {};
+  window.caGoTo = function(id, index) {
+    if (!state[id]) {
+      const w = document.getElementById(id);
+      const s = { slides: w.querySelectorAll('.carousel-slide'), thumbs: w.querySelectorAll('.carousel-thumb'), track: w.querySelector('.carousel-track'), current: w.querySelector('.ca-current'), index: 0, timer: null };
+      state[id] = s;
+    }
+    const s = state[id];
+    s.slides[s.index].classList.remove('active');
+    s.thumbs[s.index].classList.remove('active');
+    s.index = (index + s.slides.length) % s.slides.length;
+    s.slides[s.index].classList.add('active');
+    s.thumbs[s.index].classList.add('active');
+    s.track.style.transform = `translateX(-${s.index * 100}%)`;
+    s.current.textContent = s.index + 1;
+    s.thumbs[s.index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    if (s.timer) clearInterval(s.timer);
+    s.timer = setInterval(() => window.caGoTo(id, s.index + 1), 4000);
+  };
+  window.caMove = function(id, dir) {
+    if (!state[id]) window.caGoTo(id, 0);
+    window.caGoTo(id, state[id].index + dir);
+  };
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.carousel-wrapper').forEach(w => {
+      if (w.querySelector('.ca-current')) window.caGoTo(w.id, 0);
+    });
+  });
+})();
+</script>
