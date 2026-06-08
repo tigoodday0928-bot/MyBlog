@@ -17,7 +17,8 @@ toc: true
 ## 前言
 
 
-刪除
+![](/posts/taiwan-hsinchu-trip/trip-hsinchu-1-1.webp)
+
 
 ([圖源](https://www.popdaily.com.tw/forum/food/1340040))
 
@@ -32,35 +33,39 @@ toc: true
 ## 菜單
 
 
- 輪播(箭頭)（6 張）
-刪除
+{{< carousel-simple images="trip-hsinchu-1-2.jpg trip-hsinchu-1-3.jpg trip-hsinchu-1-4.jpg trip-hsinchu-1-5.jpg trip-hsinchu-1-6.jpg trip-hsinchu-1-7.jpg" >}}
 
 
 ## 菜色
 
 
+{{< figure src="/posts/taiwan-hsinchu-trip/trip-hsinchu-1-8.jpg" caption="滑蛋牛肉 NT.280" >}}
 
-刪除
 滑蛋牛肉上次來也有點，有點一試成主顧的感覺，
 滑蛋油香，牛肉軟嫩彈牙，加上青蔥點綴，很下飯。
 
 
-刪除
+{{< figure src="/posts/taiwan-hsinchu-trip/trip-hsinchu-1-9.jpg" caption="韭菜鴨血 NT.180" >}}
+
 CP值很高的一道菜，調味重適合配飯，
 因為上次來點的五更腸旺對我們來說太辣了，便改點這道嘗鮮。
 鴨血乍聞無腥味，質嫩滑口，韭菜則是爽口清脆，完全不老，
 辣椒點綴，一點蒜片帶著的香氣充斥味蕾。
 
 
-刪除
+{{< figure src="/posts/taiwan-hsinchu-trip/trip-hsinchu-1-10.jpg" caption="大陸A菜 NT.120" >}}
+
 這道時蔬嚐來並不苦，反而鮮嫩香脆，油蔥自帶的香氣和A菜很搭。
 
 
-刪除
+{{< figure src="/posts/taiwan-hsinchu-trip/trip-hsinchu-1-11.jpg" caption="新埔粄條 NT.70" >}}
+
 油蔥味道是這道版條的核心，蘿蔔絲、香菇絲、肉絲和蔥段拌炒，口感算中規中矩。
 
 
-刪除
+
+{{< figure src="/posts/taiwan-hsinchu-trip/trip-hsinchu-1-12.jpg" caption="清蒸魚片 NT.220" >}}
+
 清蒸魚片算是這次有讓我感到驚艷的一道菜，
 乍看以為會是很普通的口感，卻非如此；
 其醬汁中帶著一絲甘甜，應該是因為拌有洋蔥，
@@ -68,12 +73,16 @@ CP值很高的一道菜，調味重適合配飯，
 像我這種吃魚怕刺的人能夠吃好多塊，感到十分滿足。
 
 
-刪除
+
+{{< figure src="/posts/taiwan-hsinchu-trip/trip-hsinchu-1-13.jpg" caption="蚵仔湯 NT.200" >}}
+
 算是新鮮的蚵仔，份量不大，湯裡有小豆腐和薑絲，薑絲去腥；
 因此能喝得到蚵仔的鮮與薑絲的微辣。
 
 
-刪除
+
+{{< figure src="/posts/taiwan-hsinchu-trip/trip-hsinchu-1-14.jpg" caption="客家麻糬(招待)" >}}
+
 上次來也吃到的客家麻糬，是吃完菜後慣例招待的。
 外層花生粉、砂糖裹滿，麻糬不黏牙口感Q彈，是非常道地的客家麻糬。
 
@@ -91,9 +100,8 @@ CP值很高的一道菜，調味重適合配飯，
 ## 餐廳地址、電話、營業時間
 
 > 📍 地址：306 新竹縣關西鎮中豐新路50號\
-> 🕐 營業時間：週二~週日 11:00~14:00/16:30~20:00 (週一公休)\
+> 🕐 營業時間：週二～週日 11:00～14:00/16:30～20:00 (週一公休)\
 > 📞 電話：03-587-7347\
 > 💡 備註：附停車位
-
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.3426889093757!2d121.18200480000002!3d24.7837165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34683ebc04941bf1%3A0xa54878fbf7951f5!2z56aP56uZ5a6i5a625bCP5ZCD!5e0!3m2!1szh-TW!2stw!4v1780839690025!5m2!1szh-TW!2stw" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
