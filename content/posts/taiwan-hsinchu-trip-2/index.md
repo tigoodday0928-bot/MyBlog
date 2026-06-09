@@ -46,11 +46,13 @@ toc: true
 
 
 
-{{< gallery images="trip-hsinchu-2-13.jpg trip-hsinchu-2-14.jpg trip-hsinchu-2-15.jpg trip-hsinchu-2-16.jpg trip-hsinchu-2-17.jpg" >}}
+{{< gallery images="trip-hsinchu-2-13.jpg trip-hsinchu-2-14.jpg trip-hsinchu-2-15.jpg trip-hsinchu-2-16.jpg trip-hsinchu-2-17.jpg trip-hsinchu-2-18.jpg" >}}
 
 
 ## 景點位置
 > 📍 地址：311新竹縣五峰鄉23鄰468之5號\
-> 🕐 營業時間：本館@ 上午9：00~下午5：00\
-          森林咖啡館@上午9：00~下午4：00 （週六、日假日營業；雨天、平日不營業）\
-> 門票說明：（櫻花季期間門票不可抵消費，期間依官網公告為主）\
+> 🕐 營業時間：本館@ 上午9：00～下午5：00\
+          森林咖啡館@上午9：00～下午4：00 （週六、日假日營業；雨天、平日不營業）\
+> 門票說明：（櫻花季期間門票不可抵消費，期間依官網公告為主）
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3627.552358011984!2d121.0891015!3d24.604640399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34684542cbd861df%3A0x247fbc8b64543ba3!2z5bGx5LiK5Lq65a625qOu5p6X6L6y5aC0!5e0!3m2!1szh-TW!2stw!4v1781003291299!5m2!1szh-TW!2stw" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
