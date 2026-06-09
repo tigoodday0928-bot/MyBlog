@@ -1443,6 +1443,25 @@ aside.article-toc {
     align-self: flex-start;
 }
 
+/* 文章內連結按鈕樣式 */
+
+.shortcode-btn {
+    display: inline-block;
+    background: #222;
+    color: #fff !important;
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-decoration: none !important;
+    margin: 4px 6px 4px 0;
+    transition: background 0.2s;
+
+    &:hover {
+        background: #967BB6;
+    }
+}
+
 /* ============================================================
    7-1. 文章內頁排版美化：照片
    ============================================================ */

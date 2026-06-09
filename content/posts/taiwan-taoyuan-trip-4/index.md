@@ -14,7 +14,7 @@ draft: false
 toc: true
 ---
 
-## 餐廳位置
+## 餐廳位置
 {{< figure src="/posts/taiwan-taoyuan-trip-4/trip-taoyuan-4-1.jpg" caption="鄉村氣息的三合院建築" >}}
 
 
