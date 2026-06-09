@@ -1320,9 +1320,8 @@ body.home-page .article-subtitle {
         margin: 0 !important;
     }
 
-
     img {
-        max-width: 82% !important;
+        max-width: 100% !important;
         border-radius: 12px !important;
         margin: 28px auto !important;
         display: block !important;
@@ -1354,6 +1353,9 @@ body.single-post .article-content p {
 
 body.single-post .article-content .photo-gallery {
     margin-top: -2rem !important;
+    max-width: 780px !important;  // 👈 跟文字同寬
+    margin-left: auto !important; // 👈 置中
+    margin-right: auto !important;
 }
 
 /* 文章內評分 */ 
@@ -1474,7 +1476,7 @@ aside.article-toc {
 
     img {
         width: 100% !important;
-        height: 100% !important;  /* 👈 加這行 */
+        height: 250px !important;  /* 👈 加這行 */
         aspect-ratio: 1/1 !important;
         object-fit: cover !important;
         border-radius: 8px !important;
