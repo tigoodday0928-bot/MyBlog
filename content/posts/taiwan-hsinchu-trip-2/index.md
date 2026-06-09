@@ -28,12 +28,11 @@ toc: true
 
 
 
-
 ## 遊記照片與心得
 
 
-
 {{< carousel-auto images="trip-hsinchu-2-1.jpg trip-hsinchu-2-2.jpg trip-hsinchu-2-3.jpg trip-hsinchu-2-4.jpg trip-hsinchu-2-5.jpg trip-hsinchu-2-6.jpg trip-hsinchu-2-7.jpg trip-hsinchu-2-8.jpg trip-hsinchu-2-9.jpg trip-hsinchu-2-10.jpg trip-hsinchu-2-11.jpg trip-hsinchu-2-12.jpg" >}}
+
 
 為了順利上山，家裡這天特別早出發，十點多便到山上人家了。
 這時候的櫻花正漂亮，今年這邊的櫻花花季是從2/11~3/10，再晚些日子來的話估計已經凋謝了！
@@ -43,7 +42,6 @@ toc: true
 即便到了我們下午一點多要下山吃飯的時候，仍然有不少車子正準備上山賞櫻，
 天氣雖好，但山上仍然有點冷，還是得穿著薄外套(正午陽光強，會有點曬)。
 在路上有遇到被主人放出來放風的可愛鸚鵡，以及乖巧溫和的柴柴一隻(主人說他叫「旺福」)。
-
 
 
 {{< gallery images="trip-hsinchu-2-13.jpg trip-hsinchu-2-14.jpg trip-hsinchu-2-15.jpg trip-hsinchu-2-16.jpg trip-hsinchu-2-17.jpg trip-hsinchu-2-18.jpg" >}}
