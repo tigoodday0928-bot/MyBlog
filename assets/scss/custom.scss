@@ -1335,6 +1335,13 @@ body.home-page .article-subtitle {
         margin-top: -16px !important;
         margin-bottom: 28px !important;
     }
+
+    h2 {
+        background: rgba(150, 123, 182, 0.08) !important;
+        border-left: 4px solid #967BB6 !important;
+        padding: 8px 16px !important;
+        border-radius: 0 8px 8px 0 !important;
+    }
 }
 
 body.single-post .article-content p,
@@ -1356,6 +1363,25 @@ body.single-post .article-content .photo-gallery {
     max-width: 780px !important;  // 👈 跟文字同寬
     margin-left: auto !important; // 👈 置中
     margin-right: auto !important;
+}
+
+/* 文章內引用區塊 */
+body.single-post .article-content blockquote {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 16px 24px !important;  // 👈 左右 padding 跟 p 一致
+    background: rgba(0, 0, 0, 0.06) !important;
+    border-left: 3px solid #aaa !important;
+    border-radius: 0 8px 8px 0 !important;
+    width: auto !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+}
+
+/* 文章內連結按鈕 */
+body.single-post .article-content a.shortcode-btn,
+body.single-post .article-content blockquote {
+    margin-left: 24px !important;
 }
 
 /* 文章內評分 */ 

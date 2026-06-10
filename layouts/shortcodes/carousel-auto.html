@@ -57,7 +57,12 @@
     s.thumbs[s.index].classList.add('active');
     s.track.style.transform = `translateX(-${s.index * 100}%)`;
     s.current.textContent = s.index + 1;
-    s.thumbs[s.index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    const thumb = s.thumbs[s.index];
+    const container = thumb.closest('.carousel-thumbs');
+    const thumbLeft = thumb.offsetLeft;
+    const thumbWidth = thumb.offsetWidth;
+    const containerWidth = container.offsetWidth;
+    container.scrollTo({ left: thumbLeft - (containerWidth / 2) + (thumbWidth / 2), behavior: 'smooth' });
     if (s.timer) clearInterval(s.timer);
     s.timer = setInterval(() => window.caGoTo(id, s.index + 1), 4000);
   };
