@@ -10,7 +10,7 @@ tags:
   - 心得
 image: /posts/myinsights-helloghost/helloghost.jpg
 draft: false
-title: 【電影】我的麻吉4個鬼 觀後心得（有雷）
+title: 【電影】《 我的麻吉4個鬼》觀影心得（有雷）
 ---
 
 距離我上次更新文章已經是好幾個月前。

@@ -21,11 +21,9 @@ toc: true
 
 {{< figure src="/posts/taiwan-newtaipei-trip-2/trip-newtaipei-2-2.jpg" caption="假日用餐人潮多，生意很好" >}}
 
- wp:paragraph {"style":{"typography":{"textAlign":"left"}}} 
 
 今天一家人到淡水半日遊，午餐決定在這間家父吃過一次的60年代用餐；
 這是一間海景餐廳，但很可惜淡水今天霧氣重，沒能看到碧海藍天相輝映的模樣。
-
 
 
 ## 菜單
@@ -112,7 +110,3 @@ toc: true
 {{< info-card name="60年代脆皮雞白斬雞" address="252 新北市三芝區北勢子12-1號" hours="週一～週日 11:00~21:00" phone="02-2636-0099" remark="附停車場" >}}
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.448024782024!2d121.47476660000001!3d25.255509900000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442b0e96aa3a65f%3A0x66b5bdd05e2af848!2zNjDlubTku6PohIbnmq7pm57nmb3mlqzpm54!5e0!3m2!1szh-TW!2stw!4v1781167884470!5m2!1szh-TW!2stw" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-
-
- /wp:heading

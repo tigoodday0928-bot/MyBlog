@@ -1,5 +1,5 @@
 ---
-title: "《絕地戰警：生死與共》觀影心得"
+title: "【電影】《絕地戰警：生死與共》觀影心得"
 date: 2024-06-18
 slug: "myinsights-badboys"
 description: "熟悉的夥伴最對味，不管多鬧都要一起衝鋒陷陣。"
