@@ -1378,12 +1378,6 @@ body.single-post .article-content blockquote {
     box-sizing: border-box !important;
 }
 
-/* 文章內連結按鈕 */
-body.single-post .article-content a.shortcode-btn,
-body.single-post .article-content blockquote {
-    margin-left: 24px !important;
-}
-
 /* 文章內評分 */ 
 body.single-post .article-content .rating-block {
     display: flex !important;
@@ -1487,6 +1481,46 @@ aside.article-toc {
     &:hover {
         background: #967BB6;
     }
+}
+
+/* 文章內資訊卡排版 */
+.info-card {
+    background: #fff;
+    border: 1px solid #e8e0f0;
+    border-radius: 12px;
+    padding: 14px 20px;
+    margin: 16px 0;
+}
+
+.info-card-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 5px 0;
+    font-size: 1.5rem;
+    color: #555;
+    border-bottom: 1px solid rgba(150, 123, 182, 0.1);
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.info-card-icon {
+    flex-shrink: 0;
+    width: 20px;
+}
+
+.info-card-label {
+    flex-shrink: 0;
+    font-weight: 600;
+    color: #666;
+    width: 70px;
+}
+
+.info-card-value {
+    flex: 1;
+    line-height: 1.7;
 }
 
 /* ============================================================
@@ -2602,5 +2636,12 @@ section.article-list article:first-child {
     body.single-post .article-content .rating-block {
         transform: none !important;
         max-width: 100% !important;
+    }
+}
+
+/* 手機版照片牆2欄式 */
+@media (max-width: 768px) {
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 }

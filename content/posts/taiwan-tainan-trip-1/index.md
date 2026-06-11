@@ -61,10 +61,6 @@ draft: false
 難得全家出遊，就想著紀錄一下，希望之後也能多多記錄這些回憶與時光。
 
 ## 餐廳位置
-
-> 太山梅仔雞創始店\
-> 地址：715臺南市楠西區灣丘里4號\
-> 營業時間：週一\~週日 10:30\~19:00 (週四公休)\
-> 電話：065751931
+{{< info-card name="太山梅仔雞創始店" address="715 臺南市楠西區灣丘里4號" hours="週一～週日 10:30～19:00 (週四公休)" phone="06-575-19317" >}}
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.631774543275!2d120.53291677624654!3d23.183635779061166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346ef59a0ba80875%3A0xa07e116c3e3b8845!2z5aSq5bGx5qKF5LuU6Zue5Ym15aeL5bqX!5e0!3m2!1szh-TW!2stw!4v1780033193496!5m2!1szh-TW!2stw" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

@@ -80,19 +80,11 @@ featured: true
 
 
 ## 餐廳、景點位置
->
-> 桃園彩色海芋季(溪海花卉園區)\
-> 地址：337桃園市大園區聖德北路828號\
-> 營業時間：2023/4/1～2023/4/16 9:00～17:00\
-> 電話：03-3322101\
-> (交通管制，停車後徒步前往園區)
+{{< info-card name="桃園彩色海芋季(溪海花卉園區)" address="337桃園市大園區聖德北路828號" hours="2023/4/1～2023/4/16 9:00～17:00" phone="03-332-2101" remark="交通管制，停車後徒步前往園區" >}}
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.032565658763!2d121.19287977629101!3d25.03296887781709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346820e79c8fa7bb%3A0x4b28c3b1653996e4!2zMjAyNjA0MDXmoYPlnJLluILlvanoibLmtbfoiovlraM!5e0!3m2!1szh-TW!2stw!4v1780033846808!5m2!1szh-TW!2stw" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-> 大河屋 燒肉丼 串燒(華泰名品城店-已歇業)\
-> 地址：320桃園市中壢區春德路189號3樓\
-> 營業時間：週一～週日 11:00～21:00\
-> 電話；03-2870649
+{{< info-card name="大河屋 燒肉丼 串燒(華泰名品城店)" address="320桃園市中壢區春德路189號3樓" hours="週一～週日 11:00～21:00" phone="03-287-0649" remark="已歇業" >}}
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.5754489581927!2d121.2102159762906!3d25.014538177829017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346821e3cca50747%3A0xcf0bc97fc48a448b!2z5aSn5rKz5bGLIOeHkuiCieS4vCDkuLLnh5It6I-v5rOw5ZCN5ZOB5Z-O5bqX!5e0!3m2!1szh-TW!2stw!4v1780033817513!5m2!1szh-TW!2stw" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 

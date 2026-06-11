@@ -45,9 +45,7 @@ toc: true
 
 
 ## 楓樹湖位置
-> 📍 地址：新北市淡水區楓樹湖\
-> 🕐 營業時間：全年開放\
-> 📞 電話：02-262-21020
+{{< info-card address="新北市淡水區楓樹湖" hours="全年開放" phone="02-262-21020" >}}
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14441.91657388658!2d121.48875526453025!3d25.187059243477247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442b1c90fb93f1f%3A0x3dfee599bd2d5ab1!2zMjUx5paw5YyX5biC5reh5rC05Y2A5rC05rqQ6YeM5qWT5qi55rmW!5e0!3m2!1szh-TW!2stw!4v1781016673136!5m2!1szh-TW!2stw" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 

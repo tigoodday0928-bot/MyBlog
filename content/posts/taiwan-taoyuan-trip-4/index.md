@@ -93,13 +93,6 @@ toc: true
 
 
 ## 餐廳地址、電話、營業時間
-
-> 📍 地址：326桃園市楊梅區楊湖路二段327巷9號\
-> 🕐 營業時間：週二 10:00～14:00/ 16:00～20:00\
-> 　　週三-週六 10:00～14:00/ 16:00～18:30\
->　　 週日 10:00～14:00\
-> 📞 電話：03-478-2706\
-> 💡 備註：附停車場
-
+{{< info-card name="鄰長伯大湯圓" address="326桃園市楊梅區楊湖路二段327巷9號" hours="週二 10:00～14:00/16:00～20:00；週三～週六 10:00～14:00/16:00～18:30；週日 10:00～14:00" phone="03-478-2706" remark="附停車位" >}}
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.5852226816746!2d121.11071847537264!3d24.91212597789552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34683ace1f4b213d%3A0x89eebc11590c3e80!2z6YSw6ZW35Lyv5aSn5rmv5ZyT!5e0!3m2!1szh-TW!2stw!4v1780920970663!5m2!1szh-TW!2stw" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

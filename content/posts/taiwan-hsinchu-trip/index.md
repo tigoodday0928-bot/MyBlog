@@ -98,10 +98,6 @@ CP值很高的一道菜，調味重適合配飯，
 
 
 ## 餐廳地址、電話、營業時間
-
-> 📍 地址：306 新竹縣關西鎮中豐新路50號\
-> 🕐 營業時間：週二～週日 11:00～14:00/16:30～20:00 (週一公休)\
-> 📞 電話：03-587-7347\
-> 💡 備註：附停車位
+{{< info-card name="福站客家小吃" address="306 新竹縣關西鎮中豐新路50號" hours="週二～週日 11:00～14:00/16:30～20:00 (週一公休)" phone="03-587-7347" reservation="可線上訂位" remark="附停車位" >}}
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.3426889093757!2d121.18200480000002!3d24.7837165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34683ebc04941bf1%3A0xa54878fbf7951f5!2z56aP56uZ5a6i5a625bCP5ZCD!5e0!3m2!1szh-TW!2stw!4v1780839690025!5m2!1szh-TW!2stw" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

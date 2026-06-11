@@ -22,11 +22,10 @@ toc: true
 
 > 這裡有自然生態景觀，有時也看得到遠處翻騰的雲海，清幽如畫的美景令人嘆為觀止；園區內遍植香草植物，行走其間可以充分享受森林浴洗禮，走進森林聽聽蟲鳴鳥叫以及潺潺的流水聲，享受那充滿芬多精的森林、呼吸著帶有甜味的空氣，遠離都市塵囂所帶來片刻寧靜…達到身心靈的放鬆。
 
+{{< btns >}}
 {{< btn url="https://www.mvresort.com.tw/" text="山上人家網址" >}}
-
 {{< btn url="https://www.facebook.com/mvresort.tw/" text="FB粉絲專頁" >}}
-
-
+{{< /btns >}}
 
 ## 遊記照片與心得
 
@@ -48,9 +47,6 @@ toc: true
 
 
 ## 景點位置
-> 📍 地址：311新竹縣五峰鄉23鄰468之5號\
-> 🕐 營業時間：本館@ 上午9：00～下午5：00\
-          森林咖啡館@上午9：00～下午4：00 （週六、日假日營業；雨天、平日不營業）\
-> 門票說明：（櫻花季期間門票不可抵消費，期間依官網公告為主）
+{{< info-card name="山上人家" address="311新竹縣五峰鄉23鄰468之5號" hours="本館@ 上午9：00～下午5：00 ；森林咖啡館@上午9：00～下午4：00 （週六、日假日營業；雨天、平日不營業）" remark="門票說明：櫻花季期間門票不可抵消費，期間依官網公告為主" >}}
 
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3627.552358011984!2d121.0891015!3d24.604640399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34684542cbd861df%3A0x247fbc8b64543ba3!2z5bGx5LiK5Lq65a625qOu5p6X6L6y5aC0!5e0!3m2!1szh-TW!2stw!4v1781003291299!5m2!1szh-TW!2stw" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

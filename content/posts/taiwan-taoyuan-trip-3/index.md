@@ -80,10 +80,9 @@ toc: true
 (我們也有煮烏龍麵吃，還不錯吃)
 
 ## 餐廳地址、電話、營業時間
-> 📍 地址：330 桃園市桃園區復興路123號2樓\
-> 🕐 營業時間：週一~週日 11:00~3:00\
-> 📞 電話：03-334-0999\
-> 📅 訂位：可線上訂位
+{{< info-card name="魯山人和風壽喜鍋物" address="330 桃園市桃園區復興路123號2樓" hours="週一~週日 11:00~3:00" phone="03-334-0999" reservation="可線上訂位" >}}
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.286823735349!2d121.3129426!3d24.990368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681f09d89412f3%3A0x88f84bd523519594!2z6a2v5bGx5Lq65ZKM6aKo5aO95Zac6Y2L54mpLeahg-WckuW6lw!5e0!3m2!1szh-TW!2stw!4v1781166730350!5m2!1szh-TW!2stw" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 ## 後記
 
