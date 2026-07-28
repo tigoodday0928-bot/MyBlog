@@ -24,6 +24,43 @@
     {{- .Scratch.Set "hasWidget" (or $HasWidgetNotTOC (and $TOCEnabled $hasTOC)) -}}
 {{ end }}
 
+{{ define "hero" }}
+    {{- $image := partial "helper/image" (dict "Image" .Params.image "Resources" .Resources "Context" .) -}}
+    {{ if $image }}
+    <div class="article-hero">
+        {{ partial "helper/responsive-image" (dict
+            "Resource" $image.Resource
+            "Widths" (cond .Site.Params.ImageProcessing.Content.Enabled .Site.Params.ImageProcessing.Content.Widths nil)
+            "Attributes" (dict
+                "src" $image.Permalink
+                "width" $image.Width
+                "height" $image.Height
+                "alt" (printf "Featured image of post %s" .Title)
+                "loading" "lazy"
+                "sizes" "100vw"
+            )
+        ) }}
+        <div class="article-hero-overlay">
+            <div class="article-hero-details">
+                <h1 class="article-title">{{ .Title }}</h1>
+                {{ if .Params.description }}
+                <p class="article-subtitle">{{ .Params.description }}</p>
+                {{ end }}
+                <div class="article-hero-meta">
+                    <span class="article-time--published">{{ .Date.Format "2006年1月2日" }}</span>
+                    {{ if ne .Date .Lastmod }}
+                    <span class="article-time--published">最後更新：{{ .Lastmod.Format "2006年1月2日" }}</span>
+                    {{ end }}
+                    {{ range .Params.categories }}
+                    <a href="/categories/{{ . | urlize }}/" class="article-category-link">{{ . }}</a>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ end }}
+{{ end }}
+
 {{ define "main" }}
     {{ partial "article/article.html" . }}
 

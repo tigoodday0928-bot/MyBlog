@@ -1,0 +1,10 @@
+<details class="collapse-block">
+  <summary class="collapse-title">
+    {{ with .Get "icon" }}<span>{{ . }}</span>{{ end }}
+    {{ .Get "title" }}
+    <span class="collapse-arrow">▲</span>
+  </summary>
+  <div class="collapse-content">
+    {{ .Inner | markdownify }}
+  </div>
+</details>

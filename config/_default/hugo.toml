@@ -3,6 +3,7 @@ languageCode    = "zh-hant-tw"
 title           = "Life with everything"
 theme           = "hugo-theme-stack" # 加入這行，指定讀取本地 themes 資料夾
 paginate        = 15
+enableGitInfo   = true
 
 defaultContentLanguage = "zh-hant-tw"
 hasCJKLanguage         = true # 你的遊記會用到中文，這行很重要

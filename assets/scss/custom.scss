@@ -1203,6 +1203,112 @@ summary::-webkit-details-marker {
 /* ============================================================
    7. 文章內頁排版美化
    ============================================================ */
+
+/* 文章封面圖全寬 hero */
+.article-hero {
+    position: relative;
+    width: 100%;
+    height: 580px;
+    overflow: hidden;
+    margin-bottom: 0;
+
+    img {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        object-fit: cover !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+    }
+}
+
+.article-hero-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px 80px;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.article-hero-details {
+    text-align: center;
+    max-width: 780px;
+}
+
+.article-hero-details .article-title {
+    color: #fff !important;
+    font-size: 2.8rem !important;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.8), 0 1px 4px rgba(0,0,0,0.9) !important;
+    margin-bottom: 12px !important;
+}
+
+body.single-post .article-hero-details .article-subtitle {
+    color: #fff !important;
+    background: rgba(255,255,255,0.2) !important;
+    border: 1px dashed rgba(255,255,255,0.6) !important;  /* 改成虛線 */
+    border-radius: 8px !important;
+    padding: 6px 14px !important;
+    display: inline-block !important;
+    font-size: 1.4rem !important;
+    line-height: 1.8 !important;
+    margin-bottom: 12px !important;
+    backdrop-filter: blur(4px) !important;
+}
+
+.article-hero-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.article-hero-meta .article-time--published {
+    color: rgba(255,255,255,0.8) !important;
+    font-size: 1.4rem !important;
+}
+
+.article-hero-meta .article-category-link {
+    color: #fff !important;
+    border: 1px solid rgba(255,255,255,0.5) !important;
+    background: rgba(255,255,255,0.15) !important;
+    border-radius: 6px !important;
+    padding: 2px 10px !important;
+    font-size: 1.4rem !important;
+    text-decoration: none !important;
+}
+
+/* 文章內頁隱藏原本的 details */
+body.single-post .article-details {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .article-hero {
+        height: 400px;
+    }
+
+    .article-hero-overlay {
+        padding: 40px 20px 24px;
+    }
+
+    .article-hero-details .article-title {
+        font-size: 2rem !important;
+    }
+}
+
+/* 隱藏原本的封面圖 */
+body.single-post .article-header .article-image {
+    display: none !important;
+}
+
 /* 首頁卡片標題 */
 .article-title {
     font-size: 2.2rem !important;
@@ -1524,6 +1630,52 @@ aside.article-toc {
 }
 
 /* ============================================================
+   7. 文章內頁排版美化：引用內容收合
+   ============================================================ */
+.collapse-block {
+    border: 1px solid #e0d8f0;
+    border-radius: 10px;
+    margin: 16px 0;
+    overflow: hidden;
+
+    &[open] .collapse-arrow {
+        transform: rotate(0deg);
+    }
+
+    .collapse-arrow {
+        transform: rotate(180deg);
+        transition: transform 0.3s;
+        margin-left: auto;
+        font-size: 1.2rem;
+        color: #967BB6;
+    }
+}
+
+.collapse-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+    background: #f8f5fc;
+    list-style: none;
+
+    &::-webkit-details-marker { display: none; }
+    &::marker { display: none; }
+}
+
+.collapse-content {
+    padding: 16px 20px;
+    font-size: 1.5rem;
+    line-height: 2;
+    color: #444;
+    border-top: 1px solid #e0d8f0;
+}
+
+/* ============================================================
    7-1. 文章內頁排版美化：照片
    ============================================================ */
 .photo-gallery {
@@ -1594,7 +1746,7 @@ aside.article-toc {
 }
 
 /* ============================================================
-   7-1. 文章內頁排版美化：頁尾分享＋作者簡介+相關文章
+   7-1. 文章內頁排版美化：頁尾分享 + 作者簡介 + 相關文章
    ============================================================ */
 .article-share {
     display: flex;

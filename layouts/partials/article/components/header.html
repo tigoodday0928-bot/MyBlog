@@ -2,7 +2,7 @@
 {{- $Page := .Page -}}
 <header class="article-header">
     {{- $image := partial "helper/image" (dict "Image" $Page.Params.image "Resources" $Page.Resources "Context" $Page) -}}
-    {{ if $image }}
+    {{ if and $image $IsList }}
     <div class="article-image">
         <a href="{{ $Page.RelPermalink }}">
             {{ partial "helper/responsive-image" (dict
@@ -20,6 +20,8 @@
         </a>
     </div>
     {{ end }}
-
+    {{ if not $IsList }}
+    {{ else }}
     {{ partial "article/components/details" (dict "Page" $Page "IsList" $IsList) }}
+    {{ end }}
 </header>

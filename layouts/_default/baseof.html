@@ -14,6 +14,8 @@
         <div class="site-cover"></div>
         {{ end }}
 
+        {{- block "hero" . }}{{- end }}
+
         <div class="main-layout-container">
             <main class="article-section">
                 {{- block "main" . }}{{- end }}
