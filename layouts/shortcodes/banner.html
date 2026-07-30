@@ -1,0 +1,28 @@
+{{/*
+  橫幅標語 Banner Shortcode
+  --------------------------------
+  用法：
+    {{< banner >}}
+    蘇州自由行 Day 3：葑門橫街 → 滄浪亭 → 柴園 → 十全街 → 金雞湖
+    {{< /banner >}}
+
+  說明：
+    純粹的灰底置中文字橫幅，適合當作行程標題、段落分隔標語等用途。
+    支援 markdown 語法（例如需要的話可以加粗、加連結）。
+*/}}
+<div class="hz-banner">{{ .Inner | markdownify }}</div>
+
+<style>
+.hz-banner{
+  background:#e9e9ec;
+  border-radius:12px;
+  padding:18px 24px;
+  margin:24px 0;
+  text-align:center;
+  font-size:17px;
+  font-weight:700;
+  color:#222;
+  line-height:1.5;
+}
+.hz-banner p{ margin:0; }
+</style>

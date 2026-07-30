@@ -1,0 +1,60 @@
+{{/*
+  提示框 Callout Shortcode（可切換 tip / warning / info 三種預設樣式）
+  --------------------------------
+  用法：
+    {{< callout type="tip" title="值得注意的是" >}}
+    張繼寫這首詩的時代背景是動亂流亡...
+    {{< /callout >}}
+
+    {{< callout type="warning" title="重要提醒" >}}
+    - 中國高鐵採實名制...
+    - 蘇州的高鐵站有好幾個...
+    - 中國高鐵可以免費改簽一次...
+    {{< /callout >}}
+
+  參數：
+    type   選填，預設 tip。可用值：tip（💡 提示）／warning（⚠️ 警示）／info（ℹ️ 資訊）
+    title  選填，不填則不顯示標題那一行
+
+  說明：
+    內容支援完整 markdown 語法（清單、粗體、連結等）。
+    之後若要再加新的類型（例如 danger、success），
+    只要在下面的 $icons 字典跟最下面的顏色區塊各加一組即可。
+*/}}
+{{ $type := .Get "type" | default "tip" }}
+{{ $icons := dict "tip" "💡" "warning" "⚠️" "info" "ℹ️" }}
+{{ $icon := index $icons $type | default "💡" }}
+<div class="hz-callout hz-callout-{{ $type }}">
+  {{ with .Get "title" }}
+  <div class="hz-callout-title">{{ $icon }} {{ . }}</div>
+  {{ end }}
+  <div class="hz-callout-body">{{ .Inner | markdownify }}</div>
+</div>
+
+<style>
+.hz-callout{
+  background:#f0f0f2;
+  border-radius:12px;
+  padding:18px 22px;
+  margin:24px 0;
+}
+.hz-callout-title{
+  font-weight:700;
+  font-size:15px;
+  margin-bottom:10px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.hz-callout-body{ font-size:15px; line-height:1.8; color:#333; }
+.hz-callout-body p{ margin:0 0 10px; }
+.hz-callout-body p:last-child{ margin-bottom:0; }
+.hz-callout-body ul, .hz-callout-body ol{ margin:0; padding-left:1.3em; }
+.hz-callout-body li{ margin-bottom:8px; }
+.hz-callout-body li:last-child{ margin-bottom:0; }
+.hz-callout-body strong{ color:#d6336c; }
+
+.hz-callout-tip .hz-callout-title{ color:#c9891f; }
+.hz-callout-warning .hz-callout-title{ color:#c0392b; }
+.hz-callout-info .hz-callout-title{ color:#2266bb; }
+</style>

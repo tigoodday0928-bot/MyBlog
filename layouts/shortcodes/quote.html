@@ -1,0 +1,53 @@
+{{/*
+  引用（含出處）Quote Shortcode
+  --------------------------------
+  用法：
+    {{< quote author="唐代詩人 張繼《楓橋夜泊》" >}}
+    月落烏啼霜滿天，江楓漁火對愁眠。
+    姑蘇城外寒山寺，夜半鐘聲到客船。
+    {{< /quote >}}
+
+  參數：
+    author  選填。不填的話就不會顯示右下角的出處那一行。
+
+  說明：
+    內容區塊每一行文字會各自變成獨立一行（不會像一般 markdown
+    段落那樣被自動合併成同一行），並支援單行內的 **粗體** / *斜體* 語法。
+*/}}
+<div class="hz-quote">
+  <div class="hz-quote-body">
+    {{ range (split (trim .Inner "\n") "\n") }}
+      {{ $line := trim . " " }}
+      {{ if $line }}<p>{{ $line | markdownify }}</p>{{ end }}
+    {{ end }}
+  </div>
+  {{ with .Get "author" }}
+  <div class="hz-quote-author">— {{ . }}</div>
+  {{ end }}
+</div>
+
+<style>
+.hz-quote{
+  position:relative;
+  background:#f3f3f5;
+  border-left:4px solid #d6336c;
+  border-radius:8px;
+  padding:20px 24px;
+  margin:24px 0;
+}
+.hz-quote-body p{
+  margin:0 0 8px;
+  font-style:italic;
+  font-size:16px;
+  line-height:1.8;
+  color:#333;
+}
+.hz-quote-body p:last-child{ margin-bottom:0; }
+.hz-quote-author{
+  text-align:right;
+  margin-top:10px;
+  font-size:14px;
+  font-weight:600;
+  color:#555;
+}
+</style>
