@@ -5,6 +5,7 @@ slug: "test"
 draft: true
 toc: true
 description: "測試用"
+image: "/posts/test/NSHM_PHOTO_2026_8_2_23_57_51.jpg"
 categories:
     - 自創內容
     - 影劇心得
