@@ -2,7 +2,7 @@
 title: "測試用"
 date: 2026-08-03
 slug: "test"
-draft: false
+draft: true
 toc: true
 description: "測試用"
 image: "/posts/test/NSHM_PHOTO_2026_8_2_23_57_51.jpg"
