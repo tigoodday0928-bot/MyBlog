@@ -1,5 +1,5 @@
 ---
-title: "【電影】《食破天驚》觀影心得1"
+title: "【電影】《食破天驚》觀影心得"
 date: 2026-08-03
 slug: "myinsights-cloudy_with_a_chance_of_meatballs"
 description: "只要一直在堅持不懈的道路上奔馳，最後一定會看到最美的光景。"
