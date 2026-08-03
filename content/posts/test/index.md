@@ -2,13 +2,15 @@
 title: "測試用"
 date: 2026-08-03
 slug: "test"
-draft: true
+draft: false
 toc: true
 description: "測試用"
 image: "/posts/test/NSHM_PHOTO_2026_8_2_23_57_51.jpg"
 categories:
     - 自創內容
     - 影劇心得
+tags:
+    - 測試
 ---
 
 這篇文章是用來測試後台網站的新功能是否有被順利建立。
