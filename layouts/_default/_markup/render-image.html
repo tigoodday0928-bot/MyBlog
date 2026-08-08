@@ -1,8 +1,9 @@
-<a href="{{ .Destination | safeURL }}" 
-   data-cropped="true"
-   {{ with .Title }}title="{{ . }}"{{ end }}>
-  <img src="{{ .Destination | safeURL }}"
-       alt="{{ .Text }}"
-       {{ with .Title }}title="{{ . }}"{{ end }}
-       loading="lazy">
-</a>
+{{- $destination := .Destination -}}
+{{- $text := .Text -}}
+{{- $title := .Title -}}
+<img src="{{ $destination | safeURL }}"
+     alt="{{ $text }}"
+     {{ with $title }}title="{{ . }}"{{ end }}
+     loading="lazy"
+     class="lightbox-trigger"
+     onclick="openLightbox(this)">

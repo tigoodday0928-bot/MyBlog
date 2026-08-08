@@ -15,14 +15,33 @@ menu:
 
 <!-- 宣傳圖 -->
 <div style="text-align: center; margin: 20px 0 40px;">
-    <img src="/img/banner.jpg" alt="Banner" style="max-width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(150,123,182,0.2);">
+    <img src="/img/banner.png" alt="Banner" style="max-width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(150,123,182,0.2);">
 </div>
 
 ---
 
 ## 👋 Hi，我是 Hazwle
 
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0;">
+    <div style="background: rgba(150, 123, 182, 0.12); border: 1px solid rgba(150, 123, 182, 0.3); border-radius: 20px; padding: 10px 18px; font-size: 1.3rem; color: #6b5a7e; font-weight: 600;">
+        🎮 重度抽卡遊戲成癮者
+    </div>
+    <div style="background: rgba(150, 123, 182, 0.12); border: 1px solid rgba(150, 123, 182, 0.3); border-radius: 20px; padding: 10px 18px; font-size: 1.3rem; color: #6b5a7e; font-weight: 600;">
+        🎲 具備高度賭徒精神
+    </div>
+    <div style="background: rgba(150, 123, 182, 0.12); border: 1px solid rgba(150, 123, 182, 0.3); border-radius: 20px; padding: 10px 18px; font-size: 1.3rem; color: #6b5a7e; font-weight: 600;">
+        📖 喜好閱讀、觀賞戲劇電影
+    </div>
+    <div style="background: rgba(150, 123, 182, 0.12); border: 1px solid rgba(150, 123, 182, 0.3); border-radius: 20px; padding: 10px 18px; font-size: 1.3rem; color: #6b5a7e; font-weight: 600;">
+        👾 閒暇時與朋友玩各種遊戲
+    </div>
+    <div style="background: rgba(150, 123, 182, 0.12); border: 1px solid rgba(150, 123, 182, 0.3); border-radius: 20px; padding: 10px 18px; font-size: 1.3rem; color: #6b5a7e; font-weight: 600;">
+        🎬 偶爾剪剪遊玩影片
+    </div>
+</div>
+
 這個部落格記錄著我的日常生活——旅遊景點、美食體驗、電玩心得，以及各種我喜歡的事物。
+
 希望這裡的內容能讓你感到有趣，或是找到共鳴 🎨
 
 ---
@@ -30,14 +49,7 @@ menu:
 ## 📸 旅遊 & 遊戲時光
 
 <!-- 照片牆 -->
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0;">
-    <img src="/img/photo1.jpg" alt="旅遊照片" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px;">
-    <img src="/img/photo2.jpg" alt="旅遊照片" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px;">
-    <img src="/img/photo3.jpg" alt="遊戲截圖" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px;">
-    <img src="/img/photo4.jpg" alt="遊戲截圖" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px;">
-    <img src="/img/photo5.jpg" alt="旅遊照片" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px;">
-    <img src="/img/photo6.jpg" alt="遊戲截圖" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:12px;">
-</div>
+{{< photo-wall >}}
 
 ---
 
@@ -60,7 +72,7 @@ menu:
         style="padding: 12px 16px; border-radius: 10px; border: 1px solid rgba(150,123,182,0.3); font-size: 1.2rem; outline: none; resize: vertical;"></textarea>
     <button 
         type="submit"
-        style="padding: 12px; background: #967BB6; color: #fff; border: none; border-radius: 10px; font-size: 1.2rem; font-weight: bold; cursor: pointer;">
+        style="padding: 15px; background: #967BB6; color: #fff; border: none; border-radius: 13px; font-size: 1.3rem; font-weight: bold; cursor: pointer;">
         送出 ✉️
     </button>
 </form>

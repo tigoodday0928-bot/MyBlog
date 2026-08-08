@@ -42,6 +42,31 @@ body.home-page .article-details {
     padding-left: 25px !important;
 }
 
+/* 全站底色：用極淡的薰衣草白取代純白，避免大片死白 */
+body {
+    background-color: #f8f6fb !important;
+}
+
+/* 文章內頁：漸層最後融入底色，而不是變回純白 */
+body.article-page {
+    background: linear-gradient(180deg,
+            rgba(150, 123, 182, 0.22) 0%,
+            rgba(150, 123, 182, 0.12) 18%,
+            rgba(150, 123, 182, 0.05) 38%,
+            rgba(150, 123, 182, 0) 65%),
+        #f8f6fb !important;
+}
+
+/* 首頁：加上同樣邏輯的淡漸層，跟文章頁調性一致 */
+body.home-page {
+    background: linear-gradient(180deg,
+            rgba(150, 123, 182, 0.16) 0%,
+            rgba(150, 123, 182, 0.08) 20%,
+            rgba(150, 123, 182, 0.03) 40%,
+            rgba(150, 123, 182, 0) 60%),
+        #f8f6fb !important;
+}
+
 /* 手機版 */
 @media (max-width: 1024px) {
     .article-list {
@@ -411,20 +436,20 @@ section.article-list article {
     background: rgba(255, 255, 255, 0.96) !important;
     backdrop-filter: blur(20px);
     padding: 40px 0 !important;
-    /* 再次加厚，支撐大字體 */
     position: sticky;
     top: 0;
     z-index: 999;
     border-bottom: 2px solid rgba(0, 0, 0, 0.05);
-    /* 底部線條稍微加粗 */
+    transition: background 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease;
 }
 
 /* 導航欄透明效果 */
 .dream-nav.scrolled {
-    background: rgba(255, 255, 255, 0.85) !important;
-    backdrop-filter: blur(20px) !important;
-    box-shadow: 0 4px 20px rgba(150, 123, 182, 0.1) !important;
-    transition: all 0.3s ease !important;
+    background: rgba(150, 123, 182, 0.15) !important;
+    backdrop-filter: blur(24px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(200%) !important;
+    box-shadow: 0 4px 24px rgba(150, 123, 182, 0.18) !important;
+    border-bottom: 1px solid rgba(150, 123, 182, 0.2) !important;
 }
 
 .nav-container {
@@ -571,13 +596,6 @@ section.article-list article {
 body.article-page .main-layout-container {
     margin-top: 0 !important;
     padding-top: 30px !important;
-}
-
-body.article-page {
-    background: linear-gradient(180deg,
-            rgba(150, 123, 182, 0.25) 0%,
-            /* 從 0.15 調高到 0.25 */
-            rgba(255, 255, 255, 0) 35%) !important;
 }
 
 /* 同時確認 Stack 主題預設 header 沒有殘留 */
@@ -2441,7 +2459,169 @@ aside .article-list--tile {
 }
 
 /* ============================================================
-   8-3. 分頁進入淡化載入樣式
+   8-3. 分頁: 關於我
+   ============================================================ */
+.about-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 0;
+}
+
+.about-slide:first-child {
+    padding-top: 20px;
+    /* 第一段不用留太多頂部空間，因為上面已經有導航列 */
+}
+
+.about-slide + .about-slide {
+    border-top: 1px solid rgba(150, 123, 182, 0.1);
+}
+
+/* ============================================================
+   8-4. 搜尋結果頁
+   ============================================================ */
+.search-form {
+    p {
+        flex: 1;
+        margin: 0;
+        position: relative;
+    }
+
+    input[name="keyword"] {
+        width: 100%;
+        box-sizing: border-box;
+        background: transparent !important;
+        border: none !important;
+    }
+
+    label {
+        position: absolute;
+        top: 6px;
+        left: 0;
+        font-size: 0.8rem;
+        color: #b0a4bd;
+        pointer-events: none;
+        display: none;
+    }
+}
+
+.search-result {
+    margin-top: 32px;
+}
+
+.search-result--title {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #7f68a0;
+    background: rgba(150, 123, 182, 0.1);
+    border: 1px solid rgba(150, 123, 182, 0.2);
+    border-radius: 999px;
+    padding: 8px 18px;
+    margin-bottom: 28px;
+
+    &::before {
+        content: "✨";
+    }
+}
+
+.search-result--list.article-list--compact {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    article {
+        position: relative;
+        background: #fff;
+        border-radius: 18px;
+        border: 1px solid rgba(150, 123, 182, 0.12);
+        box-shadow: 0 4px 16px rgba(150, 123, 182, 0.08);
+        overflow: hidden;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+        /* 左側莫蘭迪紫色塊，做出識別度 */
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: linear-gradient(180deg, #967BB6, #b9a4d1);
+        }
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 32px rgba(150, 123, 182, 0.2);
+
+            h3 {
+                color: #7f68a0;
+            }
+        }
+
+        > a {
+            padding: 24px 28px 24px 32px;
+            gap: 28px;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            transition: color 0.2s ease;
+        }
+
+        p {
+            color: #777;
+            line-height: 1.7;
+        }
+
+        img {
+            border-radius: 14px;
+            object-fit: cover;
+            box-shadow: 0 6px 16px rgba(150, 123, 182, 0.15);
+        }
+
+        mark {
+            background: rgba(150, 123, 182, 0.35);
+            color: #4a3a5a;
+            border-radius: 4px;
+            padding: 1px 3px;
+            font-weight: 600;
+        }
+    }
+}
+
+/* 查無結果的空狀態 */
+.search-result--empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: #999;
+
+    &::before {
+        content: "🔍";
+        display: block;
+        font-size: 3rem;
+        margin-bottom: 16px;
+        opacity: 0.5;
+    }
+
+    &::after {
+        content: "換個關鍵字試試看吧";
+        display: block;
+        font-size: 1rem;
+        margin-top: 8px;
+        color: #b8a8c8;
+    }
+}
+
+/* ============================================================
+   8-5. 分頁進入淡化載入樣式
    ============================================================ */
 @keyframes fadeIn {
     from {
