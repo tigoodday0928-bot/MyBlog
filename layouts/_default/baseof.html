@@ -70,6 +70,92 @@
             }
         </script>
 
+        <script>
+        (function () {
+            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // 1. 橫幅 3D 傾斜 + 反光
+            var heroCard = document.getElementById('about-hero-card');
+            if (heroCard && !reduce) {
+                heroCard.addEventListener('mousemove', function (e) {
+                    var r = heroCard.getBoundingClientRect();
+                    var x = (e.clientX - r.left) / r.width;
+                    var y = (e.clientY - r.top) / r.height;
+                    heroCard.style.transform = 'perspective(900px) rotateY(' + ((x - 0.5) * 10) + 'deg) rotateX(' + ((0.5 - y) * 8) + 'deg)';
+                    heroCard.style.setProperty('--mx', (x * 100) + '%');
+                    heroCard.style.setProperty('--my', (y * 100) + '%');
+                });
+                heroCard.addEventListener('mouseleave', function () {
+                    heroCard.style.transform = '';
+                });
+            }
+
+            // 2. 抽卡
+            var gacha = document.getElementById('about-gacha');
+            if (gacha) {
+                var cards = Array.prototype.slice.call(gacha.querySelectorAll('.gacha-card'));
+                var countEl = document.getElementById('gacha-count');
+                var msgEl = document.getElementById('gacha-msg');
+
+                function update() {
+                    var n = cards.filter(function (c) { return c.classList.contains('is-flipped'); }).length;
+                    countEl.textContent = n;
+                    msgEl.textContent = (n === cards.length) ? '🎉 全圖鑑達成！謝謝你把我全部抽完了～' : '';
+                }
+
+                function reveal(c) {
+                    if (c.classList.contains('is-flipped') || c.classList.contains('is-shaking')) return;
+                    c.classList.add('is-shaking');
+                    setTimeout(function () {
+                        c.classList.remove('is-shaking');
+                        c.classList.add('is-flipped');
+                        c.setAttribute('aria-pressed', 'true');
+                        update();
+                    }, reduce ? 0 : 450);
+                }
+
+                cards.forEach(function (c) {
+                    var tag = c.querySelector('.gacha-card__rarity');
+                    if (tag) tag.textContent = c.getAttribute('data-rarity') || '';
+                    c.addEventListener('click', function () { reveal(c); });
+                });
+
+                document.getElementById('gacha-draw').addEventListener('click', function () {
+                    var rest = cards.filter(function (c) {
+                        return !c.classList.contains('is-flipped') && !c.classList.contains('is-shaking');
+                    });
+                    if (!rest.length) return;
+                    reveal(rest[Math.floor(Math.random() * rest.length)]);
+                });
+
+                document.getElementById('gacha-reset').addEventListener('click', function () {
+                    cards.forEach(function (c) {
+                        c.classList.remove('is-flipped', 'is-shaking');
+                        c.setAttribute('aria-pressed', 'false');
+                    });
+                    update();
+                });
+            }
+
+            // 3. 捲動到才浮現
+            var blocks = document.querySelectorAll('.about-reveal');
+            if (blocks.length && 'IntersectionObserver' in window && !reduce) {
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (en) {
+                        if (en.isIntersecting) {
+                            en.target.classList.remove('is-pending');
+                            io.unobserve(en.target);
+                        }
+                    });
+                }, { threshold: 0.12 });
+                blocks.forEach(function (b) {
+                    b.classList.add('is-pending');
+                    io.observe(b);
+                });
+            }
+        })();
+        </script>
+
         <!-- Lightbox -->
         <div id="lightbox-overlay" onclick="closeLightbox()">
         <button id="lightbox-close" onclick="closeLightbox()">✕</button>

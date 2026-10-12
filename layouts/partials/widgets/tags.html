@@ -4,10 +4,16 @@
     </div>
     <div class="widget-body">
         <div class="tag-cloud">
+            {{ $max := 1 }}
             {{ range .Site.Taxonomies.tags }}
-            <a href="{{ .Page.RelPermalink }}" class="tag-item">
-                {{ .Page.Title }} ({{ .Count }})
-            </a>
+                {{ if gt .Count $max }}{{ $max = .Count }}{{ end }}
+            {{ end }}
+            {{ range .Site.Taxonomies.tags }}
+                {{ $w := 1.0 }}
+                {{ if gt $max 1 }}
+                    {{ $w = add 1.0 (mul (div (sub .Count 1.0) (sub $max 1.0)) 0.9) }}
+                {{ end }}
+                <a href="{{ .Page.RelPermalink }}" class="tag-item" style="--w: {{ printf "%.2f" $w }}" title="{{ .Count }} 篇文章">{{ .Page.Title }}</a>
             {{ end }}
         </div>
     </div>

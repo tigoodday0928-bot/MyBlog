@@ -964,23 +964,26 @@ body.article-page .main-layout-container {
 .tag-cloud {
     display: flex !important;
     flex-wrap: wrap !important;
-    gap: 8px !important;
+    align-items: baseline !important;
+    gap: 6px 14px !important;
 }
 
 .tag-item {
-    background: rgba(150, 123, 182, 0.1) !important;
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
     color: #967BB6 !important;
-    border-radius: 20px !important;
-    padding: 4px 12px !important;
-    font-size: 0.95rem !important;
+    font-size: calc(1.3rem * var(--w, 1)) !important;
     font-weight: 600 !important;
+    line-height: 1.4 !important;
     text-decoration: none !important;
-    transition: all 0.2s !important;
-    border: 1px solid rgba(150, 123, 182, 0.2) !important;
+    transition: color 0.2s ease !important;
 
     &:hover {
-        background: #967BB6 !important;
-        color: #fff !important;
+        background: none !important;
+        color: #5a4065 !important;
+        text-decoration: underline !important;
     }
 }
 
@@ -2459,165 +2462,429 @@ aside .article-list--tile {
 }
 
 /* ============================================================
-   8-3. 分頁: 關於我
+   8-3. 分頁: 關於我 —— 玩家檔案 × 抽卡互動版
    ============================================================ */
-.about-slide {
+
+.about-reveal {
+    transition: opacity 0.6s ease, transform 0.6s ease;
+
+    &.is-pending {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+}
+
+/* ---- 橫幅：傾斜 + 反光 ---- */
+.about-hero {
+    margin: 0 0 40px;
+}
+
+.about-hero__card {
+    --mx: 50%;
+    --my: 50%;
+    position: relative;
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 14px 40px rgba(150, 123, 182, 0.28);
+    transition: transform 0.18s ease-out;
+    will-change: transform;
+}
+
+/* 蓋過「文章內圖片 70% 寬 + 上下留白」那條規則 */
+.article-content .about-hero .about-hero__card img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 460px;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    object-fit: cover;
+}
+
+.about-hero__plate {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 56px 28px 24px;
+    text-align: left;
+    pointer-events: none;
+    background: linear-gradient(to top, rgba(54, 38, 74, 0.78), rgba(54, 38, 74, 0));
+}
+
+.about-hero__name {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.about-hero__tagline {
+    margin-top: 4px;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+@media (max-width: 768px) {
+    .about-hero__plate {
+        padding: 40px 18px 16px;
+    }
+
+    .about-hero__name {
+        font-size: 2.4rem;
+    }
+
+    .about-hero__tagline {
+        font-size: 1.4rem;
+    }
+}
+
+.about-hero__shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at var(--mx) var(--my), rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0) 55%);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.about-hero__card:hover .about-hero__shine {
+    opacity: 1;
+}
+
+/* ---- 共用：寬度對齊文章內文 ---- */
+.about-intro,
+.about-gacha,
+.about-title,
+.about-mail {
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.about-title {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 100px 0;
-}
-
-.about-slide:first-child {
-    padding-top: 20px;
-    /* 第一段不用留太多頂部空間，因為上面已經有導航列 */
-}
-
-.about-slide + .about-slide {
-    border-top: 1px solid rgba(150, 123, 182, 0.1);
-}
-
-/* ============================================================
-   8-4. 搜尋結果頁
-   ============================================================ */
-.search-form {
-    p {
-        flex: 1;
-        margin: 0;
-        position: relative;
-    }
-
-    input[name="keyword"] {
-        width: 100%;
-        box-sizing: border-box;
-        background: transparent !important;
-        border: none !important;
-    }
-
-    label {
-        position: absolute;
-        top: 6px;
-        left: 0;
-        font-size: 0.8rem;
-        color: #b0a4bd;
-        pointer-events: none;
-        display: none;
-    }
-}
-
-.search-result {
-    margin-top: 32px;
-}
-
-.search-result--title {
-    display: inline-flex;
     align-items: center;
-    gap: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #7f68a0;
-    background: rgba(150, 123, 182, 0.1);
-    border: 1px solid rgba(150, 123, 182, 0.2);
-    border-radius: 999px;
-    padding: 8px 18px;
-    margin-bottom: 28px;
-
-    &::before {
-        content: "✨";
-    }
-}
-
-.search-result--list.article-list--compact {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    article {
-        position: relative;
-        background: #fff;
-        border-radius: 18px;
-        border: 1px solid rgba(150, 123, 182, 0.12);
-        box-shadow: 0 4px 16px rgba(150, 123, 182, 0.08);
-        overflow: hidden;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-
-        /* 左側莫蘭迪紫色塊，做出識別度 */
-        &::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 5px;
-            background: linear-gradient(180deg, #967BB6, #b9a4d1);
-        }
-
-        &:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 14px 32px rgba(150, 123, 182, 0.2);
-
-            h3 {
-                color: #7f68a0;
-            }
-        }
-
-        > a {
-            padding: 24px 28px 24px 32px;
-            gap: 28px;
-            align-items: center;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            transition: color 0.2s ease;
-        }
-
-        p {
-            color: #777;
-            line-height: 1.7;
-        }
-
-        img {
-            border-radius: 14px;
-            object-fit: cover;
-            box-shadow: 0 6px 16px rgba(150, 123, 182, 0.15);
-        }
-
-        mark {
-            background: rgba(150, 123, 182, 0.35);
-            color: #4a3a5a;
-            border-radius: 4px;
-            padding: 1px 3px;
-            font-weight: 600;
-        }
-    }
-}
-
-/* 查無結果的空狀態 */
-.search-result--empty {
-    text-align: center;
-    padding: 80px 20px;
-    color: #999;
-
-    &::before {
-        content: "🔍";
-        display: block;
-        font-size: 3rem;
-        margin-bottom: 16px;
-        opacity: 0.5;
-    }
+    gap: 12px;
+    margin-top: 64px;
+    margin-bottom: 20px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #5a4065;
 
     &::after {
-        content: "換個關鍵字試試看吧";
-        display: block;
-        font-size: 1rem;
-        margin-top: 8px;
-        color: #b8a8c8;
+        content: "";
+        flex: 1;
+        height: 2px;
+        border-radius: 2px;
+        background: linear-gradient(90deg, rgba(150, 123, 182, 0.45), rgba(150, 123, 182, 0));
     }
+}
+
+/* ---- 自我介紹 ---- */
+.about-intro {
+    margin-bottom: 36px;
+    padding: 28px 32px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, rgba(150, 123, 182, 0.1), rgba(255, 255, 255, 0));
+    border: 1px solid rgba(150, 123, 182, 0.18);
+
+    .about-title {
+        margin-top: 0;
+    }
+
+    .about-text + .about-text {
+        margin-top: 14px;
+    }
+}
+
+/* ---- 抽卡區 ---- */
+.about-gacha {
+    padding: 26px 28px 24px;
+    border-radius: 20px;
+    background: #fff;
+    border: 1px solid rgba(150, 123, 182, 0.18);
+    box-shadow: 0 8px 28px rgba(150, 123, 182, 0.12);
+}
+
+.about-gacha__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.about-gacha__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #5a4065;
+}
+
+.about-gacha__count {
+    font-size: 1.5rem;
+    color: #8a7a9a;
+
+    b {
+        font-size: 2rem;
+        color: #967BB6;
+    }
+}
+
+.about-gacha__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.gacha-card {
+    --c: #8fa3b8;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+    perspective: 800px;
+
+    &[data-rarity="SSR"] { --c: #c9a45c; }
+    &[data-rarity="SR"]  { --c: #967BB6; }
+    &[data-rarity="R"]   { --c: #8fa3b8; }
+
+    &:not(.is-flipped):hover .gacha-card__inner {
+        transform: translateY(-5px);
+    }
+
+    &.is-flipped .gacha-card__inner {
+        transform: rotateY(180deg);
+    }
+
+    &.is-shaking .gacha-card__inner {
+        animation: gacha-shake 0.45s ease-in-out;
+    }
+}
+
+.gacha-card__inner {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.gacha-card__face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 14px;
+    text-align: center;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.gacha-card__back {
+    background: repeating-linear-gradient(45deg, #a791c4, #a791c4 8px, #967BB6 8px, #967BB6 16px);
+    color: #fff;
+    font-size: 3.2rem;
+    font-weight: 700;
+    box-shadow: 0 6px 16px rgba(150, 123, 182, 0.3);
+}
+
+.gacha-card__front {
+    transform: rotateY(180deg);
+    background: #fff;
+    border: 2px solid var(--c);
+    box-shadow: 0 0 18px -4px var(--c);
+}
+
+.gacha-card__rarity {
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--c);
+}
+
+.gacha-card__emoji {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.gacha-card__label {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #5a4065;
+}
+
+@keyframes gacha-shake {
+    0%, 100% { transform: rotate(0); }
+    20% { transform: rotate(-8deg) scale(1.05); }
+    40% { transform: rotate(8deg) scale(1.05); }
+    60% { transform: rotate(-6deg) scale(1.05); }
+    80% { transform: rotate(6deg) scale(1.05); }
+}
+
+.about-gacha__actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.gacha-btn {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 0;
+    padding: 12px 26px;
+    border-radius: 13px;
+    background: #967BB6;
+    color: #fff;
+    font: inherit;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+
+    &:hover {
+        background: #7f68a0;
+        transform: translateY(-1px);
+    }
+
+    &--ghost {
+        background: rgba(150, 123, 182, 0.12);
+        color: #6b5a7e;
+        border: 1px solid rgba(150, 123, 182, 0.3);
+
+        &:hover {
+            background: rgba(150, 123, 182, 0.22);
+        }
+    }
+}
+
+.about-gacha__msg {
+    min-height: 2.4rem;
+    margin-top: 14px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #7f68a0;
+}
+
+/* ---- 聯絡卡片 ---- */
+.about-mail {
+    margin-bottom: 20px;
+    padding: 26px 28px 30px;
+    background: #fff;
+    border: 1px solid rgba(150, 123, 182, 0.18);
+    border-radius: 20px;
+    box-shadow: 0 8px 28px rgba(150, 123, 182, 0.12);
+}
+
+@media (max-width: 768px) {
+    .about-intro,
+    .about-gacha,
+    .about-mail {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-reveal,
+    .about-hero__card,
+    .gacha-card__inner {
+        transition: none;
+    }
+
+    .gacha-card.is-shaking .gacha-card__inner {
+        animation: none;
+    }
+}
+
+/* 自我介紹：分類連結 + 小檔案 */
+.about-intro .about-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+
+    a {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: rgba(150, 123, 182, 0.1);
+        border: 1px solid rgba(150, 123, 182, 0.25);
+        color: #6b5a7e;
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-decoration: none;
+        box-shadow: none;
+        transition: background 0.25s ease, transform 0.25s ease;
+
+        &:hover {
+            background: rgba(150, 123, 182, 0.22);
+            transform: translateY(-2px);
+        }
+    }
+}
+
+.about-facts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 22px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.about-fact {
+    padding: 14px 18px;
+    border-radius: 14px;
+    background: #fff;
+    border: 1px solid rgba(150, 123, 182, 0.15);
+}
+
+.about-fact__k {
+    margin-bottom: 4px;
+    font-size: 1.3rem;
+    color: #8a7a9a;
+}
+
+.about-fact__v {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #5a4065;
 }
 
 /* ============================================================
