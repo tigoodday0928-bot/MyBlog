@@ -1959,6 +1959,23 @@ aside .article-list--tile {
     height: auto !important;
 }
 
+/* 分類卡片：五種莫蘭迪色循環 */
+.subsection-list .article-list--tile article:nth-child(5n + 1) {
+    background: linear-gradient(135deg, #ECE6F2 0%, #E1D8EC 100%) !important;  /* 薰衣草 */
+}
+.subsection-list .article-list--tile article:nth-child(5n + 2) {
+    background: linear-gradient(135deg, #E6EDE7 0%, #D8E3DA 100%) !important;  /* 鼠尾草綠 */
+}
+.subsection-list .article-list--tile article:nth-child(5n + 3) {
+    background: linear-gradient(135deg, #F3E7E9 0%, #EAD8DC 100%) !important;  /* 乾燥玫瑰 */
+}
+.subsection-list .article-list--tile article:nth-child(5n + 4) {
+    background: linear-gradient(135deg, #E5EBF1 0%, #D7E1EA 100%) !important;  /* 霧藍 */
+}
+.subsection-list .article-list--tile article:nth-child(5n + 5) {
+    background: linear-gradient(135deg, #F5F0E8 0%, #EDE8DF 100%) !important;  /* 原本的米色 */
+}
+
 // ===== 歸檔時間軸 =====
 .template-archives .archives-group {
     position: relative;
